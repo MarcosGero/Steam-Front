@@ -1,11 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Form, Button, Container, Row, Col, Card } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-const App = () => {
+const Login = () => {
   return (
     
+    <Container className="mt-5">
+      <Row className="justify-content-center">
+        <Col md={6}>
           <Card style={{ width: '18rem' }} className="mx-auto p-4"> {/* Estilo y clases para centrar */}
             <Card.Body>
               <h3 className="text-center mb-4">INICIA SESIÓN CON EL NOMBRE DE LA CUENTA</h3>
@@ -32,9 +33,10 @@ const App = () => {
               </div>
             </Card.Body>
           </Card>
-    
-    
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
-export default App;
+export default Login;
