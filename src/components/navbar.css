@@ -1,0 +1,23 @@
+.navbar{
+    background-color: #171d25;
+    height: 104px;
+}
+
+.logo{
+    height: 100%;
+    width: 100%;   
+}
+
+.navoptions {
+    padding-left: 70px !important;
+    margin-left: 0px !important;
+    width: 60% !important;
+  }
+  
+.navitems {
+    margin-left: 20% !important;
+}
+
+
+
+
