@@ -3,7 +3,7 @@ import NavigationBar from '../components/NavigationBar.js'
 import { Form, Button, Container, Row, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom'; 
 import { useState } from 'react';
-import axios from 'axios';
+import axiosInstance from '../components/AxiosInstance.js';
 import Signup from './Signup.js';
 
 function Login() {
@@ -15,7 +15,7 @@ function Login() {
     event.preventDefault();  // Evitar el comportamiento de envío por defecto del formulario
 
     try {
-        const response = await axios.post('http://localhost:8080/users/login', {
+        const response = await axiosInstance.post('http://localhost:8080/users/login', {
             username: username,
             password: password
         });
