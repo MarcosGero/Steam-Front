@@ -13,12 +13,19 @@ function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();  // Evitar el comportamiento de envío por defecto del formulario
+    let config = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: '/users',
+      headers: { 
+          'Content-Type': 'application/json', 
+          'Authorization': 'Basic dXNlcjpwYXNzd29yZA=='
+      },
+      data: data
+  };
 
     try {
-        const response = await axiosInstance.post('http://localhost:8080/users/login', {
-            username: username,
-            password: password
-        });
+      const response = await axiosInstance(config);
 
         console.log('Login successful', response.data);
         // Manejar la respuesta, por ejemplo, guardar el token de acceso, redirigir al usuario, etc.
