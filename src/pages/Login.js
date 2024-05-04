@@ -11,12 +11,17 @@ function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  let data = JSON.stringify({
+    "email": username,
+    "password": password
+  });
+
   const handleSubmit = async (event) => {
     event.preventDefault();  // Evitar el comportamiento de envío por defecto del formulario
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: '/users',
+      url: 'http://localhost:8080/users/login',
       headers: { 
           'Content-Type': 'application/json', 
           'Authorization': 'Basic dXNlcjpwYXNzd29yZA=='
