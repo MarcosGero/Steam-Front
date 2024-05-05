@@ -16,7 +16,7 @@ function Login() {
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: '/users',
+      url: 'http://localhost:8080/users/login',
       headers: { 
           'Content-Type': 'application/json', 
           'Authorization': 'Basic dXNlcjpwYXNzd29yZA=='
