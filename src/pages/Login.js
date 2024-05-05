@@ -11,18 +11,22 @@ function Login() {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  let data = {
+    username: username,
+    password: password
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();  // Evitar el comportamiento de envío por defecto del formulario
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: '/users',
+      url: '/auth/login',
       headers: { 
           'Content-Type': 'application/json', 
           'Authorization': 'Basic dXNlcjpwYXNzd29yZA=='
       },
-      data: data
+      data:  data
   };
 
     try {
