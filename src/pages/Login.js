@@ -11,17 +11,12 @@ function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  let data = JSON.stringify({
-    "email": username,
-    "password": password
-  });
-
   const handleSubmit = async (event) => {
     event.preventDefault();  // Evitar el comportamiento de envío por defecto del formulario
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'http://localhost:8080/users/login',
+      url: '/users',
       headers: { 
           'Content-Type': 'application/json', 
           'Authorization': 'Basic dXNlcjpwYXNzd29yZA=='
@@ -84,21 +79,7 @@ function Login() {
     </Container>
         
       </header>
-      <Container fluid className="underbanner">
-        <Container className='underbanner-content'>
-          <Container className='left'>
-            <p className='textopregunta'>¿Es la primera vez que usas Steam?</p>
-            <Link to= '/signup'>
-            <Button variant="primary" type="submit" className="button1">
-                  <p className='buttontext'>Crea una cuenta</p>
-            </Button>
-            </Link>
-          </Container>
-          <Container className='right'>
-            <p className='textolargo text2'>Es gratis y muy fácil. Descubre miles de juegos para jugar con millones de nuevos amigos. Más información acerca de Steam</p>
-          </Container>
-        </Container>
-      </Container>
+      
     </div>
   );
 }
