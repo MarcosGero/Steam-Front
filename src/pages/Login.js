@@ -12,7 +12,7 @@ function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   let data = {
-    username: username,
+    email: username,
     password: password
   }
 
@@ -21,7 +21,7 @@ function Login() {
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'http://localhost:8080/users/login',
+      url: 'http://localhost:8080/auth/login',
       headers: { 
           'Content-Type': 'application/json', 
           'Authorization': 'Basic dXNlcjpwYXNzd29yZA=='
@@ -50,17 +50,17 @@ function Login() {
             <Card.Body>
               <Form className="form">
 
-                <h3 className="text1 text-left">INICIA SESIÓN CON EL NOMBRE DE LA CUENTA</h3>
+                <h3 className="text1  text-left">INICIA SESIÓN CON EL NOMBRE DE LA CUENTA</h3>
 
                 <Form.Group className="mb-3">
-                  <Form.Control className="forms" type="text" value={username}
+                  <Form.Control className="forms text-white" type="text" value={username}
                         onChange={(e) => setUsername(e.target.value)} />
                 </Form.Group>
 
                 <h5 className="text-left text2">CONTRASEÑA</h5>
 
                 <Form.Group className="mb-3">
-                  <Form.Control className="forms" type="password" value={password}
+                  <Form.Control className="forms text-white" type="password" value={password}
                         onChange={(e) => setPassword(e.target.value)}/>
                 </Form.Group>
 
