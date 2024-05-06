@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import NavigationBar from '../components/NavigationBar.js';
 import { Form, Button, Container, Row, Col, Card } from 'react-bootstrap';
 import './Signup.css';
-
 function Signup() {
   const [validated, setValidated] = useState(false);
 
