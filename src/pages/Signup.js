@@ -2,40 +2,20 @@ import React, { useState } from 'react';
 import NavigationBar from '../components/NavigationBar';
 import { Form, Button, Container, Row, Col, Card } from 'react-bootstrap';
 import './Signup.css';
-<<<<<<< Updated upstream
-import axios from '../components/AxiosInstance.js';
-=======
 import axiosInstance from '../components/AxiosInstance.js';
->>>>>>> Stashed changes
 
 function Signup() {
   const [validated, setValidated] = useState(false);
   const [email, setEmail] = useState('');
   const [confirmEmail, setConfirmEmail] = useState('');
-<<<<<<< Updated upstream
-=======
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
->>>>>>> Stashed changes
   const [country, setCountry] = useState('');
 
   const handleSubmit = async (event) => {
     const form = event.currentTarget;
     event.preventDefault();
-<<<<<<< Updated upstream
-    if (form.checkValidity() === false) {
-      event.stopPropagation();
-    } else {
-      // Aquí añades la lógica de la petición POST usando Axios
-      try {
-        const response = await axios.post('/api/v1/auth/signup',{
-          email: email,
-          confirmEmail: confirmEmail,
-          country: country
-        });
-        // Suponiendo que el API responda con el token JWT
-=======
     if (form.checkValidity() === false || password !== confirmPassword) {
       event.stopPropagation();
       if (password !== confirmPassword) {
@@ -43,14 +23,12 @@ function Signup() {
       }
     } else {
       try {
-        const response = await axiosInstance.post('/signup', {
-          email,
-          confirmEmail,
-          username,
-          password,
-          country
+        const response = await axiosInstance.post('/auth/signup', {
+          email: email,
+          userName: username,
+          password: password,
+          country: country
         });
->>>>>>> Stashed changes
         localStorage.setItem('jwtToken', response.data.token);
         alert('¡Registro exitoso!');
       } catch (error) {
@@ -113,13 +91,8 @@ function Signup() {
 
 
                   <Form.Group controlId="formCountry">
-<<<<<<< Updated upstream
-                    <Form.Label className='text2 text-white'>País de residencia</Form.Label>
-                    <Form.Control className='forms text-white' as="select" required onChange={(e) => setCountry(e.target.value)}>
-=======
                     <Form.Label className='text2'>País de residencia</Form.Label>
                     <Form.Control className='forms text-white' as="select" required>
->>>>>>> Stashed changes
                       <option value=""></option>
                       <option value="Argentina">Argentina</option>
                       {/* Agrega más opciones de países aquí */}
