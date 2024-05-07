@@ -3,7 +3,6 @@ import NavigationBar from '../components/NavigationBar';
 import { Form, Button, Container, Row, Col, Card } from 'react-bootstrap';
 import './Signup.css';
 import axiosInstance from '../components/AxiosInstance.js';
-import { useNavigate } from 'react-router-dom';
 
 function Signup() {
   const [validated, setValidated] = useState(false);
@@ -13,7 +12,6 @@ function Signup() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [country, setCountry] = useState('');
-  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     const form = event.currentTarget;
@@ -33,7 +31,6 @@ function Signup() {
           country: country
         });
         localStorage.setItem('jwtToken', response.data.token);
-        navigate('/home');
 
       } catch (error) {
         alert('Hubo un error en el registro: ' + error.message);
