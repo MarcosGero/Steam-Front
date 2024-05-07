@@ -13,7 +13,7 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault(); // Evitar el comportamiento de envío por defecto del formulario
     const data = {
-      email: username, // Asegúrate de que el endpoint espera 'email' y no 'username'
+      username: username, // Asegúrate de que el endpoint espera 'email' y no 'username'
       password: password
     };
 
