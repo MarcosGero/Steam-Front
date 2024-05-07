@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import './navbar.css'
 import logo from '../resources/logo.png';
 
@@ -24,6 +24,12 @@ const NavigationBar = () => {
             <Nav.Link href="#link">ACERCA DE</Nav.Link>
             <Nav.Link href="#link">SOPORTE</Nav.Link>
         </Nav>
+        </Container>
+        <Container className='navoptions'>
+          <Nav className="extraoptions">
+            <Button variant="success" className="rectangular-button" block>Instalar Steam</Button>
+            <Nav.Link href='/' className='navtext'>Iniciar Sesión</Nav.Link>
+          </Nav>
         </Container>
       </Container>
     </Navbar>

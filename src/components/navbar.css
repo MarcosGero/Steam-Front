@@ -15,9 +15,16 @@
   }
   
 .navitems {
-    margin-left: 20% !important;
+    margin-left: 25% !important;
 }
 
+.navtext {
+    margin-left: 2% !important;
+}
+
+.extraoptions {
+    padding-bottom: 50px;
+}
 
 
 
