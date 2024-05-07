@@ -4,11 +4,13 @@ import { Form, Button, Container, Row, Card } from 'react-bootstrap';
 import { useState } from 'react';
 import axiosInstance from '../components/AxiosInstance.js';
 import Underbanner from '../components/Underbanner.js';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(''); // Añadir un estado para manejar los errores de login
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // Evitar el comportamiento de envío por defecto del formulario
@@ -22,7 +24,7 @@ function Login() {
       console.log('Login successful', response.data);
       // Guardar el token en el almacenamiento local del navegador
       localStorage.setItem('jwtToken', response.data.token);
-      alert('¡Inicio de sesión exitoso!'); // Opcional, podrías redirigir al usuario a otra página
+      navigate('/home');
     } catch (error) {
       console.error('Login failed', error.response || error);
       setError('Error de inicio de sesión. Por favor verifica tus credenciales.'); // Manejar el error mostrando un mensaje
