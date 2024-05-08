@@ -7,15 +7,15 @@ import Underbanner from '../components/Underbanner.js';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(''); // Añadir un estado para manejar los errores de login
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // Evitar el comportamiento de envío por defecto del formulario
     const data = {
-      username: username, 
+      username: username, // Asegúrate de que el endpoint espera 'email' y no 'username'
       password: password
     };
 
@@ -24,8 +24,7 @@ function Login() {
       console.log('Login successful', response.data);
       // Guardar el token en el almacenamiento local del navegador
       localStorage.setItem('jwtToken', response.data.token);
-    
-      navigate('/home'); 
+      navigate('/home');
     } catch (error) {
       console.error('Login failed', error.response || error);
       setError('Error de inicio de sesión. Por favor verifica tus credenciales.'); // Manejar el error mostrando un mensaje

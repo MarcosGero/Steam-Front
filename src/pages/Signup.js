@@ -15,6 +15,7 @@ function Signup() {
 
   const handleSubmit = async (event) => {
     const form = event.currentTarget;
+
     event.preventDefault();
     if (form.checkValidity() === false || password !== confirmPassword) {
       event.stopPropagation();
@@ -30,7 +31,7 @@ function Signup() {
           country: country
         });
         localStorage.setItem('jwtToken', response.data.token);
-        alert('¡Registro exitoso!');
+
       } catch (error) {
         alert('Hubo un error en el registro: ' + error.message);
       }
