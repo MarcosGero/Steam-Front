@@ -2,8 +2,9 @@ import './Login.css';
 import NavigationBar from '../components/NavigationBar.js';
 import { Form, Button, Container, Row, Card } from 'react-bootstrap';
 import { useState } from 'react';
-import axiosInstance from '../components/AxiosInstance.js';
 import Underbanner from '../components/Underbanner.js';
+import { useLoginContext } from "../components/AuthProvider.js"
+
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
@@ -12,28 +13,26 @@ function Login() {
   const [error, setError] = useState(''); // Añadir un estado para manejar los errores de login
   const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault(); // Evitar el comportamiento de envío por defecto del formulario
-    const data = {
-      username: username, // Asegúrate de que el endpoint espera 'email' y no 'username'
-      password: password
-    };
+  const LogUser = useLoginContext(); // Usar el contexto de login
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     try {
-      const response = await axiosInstance.post('/auth/login', data);
-      console.log('Login successful', response.data);
-      // Guardar el token en el almacenamiento local del navegador
-      localStorage.setItem('jwtToken', response.data.token);
-      navigate('/home');
+      const errorMsg = await LogUser(username, password); // Llamar a la función de login del contexto
+      if (errorMsg) {
+        setError(errorMsg);
+      } else {
+        navigate('/home'); // Navegar a 'home' si el login es exitoso
+      }
     } catch (error) {
       console.error('Login failed', error.response || error);
-      setError('Error de inicio de sesión. Por favor verifica tus credenciales.'); // Manejar el error mostrando un mensaje
+      setError('Error de inicio de sesión. Por favor verifica tus credenciales.');
     }
   };
 
+
   return (
     <div className="App">
-      <NavigationBar />
       <header className="login-header">
         <Container fluid className="login-container">
           <Row className="row justify-content-center">

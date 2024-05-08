@@ -1,0 +1,26 @@
+footer {
+    font-size: 12px;
+    background-color: #1b2838;
+  }
+  .text-footer {
+    color: #bebcbc;
+  }
+  .footer-logo {
+    max-height: 30px; 
+    width: auto;
+    vertical-align: middle; 
+  }
+  
+  
+  .text-link {
+    color: #dedbdb;
+  }
+  a {
+    text-decoration: none;
+    color: #66c0f4; /* Ajustar el color azul de los enlaces si es necesario */
+  }
+  
+  a:hover {
+    color: #fff;
+  }
+  
