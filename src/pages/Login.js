@@ -19,11 +19,6 @@ function Login() {
     event.preventDefault();
     try {
       const errorMsg = await LogUser(username, password); // Llamar a la función de login del contexto
-      if (errorMsg) {
-        setError(errorMsg);
-      } else {
-        navigate('/home'); // Navegar a 'home' si el login es exitoso
-      }
     } catch (error) {
       console.error('Login failed', error.response || error);
       setError('Error de inicio de sesión. Por favor verifica tus credenciales.');
