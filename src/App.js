@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Signup from './pages/Signup';
 import Axios from "axios";
 import Home from './pages/Home'; // Asegúrate de tener este componente
+import AccountPage from './pages/AccountPage';
 
 /////////////////TOKEN/////////////////////////////////
 Axios.defaults.baseURL = 'http://localhost:8080/api/v1/'
@@ -32,6 +33,7 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/account-details" element={<AccountPage />} />
           </Routes>
         </Layout>
       </AuthProvider>

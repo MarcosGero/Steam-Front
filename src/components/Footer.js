@@ -5,19 +5,19 @@ import "./footer.css";
 const Footer = () => {
     return (
       <footer className="bg-dark text-footer py-3">
-        <Container>
+        <Container className="mt-1 container-alignment">
         <Row className="mt-1 text-center">
             <Col>
                 <hr/>
             </Col>
           </Row>
           <Row className="align-items-center">
-            <Col xs={1}>
-              <img src="/path-to-valve-logo.png" alt="Logo de Valve" className="footer-logo" />
-            </Col>
+              
             <Col xs={10} className="text-center">
+              <img src="/footerLogo_valve_new.png" alt="Logo de Valve" className="footer-logo" />
               <span>© 2024 Valve Corporation. Todos los derechos reservados. Todas las marcas registradas pertenecen a sus respectivos dueños en EE. UU. y otros países.</span>
-              <img src="/path-to-steam-logo.png" alt="Logo de Steam" className="footer-logo mx-2" />
+              <img src="/logo_steam_footer.png" alt="Logo de Steam" className="footer-logo mx-2" />
+              <br/>
               <span>Todos los precios incluyen IVA (donde sea aplicable).</span>
               <a href="#" className="text-link mx-2">Política de Privacidad</a> |
               <a href="#" className="text-link mx-2">Información legal</a> |

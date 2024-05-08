@@ -1,26 +1,30 @@
 footer {
-    font-size: 12px;
-    background-color: #1b2838;
-  }
-  .text-footer {
-    color: #bebcbc;
-  }
-  .footer-logo {
-    max-height: 30px; 
-    width: auto;
-    vertical-align: middle; 
-  }
-  
-  
-  .text-link {
-    color: #dedbdb;
-  }
-  a {
-    text-decoration: none;
-    color: #66c0f4; /* Ajustar el color azul de los enlaces si es necesario */
-  }
-  
-  a:hover {
-    color: #fff;
-  }
-  
+  font-size: 12px;
+  background-color: #1b2838;
+}
+.text-footer {
+  color: #bebcbc;
+}
+.footer-logo {
+  max-height: 30px;
+  width: auto;
+  vertical-align: middle;
+}
+.container-alignment{
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: #fff; /* Ajusta el color según tu diseño */
+  font-size: 12px; /* Ajusta el tamaño de la fuente según sea necesario */
+}
+.text-link {
+  color: #dedbdb;
+}
+a {
+  text-decoration: none;
+  color: #66c0f4; /* Ajustar el color azul de los enlaces si es necesario */
+}
+
+a:hover {
+  color: #fff;
+}

@@ -4,18 +4,17 @@
 }
 
 .logo{
-    height: 100%;
-    width: 100%;   
+    height: 7vh;
+    width: auto;   
 }
 
 .navoptions {
-    padding-left: 70px !important;
     margin-left: 0px !important;
     width: 60% !important;
   }
   
 .navitems {
-    margin-left: 25% !important;
+    margin-left: 15% !important;
 }
 
 .navtext {
@@ -26,5 +25,44 @@
     padding-bottom: 50px;
 }
 
-
+.rectangular-button {
+    background-color: #77a318; /* Color verde oscuro */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 0.1rem;
+  }
+  /* División vertical */
+.divider {
+    height: 15px;
+    width: 1px;
+    background-color: white;
+    margin: 0 10px;
+  }
+  .navtext2 {
+    color: #5c7e10; /* Color verde para texto no autenticado */
+    font-weight: bold;
+  }
+  
+  .navtext:hover {
+    color: white; /* Color blanco al pasar el mouse */
+  }
+  /* Estilos para la sección de localización y otros enlaces */
+.location-container {
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  
+  .location-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
 

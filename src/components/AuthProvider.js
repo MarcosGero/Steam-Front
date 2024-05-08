@@ -49,7 +49,7 @@ export function AuthProvider({ children }) {
         localStorage.setItem("local-user", username);
         localStorage.setItem("local-token", response.data.token);
         setLoading(false);
-        navigate("/");
+        navigate("/home");
       })
       .catch((error) => {
         setLoading(false);
@@ -84,17 +84,11 @@ export function AuthProvider({ children }) {
   /////////////////Login Out/////////////////////////////////
   const LogOutUser = (sumiterror) => {
       setLoading(true);
-      Axios.post(API_URL + "api/logout")
-        .then((response) => {
-          localStorage.removeItem("local-token");
-          localStorage.removeItem("local-user");
-          setAuth(false);
-          setLoading(false);
-          navigate("/LoginPage");
-        })
-        .catch((error) => {
-          setLoading(false);
-        });
+      localStorage.removeItem("local-token");
+      localStorage.removeItem("local-user");
+      setAuth(false);
+      setLoading(false);
+      navigate("/");
   };
   ///////////////////////////////////////////////////////////
 
