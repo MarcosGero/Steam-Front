@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import { Navbar, Nav, Container, Button, Dropdown} from 'react-bootstrap';
 import './navbar.css'
 import logo from '../resources/logo.png';
-import * as jwt_decode from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
 
 const NavigationBar = () => {
 
   const [loggedIn, setLoggedIn] = useState(false);
   const [username, setUsername] = useState('')
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem('jwtToken');
@@ -19,6 +20,20 @@ const NavigationBar = () => {
   const decodeToken = (token) => {
     const decoded = JSON.parse(atob(token.split('.')[1]));
     return { username: decoded.sub};
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('jwtToken');
+    setUsername('');
+    setLoggedIn(false);
+    navigate('/');
+  };
+
+  const handleRequest = () => {
+    const token = localStorage.getItem('jwtToken');
+    if (token) {
+      navigate('/signup'); // URL de detalles de cuenta
+    } else navigate('/') // Si el token se vencio entonces vuelve a la pagina login
   };
 
   return (
@@ -48,7 +63,16 @@ const NavigationBar = () => {
               // Si el usuario está conectado, muestra su nombre de usuario
               <>
                 <Button variant="dark" className="rectangular-button" block>Instalar Steam</Button>
-                <Nav.Link href='/' className='navtext'>{username}</Nav.Link>
+                <Dropdown className='navtext'>
+                  <Dropdown.Toggle variant="dark" id="dropdown-basic">
+                    {username}
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={handleRequest}>Detalles de cuenta</Dropdown.Item>
+                    <Dropdown.Item onClick={handleLogout}>Cerrar sesión</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </>
             ) : (
               <>
