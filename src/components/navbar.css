@@ -36,11 +36,31 @@
 .navtext {
     margin-left: 2% !important;
 }
+.nav-dropdown {
+  margin-left: 0% !important;
+  font-family: 'Motiva-Sans', sans-serif;
+  font-size: 12px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
 
 .extraoptions {
     padding-bottom: 50px;
 }
-
+.rectangular-button2 {
+  background-color: #343434; /* Color verde oscuro */
+  border: none;
+  color: rgb(229, 221, 221);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  height: 3vh;
+  width: auto;
+  margin: 6px 2px;
+  cursor: pointer;
+  border-radius: 0.1rem;
+}
 .rectangular-button {
     background-color: #688f16; /* Color verde oscuro */
     border: none;
@@ -60,7 +80,10 @@
     background-color:  #84b51b;
     color: white;
   }
-
+  .rectangular-button2:hover {
+    background-color:  #484848;
+    color: white;
+  }
   .location-icon {
     width: 15px;
     height: 15px;
@@ -93,10 +116,18 @@
     display: flex;
     align-items: center;
   }
-  
+ .navDropOptions{
+    font-family: 'Motiva-Sans', sans-serif;
+    font-size: 13px;
+    text-align: left;
+    padding-left: 0;
+    margin-left: 4px;
+    margin-right: 20px;
+ } 
 .download-icon{
     width: 15px;
     height: 15px;
     margin: 0.1vh 0.6vh 0.5vh 0.5vh;
   }
+
 
