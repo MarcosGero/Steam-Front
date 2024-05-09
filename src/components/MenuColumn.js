@@ -1,7 +1,7 @@
 import React from 'react';
 import { List, ListItem, ListItemText, Paper } from '@mui/material';
 
-const MenuColumn = () => {
+const MenuColumn = () => { // Algunas opciones en detalles de pagina
   const menuItems = [
     "Detalles de cuenta",
     "Preferencias de la tienda",

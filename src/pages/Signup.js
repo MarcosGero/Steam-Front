@@ -17,10 +17,10 @@ function Signup() {
   const navigate = useNavigate();
   const signUpUser = useSingUpUserContext(); // Usar el contexto de registro
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event) => { // Maneja el evento que sucede al clickear en registrar
     const form = event.currentTarget;
     event.preventDefault();
-    if (form.checkValidity() === false || email !== confirmEmail || password !== confirmPassword) {
+    if (form.checkValidity() === false || email !== confirmEmail || password !== confirmPassword) { // Se checkean datos que deben coincidir
       event.stopPropagation();
       if (email !== confirmEmail) {
         alert("Los correos electrónicos no coinciden.");
@@ -29,9 +29,9 @@ function Signup() {
         alert("Las contraseñas no coinciden.");
       }
     } else {
-      try {
+      try { // Si todo sale bien, se llama a la funcion para registrar al usuario
         await signUpUser(username, email, password, country);
-        navigate("/home"); // Navegar a 'home' si el registro es exitoso
+        navigate("/home"); // Va a la pagina home si el registro se realizo correctamente
       } catch (error) {
         alert("Hubo un error en el registro: " + error.message);
       }

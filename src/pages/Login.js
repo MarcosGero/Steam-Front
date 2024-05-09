@@ -8,20 +8,21 @@ import { useLoginContext } from "../components/AuthProvider.js"
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState(''); // Añadir un estado para manejar los errores de login
+  const [username, setUsername] = useState(''); // Constante que guarda el nombre de usuario
+  const [password, setPassword] = useState('');// Constante que guarda la contraseña
+  const [error, setError] = useState(''); // Para manejar errores
   const navigate = useNavigate();
 
   const LogUser = useLoginContext(); // Usar el contexto de login
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event) => { // Maneja los eventos de subida de informacion (cuando se clickea en iniciar sesion)
     event.preventDefault();
     const errorMsg = await LogUser(username, password); // Llamar a la función de login del contexto
     setError(errorMsg);
   };
 
-
+  // Formulario
+  
   return (
     <div className="App">
       <header className="login-header">

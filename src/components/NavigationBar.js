@@ -16,10 +16,10 @@ import { BiWorld } from "react-icons/bi";
 import { ImDownload } from "react-icons/im";
 
 const NavigationBar = () => {
-  const [isAuthenticated, setAuthenticated] = useState();
-  const AuthUser = useAuthUserContext(); // Suponiendo que estas funciones están definidas en tu contexto
-  const LogOutUser = useLogOutContext(); // Función para manejar el cierre de sesión
-  const navigate = useNavigate();
+  const [isAuthenticated, setAuthenticated] = useState(); // Indica si es usuario esta o no autenticado
+  const AuthUser = useAuthUserContext(); // Maneja la autenticacion de usuario
+  const LogOutUser = useLogOutContext(); // Maneja el cierre de sesion
+  const navigate = useNavigate(); // Forma para navegar entre las paginas
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   useEffect(() => {
     setAuthenticated(AuthUser());
@@ -29,7 +29,7 @@ const NavigationBar = () => {
     LogOutUser(); // Llama a la función de cierre de sesión del contexto
   };
 
-  const handleRequest = () => {
+  const handleRequest = () => { // Maneja los request
     if (isAuthenticated) {
       navigate("/account-details"); // URL de detalles de cuenta
     } else {
@@ -37,6 +37,7 @@ const NavigationBar = () => {
     }
   };
   const toggleOffcanvas = () => setShowOffcanvas(!showOffcanvas);
+
   return (
     <Navbar className="navbar" variant="dark" expand="lg">
       <Container className="navitems justify-content-center text-center">

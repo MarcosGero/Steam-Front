@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Paper } from "@mui/material";
-import "./AccountDetails.css"; // Asegúrate de tener este archivo para los estilos
+import "./AccountDetails.css";
 import ContactInfo from "./ContactInfo";
 import MenuColumn from "./MenuColumn";
 import { Container } from "react-bootstrap";
@@ -30,7 +30,7 @@ const AccountDetails = () => {
                 Fila 3 en la segunda columna
               </Paper>
             </Grid>
-            {/* Agrega más filas aquí si es necesario */}
+            {}
           </Grid>
         </Grid>
       </Grid>

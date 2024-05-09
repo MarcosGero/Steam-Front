@@ -29,6 +29,7 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(false);
 
   /////////////////User Auth/////////////////////////////////
+
   const AuthUser = () => {
     Axios.get(API_URL + "auth/check")
       .then((response) => {
@@ -42,7 +43,9 @@ export function AuthProvider({ children }) {
   /////////////////////////////////////////////////////////////
 
   ///////////////////Log In///////////////////////////////////
+
   const LogUser = async (username, password) => {
+
     setLoading(true);
     try {
       const response = await Axios.post(API_URL + "auth/login", { username: username, password: password });
@@ -51,11 +54,11 @@ export function AuthProvider({ children }) {
       navigate("/home");
     } catch (error) {
       setLoading(false);
-      // Aquí, debes decidir qué quieres retornar o si lanzar un error.
+      // Si no encuentra al usuario (404) entonces se le pide que vuelva a escribir el usuario y contraseña
       if (error.response && error.response.status === 404) {
-        return "Comprueba tu contraseña y nombre de cuenta e inténtalo de nuevo."; // Retorno de un mensaje de error específico.
+        return "Comprueba tu contraseña y nombre de cuenta e inténtalo de nuevo.";
       } else {
-        return "Error de conexión con el servidor"; // Manejo de otros tipos de errores.
+        return "Error de conexión con el servidor"; // En otros caso suponemos errores en la conexion con el servidor
       }
     } finally {
       setLoading(false);
@@ -65,17 +68,17 @@ export function AuthProvider({ children }) {
   /////////////////////////////////////////////////////////////
 
   ///////////////////Sing Up///////////////////////////////////
-  const SingUpUser = (username, email, password, country) => {
+  const SingUpUser = (username, email, password, country) => { // Tomamos de parametros el nombre de usuario, email, contraseña y pais
       setLoading(true);
-      Axios.post(API_URL + "auth/signup", {
+      Axios.post(API_URL + "auth/signup", { // Realizamos una peticion POST al servidor para que almacene al usuario
         userName: username,
         email: email,
         password: password,
         country: country
       })
-        .then((response) => {
+        .then((response) => { // Si se realizo correctamente lo lleva a una pagina que le pide que confirme su correo (se le envia un correo)
           setLoading(false);
-          navigate("/");
+          navigate("/"); // Si el URL es "/" significa que tuvimos problemas para enviar el correo, por lo que se esperaria negociarlo en el proximo incremento
         })
         .catch((error) => {
           setLoading(false);
@@ -87,11 +90,11 @@ export function AuthProvider({ children }) {
   /////////////////Login Out/////////////////////////////////
   const LogOutUser = (sumiterror) => {
       setLoading(true);
-      localStorage.removeItem("local-token");
+      localStorage.removeItem("local-token"); // Si el usuario sale de su sesion entonces se elimina su token
       localStorage.removeItem("local-user");
       setAuth(false);
       setLoading(false);
-      navigate("/");
+      navigate("/"); // Se vuelve a la pagina para iniciar sesion
   };
   ///////////////////////////////////////////////////////////
 

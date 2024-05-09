@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Link, Breadcrumbs, Box } from '@mui/material';
 
-const Header = () => {
+const Header = () => { // Esto aparece como encabezado siempre en la pagina steam
   return (
     <Box sx={{
       bgcolor: "#142540",

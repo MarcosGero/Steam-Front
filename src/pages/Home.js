@@ -1,7 +1,7 @@
 import React from 'react';
 import NavigationBar from '../components/NavigationBar'; // Adjust the path as necessary
 
-function Home() {
+function Home() { // Pagina a la que se accede una vez se encuentra logueado
     return (
         <div>
             <div style={{ color: 'white', backgroundColor: '#142540', minHeight: '100vh' }} className="homepage-content">
