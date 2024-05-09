@@ -64,7 +64,7 @@ const NavigationBar = () => {
             ) : (
               <>
               <button className="rectangular-button">Download App</button>
-              <div className="navtext2">Sign in</div>
+              <button className="navtext2" variant= "dark">Sign in</button>
               <div className="divider"></div>
               <div className="location-container">
                 <BiWorld className="location-icon" />

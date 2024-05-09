@@ -48,6 +48,9 @@
   .navtext2 {
     color: #5c7e10; /* Color verde para texto no autenticado */
     font-weight: bold;
+    margin-left: 2% !important;
+    background-color: #171d25;
+    border: 0;
   }
   
   .navtext:hover {
