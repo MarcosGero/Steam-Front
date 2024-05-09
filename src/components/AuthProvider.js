@@ -42,22 +42,26 @@ export function AuthProvider({ children }) {
   /////////////////////////////////////////////////////////////
 
   ///////////////////Log In///////////////////////////////////
-  const LogUser = (username, password) => {
+  const LogUser = async (username, password) => {
     setLoading(true);
-    Axios.post(API_URL + "auth/login", { username: username, password: password })
-      .then((response) => {
-        localStorage.setItem("local-user", username);
-        localStorage.setItem("local-token", response.data.token);
-        setLoading(false);
-        navigate("/home");
-      })
-      .catch((error) => {
-        setLoading(false);
-
-        setErrorSubmit(error);
-      });
-    return errorSubmit;
+    try {
+      const response = await Axios.post(API_URL + "auth/login", { username: username, password: password });
+      localStorage.setItem("local-user", username);
+      localStorage.setItem("local-token", response.data.token);
+      navigate("/home");
+    } catch (error) {
+      setLoading(false);
+      // Aquí, debes decidir qué quieres retornar o si lanzar un error.
+      if (error.response && error.response.status === 404) {
+        return "Comprueba tu contraseña y nombre de cuenta e inténtalo de nuevo."; // Retorno de un mensaje de error específico.
+      } else {
+        return "Error de conexión con el servidor"; // Manejo de otros tipos de errores.
+      }
+    } finally {
+      setLoading(false);
+    }
   };
+  
   /////////////////////////////////////////////////////////////
 
   ///////////////////Sing Up///////////////////////////////////

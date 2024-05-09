@@ -17,12 +17,8 @@ function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const errorMsg = await LogUser(username, password); // Llamar a la función de login del contexto
-    } catch (error) {
-      console.error('Login failed', error.response || error);
-      setError('Error de inicio de sesión. Por favor verifica tus credenciales.');
-    }
+    const errorMsg = await LogUser(username, password); // Llamar a la función de login del contexto
+    setError(errorMsg);
   };
 
 
@@ -39,14 +35,20 @@ function Login() {
                   <h3 className="text1 text-left">INICIA SESIÓN CON EL NOMBRE DE LA CUENTA</h3>
 
                   <Form.Group className="mb-3">
-                    <Form.Control className="forms text-white" type="text" value={username}
+                    <Form.Control 
+                          className={`forms text-white ${error ? 'error-border' : ''}`}
+                          type="text" 
+                          value={username}
                           onChange={(e) => setUsername(e.target.value)}/>
                   </Form.Group>
 
                   <h5 className="text-left text2">CONTRASEÑA</h5>
 
                   <Form.Group className="mb-3">
-                    <Form.Control className="forms text-white" type="password" value={password}
+                    <Form.Control 
+                          className={`forms text-white ${error ? 'error-border' : ''}`}
+                          type="password" 
+                          value={password}
                           onChange={(e) => setPassword(e.target.value)}/>
                   </Form.Group>
 
@@ -54,12 +56,11 @@ function Login() {
                     <Form.Check type="checkbox" label="Recordarme" />
                   </Form.Group>
 
-                  {error && <div className="alert alert-danger">{error}</div>} {/* Mostrar errores de login */}
-
                   <Button variant="primary" type="submit" className="button">
                     Iniciar sesión
                   </Button>
 
+                  {error && <div className="error">{error}</div>} {/* Mostrar errores de login */}
                   <div className="text3 text-muted">
                     <a className="text2" href="#">Ayuda, no puedo iniciar sesión</a>
                   </div>

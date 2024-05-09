@@ -15,7 +15,14 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.error{
+  color: #C15755;
+  font-family: 'Motiva-Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 2vh;
+  margin-bottom: 0px;
+}
 .App-link {
   color: #61dafb;
 }
@@ -70,11 +77,17 @@
   height: 336px !important;
 }
 
+.error-border {
+  border-color: #C15755 !important;
+  border-width: 1px !important;
+  border-radius: 5px !important;
+  box-shadow: 0 0 0 0.1rem #C15755  !important;
+}
 
 .text3 {
   color: #aaa6aa;
   font-size: small;
-  padding-top: 40px !important;
+  padding-top: 10px !important;
 }
 
 .title{
