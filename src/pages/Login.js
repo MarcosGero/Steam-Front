@@ -40,14 +40,14 @@ function Login() {
 
                   <Form.Group className="mb-3">
                     <Form.Control className="forms text-white" type="text" value={username}
-                          onChange={(e) => setUsername(e.target.value)} placeholder="Nombre de usuario" />
+                          onChange={(e) => setUsername(e.target.value)}/>
                   </Form.Group>
 
                   <h5 className="text-left text2">CONTRASEÑA</h5>
 
                   <Form.Group className="mb-3">
                     <Form.Control className="forms text-white" type="password" value={password}
-                          onChange={(e) => setPassword(e.target.value)} placeholder="Contraseña" />
+                          onChange={(e) => setPassword(e.target.value)}/>
                   </Form.Group>
 
                   <Form.Group className="text-left text2">

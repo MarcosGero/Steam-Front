@@ -4,6 +4,7 @@ import './navbar.css';
 import { useNavigate } from 'react-router-dom';
 import { useAuthUserContext, useLogOutContext } from "../components/AuthProvider"; // Importa el contexto necesario
 import { BiWorld } from 'react-icons/bi'; // Asegúrate de importar los íconos necesarios
+import { ImDownload } from 'react-icons/im';
 
 
 const NavigationBar = () => {
@@ -38,11 +39,11 @@ const NavigationBar = () => {
           </Navbar.Brand>
         </div>
         <Container className='navoptions'>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">TIENDA</Nav.Link>
-            <Nav.Link href="#link">COMUNIDAD</Nav.Link>
-            <Nav.Link href="#link">ACERCA DE</Nav.Link>
-            <Nav.Link href="#link">SOPORTE</Nav.Link>
+          <Nav className="navlinks">
+            <Nav.Link className='navlink' href="#home">TIENDA</Nav.Link>
+            <Nav.Link className='navlink' href="#link">COMUNIDAD</Nav.Link>
+            <Nav.Link className='navlink' href="#link">ACERCA DE</Nav.Link>
+            <Nav.Link className='navlink' href="#link">SOPORTE</Nav.Link>
           </Nav>
         </Container>
         <Container className='navoptions'>
@@ -63,12 +64,15 @@ const NavigationBar = () => {
               </>
             ) : (
               <>
-              <button className="rectangular-button">Download App</button>
-              <div className="navtext2">Sign in</div>
-              <div className="divider"></div>
-              <div className="location-container">
+              <button className="rectangular-button">
+                <ImDownload className="download-icon mr-2" />
+                  Instalar Steam
+                </button>
+              <div onClick={handleRequest} className="navtext2">Iniciar sesion</div>
+              <div className="navtext2 divider"></div>
+              <div className="location-container navtext2">
                 <BiWorld className="location-icon" />
-                <p>Location</p>
+                <p>idioma</p>
               </div>
             </>
             )}

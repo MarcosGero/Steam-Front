@@ -7,7 +7,21 @@
     height: 7vh;
     width: auto;   
 }
+.navlinks {
+  font-weight: 350;
+  color: white !important;
+}
+/*if hover then turn the text blue and add an underscore**/
+.navlink:hover {
+  color: #1A9FFF !important;
+  text-decoration: underline;
+  text-decoration-color: #1A9FFF;
+  text-decoration-thickness: 2px;
 
+}
+.navlink{
+  color: white !important;
+}
 .navoptions {
     margin-left: 0px !important;
     width: 60% !important;
@@ -15,6 +29,8 @@
   
 .navitems {
     margin-left: 15% !important;
+    font-family: 'Motiva Sans', sans-serif;
+    font-size: 16px;
 }
 
 .navtext {
@@ -26,30 +42,49 @@
 }
 
 .rectangular-button {
-    background-color: #77a318; /* Color verde oscuro */
+    background-color: #688f16; /* Color verde oscuro */
     border: none;
-    color: white;
-    padding: 8px 16px;
+    color: rgb(229, 221, 221);
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 12px;
+    height: 3vh;
+    width: auto;
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 0.1rem;
+  }
+  /*make the button slighty desaturated when hovering*/
+  .rectangular-button:hover {
+    background-color:  #84b51b;
+    color: white;
+  }
+
+  .location-icon {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 2.5vh;
+    
   }
   /* División vertical */
 .divider {
     height: 15px;
     width: 1px;
-    background-color: white;
-    margin: 0 10px;
+    background-color: rgb(190, 187, 187);
   }
   .navtext2 {
-    color: #5c7e10; /* Color verde para texto no autenticado */
-    font-weight: bold;
+    color:  rgb(190, 187, 187); /* Color verde para texto no autenticado */
+    text-align: center;
+    font-family: 'Motiva Sans', sans-serif;
+    font-size: 11px;
+    margin-top: 1vh;
+    margin-left: 1vh;
   }
-  
+  .navtext2:hover {
+    color: white; /* Color blanco al pasar el mouse */
+    cursor: pointer;
+  }
   .navtext:hover {
     color: white; /* Color blanco al pasar el mouse */
   }
@@ -57,12 +92,11 @@
 .location-container {
     display: flex;
     align-items: center;
-    color: white;
   }
   
-  .location-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+.download-icon{
+    width: 15px;
+    height: 15px;
+    margin: 0.1vh 0.6vh 0.5vh 0.5vh;
   }
 
