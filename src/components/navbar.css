@@ -5,7 +5,9 @@
 
 .logo{
     height: 7vh;
-    width: auto;   
+    width: auto; 
+    margin: 0px;
+    margin-left: 20%;
 }
 .navlinks {
   font-weight: 350;
@@ -21,14 +23,17 @@
 }
 .navlink{
   color: white !important;
+  margin: 0%;
 }
 .navoptions {
-    margin-left: 0px !important;
-    width: 60% !important;
+    margin-left: 10px !important;
+    width: 80% !important;
+    padding-top: 4vh;
+    
   }
   
 .navitems {
-    margin-left: 15% !important;
+    margin-left: 20% !important;
     font-family: 'Motiva Sans', sans-serif;
     font-size: 16px;
 }
@@ -43,9 +48,27 @@
   margin-top: 0px;
   margin-bottom: 15px;
 }
+.navbar-offcanvas {
+  background-color: #343a40; /* Fondo oscuro */
+  color: #ffffff; /* Texto en blanco */
+}
 
+.navbar-offcanvas .nav-link {
+  color: #ffffff; /* Asegura que los enlaces también sean blancos */
+}
+
+.navbar-offcanvas .btn {
+  background-color: #495057; /* Fondo de los botones */
+  color: #ffffff; /* Texto de los botones en blanco */
+}
+
+.navbar-offcanvas .nav-dropdown {
+  background-color: #495057; /* Fondo del dropdown */
+}
 .extraoptions {
     padding-bottom: 50px;
+    margin-top: 0px;
+    margin-left: -50px;
 }
 .rectangular-button2 {
   background-color: #343434; /* Color verde oscuro */

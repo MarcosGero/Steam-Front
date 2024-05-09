@@ -4,7 +4,7 @@ import NavigationBar from '../components/NavigationBar'; // Adjust the path as n
 function Home() {
     return (
         <div>
-            <div className="homepage-content">
+            <div style={{ color: 'white', backgroundColor: '#142540', minHeight: '100vh' }} className="homepage-content">
                 <h1>Welcome!</h1>
                 <p>This is a simple home page using React. Navigate through the site using the navbar above.</p>
             </div>

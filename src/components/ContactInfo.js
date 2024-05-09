@@ -1,19 +1,32 @@
 import React from 'react';
+import { Paper, Typography, Box, Divider, Button, Grid } from '@mui/material';
 
-function ContactInfo() {
+const ContactInfo = () => {
   return (
-    <div className="card mb-3">
-      <div className="card-header">
+    <Paper style={{ padding: 16, backgroundColor: '#142540', color: 'white' }}>
+      <Typography variant="h6" gutterBottom>
         Información de contacto
-      </div>
-      <div className="card-body">
-        <p className="card-text">Dirección de email: ejemplo@gmail.com</p>
-        <p className="card-text">Estado: Verificado</p>
-        <button className="btn btn-primary">Cambiar dirección de email</button>
-        <button className="btn btn-secondary">Agregar número de teléfono</button>
-      </div>
-    </div>
+      </Typography>
+      <Grid container spacing={2}>
+        <Grid item xs={6}>
+          <Typography variant="body1">Gestionar preferencias de correo electrónico</Typography>
+          <Typography variant="body2">Dirección de email: marcos.funky@gmail.com</Typography>
+          <Typography variant="body2">Estado: Verificado</Typography>
+          <Button variant="text" color="secondary" style={{ marginTop: 8 }}>
+            Cambiar mi dirección de email
+          </Button>
+        </Grid>
+        <Grid item xs={6}>
+          <Typography variant="body1" style={{ fontWeight: 'bold' }}>
+            Agregar un número de teléfono
+          </Typography>
+          <Typography variant="body2">
+            Para mayor seguridad, puedes agregar un número de teléfono a tu cuenta de Steam. De este modo, Steam podrá enviar mensajes importantes a tu teléfono.
+          </Typography>
+        </Grid>
+      </Grid>
+    </Paper>
   );
-}
+};
 
 export default ContactInfo;

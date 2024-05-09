@@ -1,18 +1,14 @@
-import React from 'react';
-import AccountDetails from '../components/AccountDetails';
-import StoreHistory from '../components/StoreHistory';
-import PaymentMethods from '../components/PaymentMethods';
-import ContactInfo from '../components/ContactInfo';
-import AccountSecurity from '../components/AccountSecurity';
+import React from "react";
+import { Container } from "react-bootstrap";
+import AccountDetails from "../components/AccountDetails";
 
 function AccountPage() {
   return (
-    <div className="container">
+    <div
+      style={{ color: "white", backgroundColor: "#142540", minHeight: "100vh" }}
+      className="homepage-content"
+    >
       <AccountDetails />
-      <StoreHistory />
-      <PaymentMethods />
-      <ContactInfo />
-      <AccountSecurity />
     </div>
   );
 }
