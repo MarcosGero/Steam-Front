@@ -61,14 +61,13 @@ export function AuthProvider({ children }) {
   /////////////////////////////////////////////////////////////
 
   ///////////////////Sing Up///////////////////////////////////
-  const SingUpUser = (username, email, password, confir, country) => {
+  const SingUpUser = (username, email, password, country) => {
       setLoading(true);
       Axios.post(API_URL + "auth/signup", {
-        email: username,
+        userName: username,
         email: email,
         password: password,
-        confirm_password: confir,
-        country: country,
+        country: country
       })
         .then((response) => {
           setLoading(false);

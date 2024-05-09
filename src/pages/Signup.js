@@ -30,7 +30,7 @@ function Signup() {
       }
     } else {
       try {
-        await signUpUser(username, email, password, confirmPassword, country);
+        await signUpUser(username, email, password, country);
         navigate("/home"); // Navegar a 'home' si el registro es exitoso
       } catch (error) {
         alert("Hubo un error en el registro: " + error.message);

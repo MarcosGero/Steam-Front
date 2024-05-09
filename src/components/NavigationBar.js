@@ -19,7 +19,6 @@ const NavigationBar = () => {
 
   const handleLogout = () => {
     LogOutUser(); // Llama a la función de cierre de sesión del contexto
-    navigate('/');
   };
 
   const handleRequest = () => {
