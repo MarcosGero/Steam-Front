@@ -3,7 +3,7 @@ import { Paper, Typography, Box, Divider, Button, Grid } from '@mui/material';
 
 const ContactInfo = ({userInfo}) => { // Informacion acerca de los detalles de la cuenta
   if (!userInfo) {
-    return <Typography>Loading user information or no data available...</Typography>;
+    return <Typography>Cargando informacion del usuario o la informacion no esta disponible...</Typography>;
   }
   return (
     <Paper style={{ padding: 16, backgroundColor: '#142540', color: 'white' }}>
@@ -14,7 +14,7 @@ const ContactInfo = ({userInfo}) => { // Informacion acerca de los detalles de l
         <Grid item xs={6}>
           <Typography variant="body1">Gestionar preferencias de correo electrónico</Typography>
           <Typography variant="body2">Dirección de email: {userInfo.email}</Typography>
-          <Typography variant="body2">Estado: Verificado</Typography>
+          <Typography variant="body2">Estado: {userInfo.accountEnabled? "Verificado" : "No verificado"}</Typography>
           <Button variant="text" color="secondary" style={{ marginTop: 8 }}>
             Cambiar mi dirección de email
           </Button>

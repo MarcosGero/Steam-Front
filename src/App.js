@@ -6,7 +6,7 @@ import Login  from './pages/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Signup from './pages/Signup';
 import Axios from "axios";
-import Home from './pages/Home'; // Asegúrate de tener este componente
+import Home from './pages/Home'; 
 import AccountPage from './pages/AccountPage';
 import EmailVerification from './pages/EmailVerification';
 import AvisoEmail from './pages/AvisoEmail';

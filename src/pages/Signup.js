@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavigationBar from "../components/NavigationBar";
+
 import { Form, Button, Container, Row, Col, Card } from "react-bootstrap";
 import "./Signup.css";
 import { useSingUpUserContext } from "../components/AuthProvider";
