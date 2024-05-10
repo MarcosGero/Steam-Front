@@ -2,6 +2,9 @@ import React from 'react';
 import { Paper, Typography, Box, Divider, Button, Grid } from '@mui/material';
 
 const ContactInfo = ({userInfo}) => { // Informacion acerca de los detalles de la cuenta
+  if (!userInfo) {
+    return <Typography>Loading user information or no data available...</Typography>;
+  }
   return (
     <Paper style={{ padding: 16, backgroundColor: '#142540', color: 'white' }}>
       <Typography variant="h6" gutterBottom>
