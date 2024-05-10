@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../config/env"
-
+import Loader from "./Loader";
 const LoginContext = React.createContext();
 const LogOutContext = React.createContext();
 const AuthUserContext = React.createContext();
@@ -100,6 +100,7 @@ export function AuthProvider({ children }) {
 
   return (
     <>
+      
       <LoginContext.Provider value={LogUser}>
         <SingUpUserContext.Provider value={SingUpUser}>
           <AuthUserContext.Provider value={AuthUser}>
