@@ -56,6 +56,7 @@ const NavigationBar = () => {
           placement="end"
           show={showOffcanvas}
           onHide={toggleOffcanvas}
+          className="navbar-offcanvas"
         >
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>Menú</Offcanvas.Title>

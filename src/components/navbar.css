@@ -49,7 +49,7 @@
   margin-bottom: 15px;
 }
 .navbar-offcanvas {
-  background-color: #343a40; /* Fondo oscuro */
+  background-color: #343a40 !important; /* Fondo oscuro */
   color: #ffffff; /* Texto en blanco */
 }
 
@@ -57,14 +57,7 @@
   color: #ffffff; /* Asegura que los enlaces también sean blancos */
 }
 
-.navbar-offcanvas .btn {
-  background-color: #495057; /* Fondo de los botones */
-  color: #ffffff; /* Texto de los botones en blanco */
-}
 
-.navbar-offcanvas .nav-dropdown {
-  background-color: #495057; /* Fondo del dropdown */
-}
 .extraoptions {
     padding-bottom: 50px;
     margin-top: 0px;
