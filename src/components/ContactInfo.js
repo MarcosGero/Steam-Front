@@ -1,7 +1,7 @@
 import React from 'react';
 import { Paper, Typography, Box, Divider, Button, Grid } from '@mui/material';
 
-const ContactInfo = () => { // Informacion acerca de los detalles de la cuenta
+const ContactInfo = (userInfo) => { // Informacion acerca de los detalles de la cuenta
   return (
     <Paper style={{ padding: 16, backgroundColor: '#142540', color: 'white' }}>
       <Typography variant="h6" gutterBottom>
@@ -10,7 +10,7 @@ const ContactInfo = () => { // Informacion acerca de los detalles de la cuenta
       <Grid container spacing={2}>
         <Grid item xs={6}>
           <Typography variant="body1">Gestionar preferencias de correo electrónico</Typography>
-          <Typography variant="body2">Dirección de email: marcos.funky@gmail.com</Typography>
+          <Typography variant="body2">Dirección de email: {userInfo.email}</Typography>
           <Typography variant="body2">Estado: Verificado</Typography>
           <Button variant="text" color="secondary" style={{ marginTop: 8 }}>
             Cambiar mi dirección de email
