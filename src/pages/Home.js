@@ -5,8 +5,8 @@ function Home() { // Pagina a la que se accede una vez se encuentra logueado
     return (
         <div>
             <div style={{ color: 'white', backgroundColor: '#142540', minHeight: '100vh' }} className="homepage-content">
-                <h1>Welcome!</h1>
-                <p>This is a simple home page using React. Navigate through the site using the navbar above.</p>
+                <h1>Bienvenido!</h1>
+                <p>Esta es una pagina placeholder mas adelante se implementara en los siguientes incrementos.</p>
             </div>
         </div>
     );
