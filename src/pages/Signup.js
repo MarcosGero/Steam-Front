@@ -31,7 +31,6 @@ function Signup() {
     } else {
       try { // Si todo sale bien, se llama a la funcion para registrar al usuario
         await signUpUser(username, email, password, country);
-        navigate("/home"); // Va a la pagina home si el registro se realizo correctamente
       } catch (error) {
         alert("Hubo un error en el registro: " + error.message);
       }

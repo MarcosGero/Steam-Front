@@ -78,7 +78,7 @@ export function AuthProvider({ children }) {
       })
         .then((response) => { // Si se realizo correctamente lo lleva a una pagina que le pide que confirme su correo (se le envia un correo)
           setLoading(false);
-          navigate("/"); // Si el URL es "/" significa que tuvimos problemas para enviar el correo, por lo que se esperaria negociarlo en el proximo incremento
+          navigate("/verificar-email");
         })
         .catch((error) => {
           setLoading(false);
