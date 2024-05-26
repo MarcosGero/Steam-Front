@@ -1,5 +1,4 @@
 import './Login.css';
-import NavigationBar from '../components/NavigationBar.js';
 import { Form, Button, Container, Row, Card } from 'react-bootstrap';
 import { useState } from 'react';
 import Underbanner from '../components/Underbanner.js';
@@ -52,7 +51,7 @@ function Login() {
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}/>
                   </Form.Group>
-
+                  
                   <Form.Group className="text-left text2">
                     <Form.Check type="checkbox" label="Recordarme" />
                   </Form.Group>
