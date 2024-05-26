@@ -122,9 +122,9 @@ const NavigationBar = () => {
                       Iniciar sesion
                     </div>
                     <div className="navtext2 divider"></div>
-                    <div className="location-container navtext2">
-                      <BiWorld className="location-icon" />
-                      <p>idioma</p>
+                    <div className="location-container">
+                      <BiWorld className="location-icon"/>
+                      <p className="navtext2">idioma</p>
                     </div>
                   </>
                 )}
