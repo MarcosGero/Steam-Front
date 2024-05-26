@@ -1,40 +1,48 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Form, Button, Container, Row, Col, Card } from 'react-bootstrap';
+import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {AuthProvider} from './components/AuthProvider';
+import Layout from './components/Layout';
+import Login  from './pages/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Signup from './pages/Signup';
+import Axios from "axios";
+import Home from './pages/Home'; 
+import AccountPage from './pages/AccountPage';
+import EmailVerification from './pages/EmailVerification';
+import AvisoEmail from './pages/AvisoEmail';
 
-const App = () => {
+/////////////////TOKEN/////////////////////////////////
+Axios.defaults.baseURL = 'http://localhost:8080/api/v1/'
+Axios.defaults.headers.post['Accept'] = 'application/json'
+Axios.defaults.headers.post['Content-Type'] = 'application/json'
+
+Axios.interceptors.request.use((config) => { // Funcion que se encarga de anteponer una cabecera de seguridad al querer realizar funciones de usuario logueado
+  const token = localStorage.getItem('local-token') // Siempre y cuando su token no este expirado 
+  if(token){
+    config.headers.Authorization = token ? `Bearer ${token}` : ''
+  }
+  return config
+})
+///////////////////////////////////////////////////////
+
+
+function App() {
   return (
-    
-          <Card style={{ width: '18rem' }} className="mx-auto p-4"> {/* Estilo y clases para centrar */}
-            <Card.Body>
-              <h3 className="text-center mb-4">INICIA SESIÓN CON EL NOMBRE DE LA CUENTA</h3>
-              <Form>
-                <Form.Group className="mb-3">
-                  <Form.Control type="text" placeholder="Nombre de la cuenta" />
-                </Form.Group>
-
-                <h5 className="text-center mb-3">CONTRASEÑA</h5>
-                <Form.Group className="mb-3">
-                  <Form.Control type="password" placeholder="Contraseña" />
-                </Form.Group>
-
-                <Form.Group className="mb-3">
-                  <Form.Check type="checkbox" label="Recordarme" />
-                </Form.Group>
-
-                <Button variant="primary" type="submit" className="w-100">
-                  Iniciar sesión
-                </Button>
-              </Form>
-              <div className="text-center mt-3 text-muted">
-                <a href="#">Ayuda, no puedo iniciar sesión</a>
-              </div>
-            </Card.Body>
-          </Card>
-    
-    
+    <BrowserRouter>
+      <AuthProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/account-details" element={<AccountPage />} />
+            <Route path="/confirm-email" element={<EmailVerification/>} />
+            <Route path="/verificar-email" element={<AvisoEmail/>} />
+          </Routes>
+        </Layout>
+      </AuthProvider>
+    </BrowserRouter>
   );
-};
+}
 
 export default App;

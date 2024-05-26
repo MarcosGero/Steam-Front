@@ -1,0 +1,166 @@
+.App {
+  text-align: center;
+}
+
+.login-header {
+  background-image: url('../resources/login-background.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center;
+  height: 72vh !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.error{
+  color: #C15755;
+  font-family: 'Motiva-Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 2vh;
+  margin-bottom: 0px;
+}
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.text1 {
+  color: #1977ff;
+  font-size: small;
+  text-align: left !important;
+
+}
+
+.text2 {
+  color: #aaa6aa;
+  font-size: small;
+  text-align: left !important;
+}
+.logincard {
+  font-size: smaller;
+  background-color: #181c24 !important;
+}
+
+
+.forms{
+  background-color: #32353c !important;
+  border: #32353c !important;
+}
+
+.form{
+  margin-top: 20px;
+  width: 465px !important;
+  height: 268px !important;
+}
+
+.button{
+  width: 270px !important;
+  height: 47px !important;
+  background-color: #0cb4ff !important;
+  padding: 0px !important;
+}
+
+.logincard{
+  width: 796px !important;
+  height: 336px !important;
+}
+
+.error-border {
+  border-color: #C15755 !important;
+  border-width: 1px !important;
+  border-radius: 5px !important;
+  box-shadow: 0 0 0 0.1rem #C15755  !important;
+}
+
+.text3 {
+  color: #aaa6aa;
+  font-size: small;
+  padding-top: 10px !important;
+}
+
+.title{
+  font-family: 'Morl-Black', sans-serif;
+  width: 796px !important;
+  text-align: left;
+  text-shadow: #181c24;
+  padding-bottom: 30px;
+}
+
+.row{
+  display: flex;      
+  justify-content: center;   
+  flex-direction: column;          
+  align-items: center;
+}
+
+@font-face {
+  font-family: 'Morl-Black'; /* Nombre de la fuente personalizada */
+  src: url('../resources/Morl-Black.ttf') format('truetype'); /* Ruta relativa a tu archivo TTF */
+}
+
+.underbanner {
+  background-color: #181c24 !important;
+  height: 182px;
+  padding-top: 48px !important;
+}
+
+.textopregunta {
+  color: white;
+  font-family: 'Morl-Black', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  padding-bottom: 30px;
+  width: 300px;
+  height: 58px;
+}
+
+.textolargo {
+  width: 300px;
+  height: 60px;
+  text-align: center !important;
+}
+
+.button1 {
+  width: 154px;
+  height: 30px;
+  background-color: #0cb4ff !important;
+  padding: 4px !important;
+}
+
+
+.buttontext {
+  font-size: smaller;
+}
+
+
+.left{
+  width: 300px !important;
+  display: flex;      
+  justify-content: center;   
+  flex-direction: column;          
+  align-items: center;
+  margin-right: 10px !important;
+}
+
+.right{
+  width: 300px !important;
+  margin-left: 10px !important;
+}
+
+.underbanner-content{
+  display: flex;
+  justify-content: center;   
+  align-items: center;
+}

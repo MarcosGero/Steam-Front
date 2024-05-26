@@ -1,0 +1,149 @@
+.navbar{
+    background-color: #171d25;
+    height: 104px;
+}
+
+.logo{
+    height: 7vh;
+    width: auto; 
+    margin: 0px;
+    margin-left: 20%;
+}
+.navlinks {
+  font-weight: 350;
+  color: white !important;
+}
+/*if hover then turn the text blue and add an underscore**/
+.navlink:hover {
+  color: #1A9FFF !important;
+  text-decoration: underline;
+  text-decoration-color: #1A9FFF;
+  text-decoration-thickness: 2px;
+
+}
+.navlink{
+  color: white !important;
+  margin: 0%;
+}
+.navoptions {
+    margin-left: 10px !important;
+    width: 80% !important;
+    padding-top: 4vh;
+    
+  }
+  
+.navitems {
+    margin-left: 20% !important;
+    font-family: 'Motiva Sans', sans-serif;
+    font-size: 16px;
+}
+
+.navtext {
+    margin-left: 2% !important;
+}
+.nav-dropdown {
+  margin-left: 0% !important;
+  font-family: 'Motiva-Sans', sans-serif;
+  font-size: 12px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+.navbar-offcanvas {
+  background-color: #343a40 !important; /* Fondo oscuro */
+  color: #ffffff; /* Texto en blanco */
+}
+
+.navbar-offcanvas .nav-link {
+  color: #ffffff; /* Asegura que los enlaces también sean blancos */
+}
+
+
+.extraoptions {
+    padding-bottom: 50px;
+    margin-top: 0px;
+    margin-left: -50px;
+}
+.rectangular-button2 {
+  background-color: #343434; /* Color verde oscuro */
+  border: none;
+  color: rgb(229, 221, 221);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  height: 3vh;
+  width: auto;
+  margin: 6px 2px;
+  cursor: pointer;
+  border-radius: 0.1rem;
+}
+.rectangular-button {
+    background-color: #688f16; /* Color verde oscuro */
+    border: none;
+    color: rgb(229, 221, 221);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    height: 3vh;
+    width: auto;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 0.1rem;
+  }
+  /*make the button slighty desaturated when hovering*/
+  .rectangular-button:hover {
+    background-color:  #84b51b;
+    color: white;
+  }
+  .rectangular-button2:hover {
+    background-color:  #484848;
+    color: white;
+  }
+  .location-icon {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 2.5vh;
+    
+  }
+  /* División vertical */
+.divider {
+    height: 15px;
+    width: 1px;
+    background-color: rgb(190, 187, 187);
+  }
+  .navtext2 {
+    color:  rgb(190, 187, 187); /* Color verde para texto no autenticado */
+    text-align: center;
+    font-family: 'Motiva Sans', sans-serif;
+    font-size: 11px;
+    margin-top: 1vh;
+    margin-left: 1vh;
+  }
+  .navtext2:hover {
+    color: white; /* Color blanco al pasar el mouse */
+    cursor: pointer;
+  }
+  .navtext:hover {
+    color: white; /* Color blanco al pasar el mouse */
+  }
+  /* Estilos para la sección de localización y otros enlaces */
+.location-container {
+    display: flex;
+    align-items: center;
+  }
+ .navDropOptions{
+    font-family: 'Motiva-Sans', sans-serif;
+    font-size: 13px;
+    text-align: left;
+    padding-left: 0;
+    margin-left: 4px;
+    margin-right: 20px;
+ } 
+.download-icon{
+    width: 15px;
+    height: 15px;
+    margin: 0.1vh 0.6vh 0.5vh 0.5vh;
+  }
+
+

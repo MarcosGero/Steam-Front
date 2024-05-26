@@ -1,0 +1,28 @@
+.layout {
+    min-height: 100vh;
+    background-color: #142540;
+    padding-top: 5vh;
+  }
+  
+  .header {
+    background: linear-gradient(45deg, #142540, #284067);
+  }
+  
+  .header-title {
+    color: white !important;
+    line-height: inherit;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .card {
+    background: #203456;
+    color: #fff !important;
+  }
+  
+  .menu {
+    border-right: 0;
+  }
+  

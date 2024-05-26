@@ -1,0 +1,66 @@
+.signup-header {
+    background-image: url('../resources/signup-background.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+  }
+
+  .signupcard {
+    background-color: transparent !important;
+    border: none !important;
+    
+  }
+
+  .text5 {
+    color: white !important;
+    text-shadow: black;
+    font-family: 'geometris', sans-serif;
+    letter-spacing: 2px;
+    
+
+  }
+
+  .text2 {
+    color: rgb(185, 185, 185) !important;
+  }
+
+  .text3 {
+    color: rgb(185, 185, 185) !important;
+    
+  }
+
+  .row{
+    display: flex;      
+    justify-content: center;   
+    flex-direction: column;          
+    align-items: center;
+  }
+
+  .forms{
+    background-color: #32353c !important;
+    border: #32353c !important;
+    width: 304px !important;
+    height: 34px !important;
+    
+  }
+
+
+  .button{
+    width: 200px !important;
+    height: 36px !important;
+    background-color: #0cb4ff !important;
+  }
+
+  .confirmacion{
+    padding-bottom: 30px !important;
+  }
+
+  @font-face {
+    font-family: 'geometris'; /* Nombre de la fuente personalizada */
+    src: url('../resources/geometris.ttf') format('truetype'); /* Ruta relativa a tu archivo TTF */
+  }
