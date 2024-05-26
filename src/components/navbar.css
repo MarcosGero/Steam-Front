@@ -4,7 +4,7 @@
 }
 
 .logo{
-    height: 7vh;
+    height: 45px;
     width: auto; 
     margin: 0px;
     margin-left: 20%;
@@ -71,8 +71,8 @@
   text-decoration: none;
   display: inline-block;
   font-size: 12px;
-  height: 3vh;
-  width: auto;
+    height: 22px;
+    width: 120px;
   margin: 6px 2px;
   cursor: pointer;
   border-radius: 0.1rem;
@@ -85,8 +85,8 @@
     text-decoration: none;
     display: inline-block;
     font-size: 12px;
-    height: 3vh;
-    width: auto;
+    height: 22px;
+    width: 120px;
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 0.1rem;
