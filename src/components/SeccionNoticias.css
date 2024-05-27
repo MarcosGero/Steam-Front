@@ -1,6 +1,10 @@
 .news-section {
     flex-grow: 1;
-    padding: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #21241b;
 }
   
 .upcoming-events {
@@ -9,11 +13,14 @@
   
 .upcoming-events h3 {
    margin-bottom: 10px;
+   font-size: 20px;
+   font-weight: 400;
+   color: white;
 }
   
 .events-list {
-   display: flex;
-   flex-direction: column;
+  display: flex;
+  flex-direction:row;
 }
   
 .news-list {

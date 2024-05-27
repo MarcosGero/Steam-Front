@@ -6,11 +6,11 @@ function SeccionNoticias() {
   return (
     <div className="news-section">
       <div className="upcoming-events">
-        <h3>Próximamente</h3>
+        <h3>PROXIMAMENTE</h3>
         <div className="events-list">
-          <EventItem title="Indie Game Fest 2024" date="miércoles a la(s) 14:00" />
-          <EventItem title="Versus! The Returning Alpha Test, coming May 30!" date="jueves a la(s) 10:00" />
-          <EventItem title="Warframe: Devstream #180" date="viernes a la(s) 15:00" />
+          <EventItem user="Indie Game Fest" title="Indie Game Fest 2024" date="miércoles a la(s) 14:00" />
+          <EventItem user="Warhammer: Vermintide 2" title="Versus! The Returning Alpha Test, coming May 30!" date="jueves a la(s) 10:00" />
+          <EventItem user="Warframe" title="Warframe: Devstream #180" date="viernes a la(s) 15:00" />
         </div>
       </div>
       <div className="news-list">
