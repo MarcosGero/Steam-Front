@@ -2,20 +2,30 @@
     width: 250px;
     background-color: #2a2d34;
     color: white;
-    padding: 10px;
+    padding: 20px;
+    height: 100%;
   }
-  
+
   .sidebar h2 {
-    margin-bottom: 20px;
+    font-size: 35px;
+    font-weight: 700;
+    margin-right: 10px;
   }
   
   .menu-section {
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
   
   .menu-section h3 {
     font-size: 14px;
     margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: darkgrey;
   }
   
   .menu-section ul {
@@ -33,7 +43,32 @@
   }
   
   .footer {
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 12px;
   }
   
+  input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4a4e58;
+    color: white;
+  }
+
+  .footer p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #888;
+  }
+
+  .seccion {
+    margin-bottom: 20px;
+  }
