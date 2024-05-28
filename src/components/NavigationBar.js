@@ -123,8 +123,11 @@ const NavigationBar = () => {
                     </div>
                     <div className="navtext2 divider"></div>
                     <div className="location-container">
-                      <BiWorld className="location-icon"/>
-                      <p className="navtext2">idioma</p>
+                      <Container className="navbar-container">
+                        <BiWorld className="location-icon"/>
+                        <p className="navtext2">idioma</p>
+                      </Container>
+
                     </div>
                   </>
                 )}
