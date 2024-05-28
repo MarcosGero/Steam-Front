@@ -8,6 +8,7 @@ const LoginContext = React.createContext();
 const LogOutContext = React.createContext();
 const AuthUserContext = React.createContext();
 const SingUpUserContext = React.createContext();
+const requestPasswordContext = React.createContext();
 
 export const useLoginContext = () => {
   return useContext(LoginContext);
@@ -20,6 +21,9 @@ export const useSingUpUserContext = () => {
 };
 export const useAuthUserContext = () => {
   return useContext(AuthUserContext);
+};
+export const usePasswordResetContext = () => {
+    return useContext(requestPasswordContext);
 };
 
 export function AuthProvider({ children }) {
@@ -64,7 +68,25 @@ export function AuthProvider({ children }) {
       setLoading(false);
     }
   };
-  
+    /////////////////////////////////////////////////////////////
+
+    ///////////////////Password recovery///////////////////////////////////
+    const requestPasswordReset = async (email) => {
+        setLoading(true);
+        try {
+            const response = await Axios.post(API_URL + "password-reset/request", { email });
+            return "Solicitud enviada, revisa tu correo electrónico.";
+        } catch (error) {
+            setLoading(false);
+            if (error.response && error.response.status === 404) {
+                return "Correo no encontrado.";
+            } else {
+                return "Error de conexión con el servidor.";
+            }
+        } finally {
+            setLoading(false);
+        }
+    };
   /////////////////////////////////////////////////////////////
 
   ///////////////////Sing Up///////////////////////////////////
@@ -100,8 +122,8 @@ export function AuthProvider({ children }) {
 
   return (
     <>
-      
       <LoginContext.Provider value={LogUser}>
+      <requestPasswordContext.Provider value={{requestPasswordReset}}>
         <SingUpUserContext.Provider value={SingUpUser}>
           <AuthUserContext.Provider value={AuthUser}>
             <LogOutContext.Provider value={LogOutUser}>
@@ -109,6 +131,7 @@ export function AuthProvider({ children }) {
             </LogOutContext.Provider>
           </AuthUserContext.Provider>
         </SingUpUserContext.Provider>
+      </requestPasswordContext.Provider>
       </LoginContext.Provider>
     </>
   );

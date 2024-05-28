@@ -62,7 +62,7 @@ function Login() {
 
                   {error && <div className="error">{error}</div>} {/* Mostrar errores de login */}
                   <div className="text3 text-muted">
-                    <a className="text2" href="#">Ayuda, no puedo iniciar sesión</a>
+                    <a className="text2" href="/recovery">Ayuda, no puedo iniciar sesión</a>
                   </div>
 
                 </Form>

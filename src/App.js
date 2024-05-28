@@ -11,6 +11,9 @@ import AccountPage from './pages/AccountPage';
 import EmailVerification from './pages/EmailVerification';
 import AvisoEmail from './pages/AvisoEmail';
 import Noticias from './pages/Noticias';
+import PasswordRecoveryPage from "./pages/PasswordRecoveryPage";
+import AvisoRecovery from "./pages/AvisoRecovery";
+import PasswordResetPage from "./pages/PasswordResetPage";
 
 /////////////////TOKEN/////////////////////////////////
 Axios.defaults.baseURL = 'http://localhost:8080/api/v1/'
@@ -35,10 +38,13 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/recovery" element={<PasswordRecoveryPage />} />
+            <Route path="/reset-password" element={<PasswordResetPage />} />
             <Route path="/home" element={<Home />} />
             <Route path="/account-details" element={<AccountPage />} />
             <Route path="/confirm-email" element={<EmailVerification/>} />
             <Route path="/verificar-email" element={<AvisoEmail/>} />
+            <Route path="/verificar-recovery" element={<AvisoRecovery/>} />
             <Route path="/noticias" element={<Noticias/>} />
           </Routes>
         </Layout>
