@@ -116,7 +116,7 @@ const NavigationBar = () => {
                   <>
                     <button className="rectangular-button">
                       <ImDownload className="download-icon mr-2" />
-                      Instalar Steam
+                        Instalar Steam
                     </button>
                     <div onClick={handleRequest} className="navtext2">
                       Iniciar sesion
@@ -125,7 +125,7 @@ const NavigationBar = () => {
                     <div className="location-container">
                       <Container className="navbar-container">
                         <BiWorld className="location-icon"/>
-                        <p className="navtext2">idioma</p>
+                        idioma
                       </Container>
 
                     </div>

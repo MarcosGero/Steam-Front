@@ -27,8 +27,7 @@
 .navoptions {
     margin-left: 10px !important;
     width: 80% !important;
-    padding-top: 4vh;
-    
+    padding-top: 1vh;
   }
   
 .navitems {
@@ -60,7 +59,7 @@
 .extraoptions {
     padding-bottom: 50px;
     margin-top: 0px;
-    margin-left: -50px;
+    display: flex;
 }
 .rectangular-button2 {
   background-color: #343434; /* Color verde oscuro */
@@ -80,15 +79,14 @@
     background-color: #688f16; /* Color verde oscuro */
     border: none;
     color: rgb(229, 221, 221);
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    height: 22px;
-    width: 120px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 0.1rem;
+    height: 22px !important;
+    width: 125px !important;
+    margin: 4px 2px !important;
+    cursor: pointer !important;
+    border-radius: 0.1rem !important;
+    font-size: 12px !important;
+    padding: 2px 2px!important;
+    text-decoration: none !important;
   }
   /*make the button slighty desaturated when hovering*/
   .rectangular-button:hover {
@@ -102,11 +100,14 @@
   .location-icon {
     width: 15px;
     height: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     margin-left: 8px;
   }
 .navbar-container{
     color:  rgb(190, 187, 187);
+    font-size: 12px !important;
+    padding-left: 0px !important;
+
 }
 .navbar-container:hover {
     color: white; /* Color blanco al pasar el mouse */
@@ -120,11 +121,21 @@
   }
 .navtext2 {
     text-align: center;
+    color:  rgb(190, 187, 187);
     font-family: 'Motiva Sans', sans-serif;
     font-size: 11px;
     margin-top: 1vh;
     margin-left: 1vh;
   }
+.navtext2:hover {
+    text-align: center;
+    color:  white;
+    font-family: 'Motiva Sans', sans-serif;
+    font-size: 11px;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    cursor: pointer;
+}
   .navtext:hover {
     color: white; /* Color blanco al pasar el mouse */
   }
