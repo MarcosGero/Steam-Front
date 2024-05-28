@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import AccountPage from './pages/AccountPage';
 import EmailVerification from './pages/EmailVerification';
 import AvisoEmail from './pages/AvisoEmail';
+import Noticias from './pages/Noticias';
 
 /////////////////TOKEN/////////////////////////////////
 Axios.defaults.baseURL = 'http://localhost:8080/api/v1/'
@@ -38,6 +39,7 @@ function App() {
             <Route path="/account-details" element={<AccountPage />} />
             <Route path="/confirm-email" element={<EmailVerification/>} />
             <Route path="/verificar-email" element={<AvisoEmail/>} />
+            <Route path="/noticias" element={<Noticias/>} />
           </Routes>
         </Layout>
       </AuthProvider>

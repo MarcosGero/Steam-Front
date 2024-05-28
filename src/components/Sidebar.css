@@ -1,0 +1,123 @@
+.sidebar {
+    width: 300px;
+    color: white;
+    padding: 20px;
+    height: 100%;
+    background-image: url('../resources/fondo_steam.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .sidebar h2 {
+    font-size: 35px;
+    font-weight: 700;
+    padding-bottom: 8px;
+  }
+  
+  .menu-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .menu-section h3 {
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: darkgrey;
+  }
+  
+  .menu-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu-section li {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .menu-section .selected {
+    font-weight: bold;
+  }
+  
+  .footer {
+    margin-top: 30px;
+    font-size: 12px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color:#353941;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #353941;
+    color: white;
+  }
+
+  .footer p {
+    margin-bottom: 20px;
+    font-size: 12.7px;
+    color: #888;
+  }
+
+  .seccion {
+    margin-bottom: 20px;
+  }
+
+  .custom-button {
+    display: block;
+    padding: 10px 10px;
+    background-color: #353941;
+    color: white;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-bottom: 5px;
+  }
+
+  .custom-button-2 {
+    display: block;
+    padding: 10px 10px;
+    background-color: #5c6069;
+    color: #a4aab9;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-bottom: 5px;
+  }
+
+  .custom-button:hover {
+    background-color: #6a6e78;
+  }
+  
+  .button-text {
+    display: block;
+    font-size: 12px;
+    font-weight:500;
+  }
+  
+  .button-subtext {
+    display: block;
+    font-size: 12px;
+    color: #d1d1d1;
+  }
