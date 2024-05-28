@@ -1,45 +1,52 @@
-.sidebar {
-    width: 300px;
-    color: white;
-    padding: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Motiva+Sans:wght@400;700&display=swap');
+
+  .sidebar {
     height: 100%;
-    background-image: url('../resources/fondo_steam.png');
+    color: white;
+
+    flex: 1 1 300px;
+    max-width: 300px;
+    min-width: 300px;
+
+    background-image: url('../resources/Steaam.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    font-family: 'Motiva Sans', Arial, Helvetica, sans-serif;
   }
 
   .sidebar h2 {
-    font-size: 35px;
-    font-weight: 700;
-    padding-bottom: 8px;
+    padding: 25px 60px 8px 20px;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 30px;
+    color: #c6d5df;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    word-wrap: break-word;
+    word-break: break-word;
   }
   
   .menu-section {
+    padding-left: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
   }
   
   .menu-section h3 {
     font-size: 13px;
     margin-bottom: 10px;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   h3 {
     font-size: 14px;
     margin-bottom: 5px;
     color: darkgrey;
-  }
-  
-  .menu-section ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .menu-section li {
-    margin-bottom: 10px;
-    cursor: pointer;
   }
   
   .menu-section .selected {
@@ -52,11 +59,24 @@
   }
   
   input[type="text"] {
-    width: 100%;
-    padding: 5px;
+    width: 95%;
+    padding: 10px;
     border-radius: 5px;
     border: none;
     background-color:#353941;
+    color :white;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+
+  input[type="text"]:hover {
+    background-color: #41454a;
+  }
+
+  input[type="text"]:focus {
+    background-color: #41454a;
+    color: white;
+    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 3.0);
+    outline: none; /* Removes default outline on focus */
   }
   
   button {
@@ -68,20 +88,37 @@
     color: white;
   }
 
-  .footer p {
-    margin-bottom: 20px;
-    font-size: 12.7px;
-    color: #888;
-  }
-
   .seccion {
     margin-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  .seccion-2 {
+    margin-bottom: 0px;
+    padding-left: 20px;
+    padding-right: 15px;
+  }
+
+  .seccion h3 {
+    letter-spacing: .05em;
+    font-weight: 400;
+    font-size: 13px;
+  }
+
+  .seccion-2 a {
+    font-size: 12px;
+    color: #cacaca;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   .custom-button {
     display: block;
-    padding: 10px 10px;
-    background-color: #353941;
+    padding: 10px 0px 10px 15px;
+    background-color: rgba(63, 69, 78, 0.5);
     color: white;
     border: none;
     border-radius: 0px;
@@ -89,14 +126,14 @@
     text-align: left;
     width: 100%;
     transition: background-color 0.3s;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
   }
 
   .custom-button-2 {
-    display: block;
+    display:flex;
     padding: 10px 10px;
-    background-color: #5c6069;
-    color: #a4aab9;
+    background-color: #575e69;
+    color: #aaa;
     border: none;
     border-radius: 0px;
     cursor: pointer;
@@ -107,17 +144,48 @@
   }
 
   .custom-button:hover {
-    background-color: #6a6e78;
+    background: linear-gradient(to left, rgba(225, 225, 225, 0.5), rgba(53, 57, 65, 0.5));
+  }
+
+  .custom-button-2:hover {
+    background-color: #787c88;
+    color: white;
   }
   
   .button-text {
     display: block;
     font-size: 12px;
-    font-weight:500;
+    font-weight: 400;
+    letter-spacing: .05em;
   }
   
   .button-subtext {
     display: block;
     font-size: 12px;
-    color: #d1d1d1;
+    color: #7e8187;
+    font-weight: 300;
+  }
+
+  .footer {
+    padding-left: 20px;
+    margin-top: 0px;
+  }
+
+  .footer p {
+    font-size: 11px;
+    padding-right: 4px;
+    color: #8f8e93;
+  }
+
+  .footer img {
+    width: 85px;
+    height: auto;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .logo1 {
+    width: 15px;
+    height: auto;
+    margin-right: 10px;
   }
