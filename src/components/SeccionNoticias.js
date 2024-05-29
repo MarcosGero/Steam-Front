@@ -1,10 +1,14 @@
 import React from 'react';
 import EventItem from './EventItem';
+import EventItemBig from './EventItemBig';
 import './SeccionNoticias.css';
 
 import user1 from '../resources/ico_1.jpg';
 import user2 from '../resources/ico_2.jpg';
 import user3 from '../resources/ico_3.jpg';
+
+import v1 from '../resources/v1.png'
+import v2 from '../resources/v2.png'
 
 function SeccionNoticias() {
   return (
@@ -20,14 +24,21 @@ function SeccionNoticias() {
       <div className="news-list">
         <h3>HOY</h3>
         <div className="news-item">
-          <h4>Bellwright</h4>
-          <p>Forestry, Staging Ground & Tier 3 Improvements OUT NOW</p>
-          <span>Actualización Importante - Hace 1 hora</span>
+          <EventItemBig user='Capes' logot={user1} title='CAPES is OUT NOW!' date='LANZAMIENTO DEL JUEGO HACE 1 HORA'
+                        detail='Hey fellow superheroes and those who want to become one!'
+                        description= 'The superheroes arribe with a smashing three-point landing'
+                        video={v1}/>
         </div>
         <div className="news-item">
-          <h4>Tom Clancy's Rainbow Six® Siege</h4>
-          <p>R6 SIEGE | Year 9 Season 2: Operation New Blood</p>
-          <span>Actualización Importante - Hace 1 hora</span>
+          <EventItemBig user='Reus 2' logot={user2} title='5 tips to start' date='NOTICIAS HACE 3 HORAS'
+                        description='Read our 5 tips to start Reus 2 smoothly and master the game. A video format is also available on Youtube!'
+                        detail= 'Greetings, Mighty Shaper of Worlds, Welcome to the expansive and wondrous universe of Reus 2, where you wield the power to shape planets and influence the delicate balance of...'
+                        video={v2}/>
+        </div>
+        <div className="news-item">
+          <EventItemBig user='Capes' logot={user1} title='CAPES is OUT NOW!' date='LANZAMIENTO DEL JUEGO HACE 1 HORA'
+                        detail='Hey fellow superheroes and those who want to become one!' description=
+                            'The superheroes arribe with a smashing three-point landing' video={v1}/>
         </div>
       </div>
     </div>
