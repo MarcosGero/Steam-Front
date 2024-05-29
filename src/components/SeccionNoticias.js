@@ -2,19 +2,23 @@ import React from 'react';
 import EventItem from './EventItem';
 import './SeccionNoticias.css';
 
+import user1 from '../resources/ico_1.jpg';
+import user2 from '../resources/ico_2.jpg';
+import user3 from '../resources/ico_3.jpg';
+
 function SeccionNoticias() {
   return (
     <div className="news-section">
       <div className="upcoming-events">
         <h3>PROXIMAMENTE</h3>
         <div className="events-list">
-          <EventItem user="Indie Game Fest" title="Indie Game Fest 2024" date="miércoles a la(s) 14:00" />
-          <EventItem user="Team Fortress 2" title="Seasonalander Summer 2024" date="jueves a la(s) 10:00" />
-          <EventItem user="Warframe" title="Warframe: Devstream #180" date="viernes a la(s) 15:00" />
+          <EventItem user="Indie Game Fest" title="Indie Game Fest 2024" date="miércoles a la(s) 14:00" logot={user1}/>
+          <EventItem user="Team Fortress 2" title="Seasonalander Summer 2024" date="jueves a la(s) 10:00" logot={user2}/>
+          <EventItem user="Warframe" title="Warframe: Devstream #180" date="viernes a la(s) 15:00" logot={user3}/>
         </div>
       </div>
       <div className="news-list">
-        <h3>Hoy</h3>
+        <h3>HOY</h3>
         <div className="news-item">
           <h4>Bellwright</h4>
           <p>Forestry, Staging Ground & Tier 3 Improvements OUT NOW</p>

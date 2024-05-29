@@ -58,3 +58,13 @@
       height: 25px;
       margin-right: 10px;
   }
+
+  .usuario{
+      display: flex;
+  }
+
+  .usuario img{
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+  }
