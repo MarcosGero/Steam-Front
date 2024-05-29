@@ -9,7 +9,7 @@ function SeccionNoticias() {
         <h3>PROXIMAMENTE</h3>
         <div className="events-list">
           <EventItem user="Indie Game Fest" title="Indie Game Fest 2024" date="miércoles a la(s) 14:00" />
-          <EventItem user="Warhammer: Vermintide 2" title="Versus! The Returning Alpha Test, coming May 30!" date="jueves a la(s) 10:00" />
+          <EventItem user="Team Fortress 2" title="Seasonalander Summer 2024" date="jueves a la(s) 10:00" />
           <EventItem user="Warframe" title="Warframe: Devstream #180" date="viernes a la(s) 15:00" />
         </div>
       </div>

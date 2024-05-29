@@ -8,6 +8,8 @@
     max-width: 300px;
     min-width: 300px;
 
+    min-height: 100vh;
+
     background-image: url('../resources/Steaam.png');
     background-size: cover;
     background-repeat: no-repeat;
