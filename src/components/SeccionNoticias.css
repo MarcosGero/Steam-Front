@@ -1,6 +1,8 @@
     .news-section {
         flex-grow: 1;
         min-height: 100vh;
+
+        overflow-y: auto;
     }
 
     .upcoming-events {

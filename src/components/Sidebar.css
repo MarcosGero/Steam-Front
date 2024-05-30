@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Motiva+Sans:wght@400;700&display=swap');
 
   .sidebar {
-    height: 100%;
     color: white;
 
-    flex: 1 1 300px;
+    flex: 1;
     max-width: 300px;
     min-width: 300px;
 
@@ -16,10 +15,26 @@
     background-position: center;
 
     font-family: 'Motiva Sans', Arial, Helvetica, sans-serif;
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
+
+    position: relative; /* Esto para que funcione z-index*/
+    z-index: 1; /* Es para poner mas encima un panel sobre otro*/
+
+    transition: transform 0.3s ease;
+
+    overflow-y: auto;
+  }
+
+  .toggle-button {
+    cursor: pointer;
+    font-size: 40px;
+    font-weight: 100;
+    margin-left: 260px;
+    color: white;
   }
 
   .sidebar h2 {
-    padding: 25px 60px 8px 20px;
+    padding: 0 60px 8px 20px;
     margin-bottom: 40px;
     font-size: 32px;
     font-weight: 600;
@@ -96,7 +111,7 @@
   }
 
   .seccion-2 {
-    margin-bottom: 0px;
+    margin-bottom: 120px;
     padding-left: 20px;
     padding-right: 15px;
   }
@@ -170,7 +185,11 @@
 
   .footer {
     padding-left: 20px;
-    margin-top: 0px;
+
+    position: fixed;
+    bottom : 0;
+    left : 0;
+    width: 100%;
   }
 
   .footer p {
