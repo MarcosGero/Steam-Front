@@ -1,0 +1,131 @@
+.details{
+    background-color: #182a39;    
+}
+
+.gamecard{
+    height: 444px;
+    width: 940px;
+    background-color: #223b50;    
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.detailscentrecont{
+    margin-left: 25.5% !important;
+    padding-top: 130px;
+}
+.gametitle{
+    margin-left: 0px;
+}
+
+.screenshots-slider{
+    width: 600px;
+    height: 432px;
+    
+}
+
+.leftsection{
+    width: 324px;
+    height: 444px;
+    margin-left: 16px;
+}
+.gamecover{
+
+    height: 151px;
+    width: 324px;
+    background-image: url('../resources/game1.png');
+    background-size: cover;
+
+}
+.gamedetails{    
+    margin-top: 10px;
+    font-size: 13px;
+    color: rgb(206, 206, 206);
+}
+
+.gamedate{
+    margin-top: 10px;
+    font-size: 13px;
+    color: rgb(75, 75, 75);
+}
+
+.purchasecont{
+    padding-bottom: 100px;
+}
+.purchaseoption{
+    position: absolute;
+    margin-top: 30px;
+    width: 616px;
+    height: 72px;
+    background-color: rgb(75, 75, 75);
+    color: rgb(206, 206, 206);
+    padding: 20px;    
+    font-size: 20px;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.purchasebutton{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    width: 256px;
+    height: 36px;
+    background-color: black;
+    z-index: 2;
+    margin-left: 330px;
+    margin-top: 80px;
+}
+
+.purchaseprice{
+    color: white;
+}
+
+.purchasecart{
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    background-color: greenyellow;
+    color: black;
+    width: 153px;
+    height: 32px;
+    border-radius: 3px;
+    border: transparent !important;
+}
+.purchasecart:hover{
+    background-color: rgb(193, 255, 99) !important;
+    color: rgb(95, 95, 95);
+}
+
+.aboutcont {
+    margin-top: 100px;
+}
+
+.abouttitle{
+    color: white;
+}
+
+.aboutvid{
+    margin-top: 15px;
+    height: 260px;
+    width: 616px;
+}
+
+.video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* Ajusta el video para cubrir todo el espacio */
+  }
+
+.detailscont{
+    margin-top: 20px;
+    width: 616px;
+    color: rgb(163, 163, 163);
+    padding-bottom: 50px;
+}
+
