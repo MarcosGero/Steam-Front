@@ -49,7 +49,6 @@ function App() {
             <Route path="/verificar-recovery" element={<AvisoRecovery/>} />
             <Route path="/noticias" element={<Noticias/>} />
             <Route path="/details" element={<GameDetails/>} />
-
           </Routes>
         </Layout>
       </AuthProvider>
