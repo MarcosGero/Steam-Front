@@ -2,7 +2,7 @@ import { Container,Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 
-function Underbanner(){
+function Underbanner(){ // Cerca del pie de pagina que invita al cliente a registrarse a Steam
     return (
         <Container fluid className="underbanner">
         <Container className='underbanner-content'>

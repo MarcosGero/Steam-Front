@@ -2,9 +2,9 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import "./footer.css";
 
-const Footer = () => {
+const Footer = () => { // Este es el pie de pagina que aparece siempre en Steam
     return (
-      <footer className="bg-dark text-footer py-3">
+      <footer className="text-footer py-3">
         <Container className="mt-1 container-alignment">
         <Row className="mt-1 text-center">
             <Col>

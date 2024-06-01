@@ -4,55 +4,137 @@
 }
 
 .logo{
-    height: 7vh;
-    width: auto;   
+    height: 45px;
+    width: auto;
+    margin: 0 0 0 20%;
 }
+.navlinks {
+  font-weight: 350;
+  color: white !important;
+}
+/*if hover then turn the text blue and add an underscore**/
+.navlink:hover {
+  color: #1A9FFF !important;
+  text-decoration: underline;
+  text-decoration-color: #1A9FFF;
+  text-decoration-thickness: 2px;
 
+}
+.navlink{
+  color: white !important;
+  margin: 0%;
+}
 .navoptions {
-    margin-left: 0px !important;
-    width: 60% !important;
+    margin-left: 10px !important;
+    width: 80% !important;
+    padding-top: 0vh;
   }
   
 .navitems {
-    margin-left: 15% !important;
+    margin-left: 20% !important;
+    font-family: 'Motiva Sans', sans-serif;
+    font-size: 16px;
 }
 
 .navtext {
     margin-left: 2% !important;
 }
-
-.extraoptions {
-    padding-bottom: 50px;
+.nav-dropdown {
+  margin-left: 0% !important;
+  font-family: 'Motiva-Sans', sans-serif;
+  font-size: 12px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+.navbar-offcanvas {
+  background-color: #343a40 !important; /* Fondo oscuro */
+  color: #ffffff; /* Texto en blanco */
 }
 
+.navbar-offcanvas .nav-link {
+  color: #ffffff; /* Asegura que los enlaces también sean blancos */
+}
+
+
+.extraoptions {
+    margin-top: -30px;
+    margin-left: -50px;
+    display: flex;
+}
+.rectangular-button2 {
+  background-color: #343434; /* Color verde oscuro */
+  border: none;
+  color: rgb(229, 221, 221);
+    height: 22px !important;
+    width: 125px !important;
+    margin: 4px 2px !important;
+    cursor: pointer !important;
+    border-radius: 0.1rem !important;
+    font-size: 12px !important;
+    padding: 2px 2px!important;
+    text-decoration: none !important;
+}
 .rectangular-button {
-    background-color: #77a318; /* Color verde oscuro */
+    background-color: #688f16; /* Color verde oscuro */
     border: none;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 0.1rem;
+    color: rgb(229, 221, 221);
+    height: 22px !important;
+    width: 125px !important;
+    margin: 4px 2px !important;
+    cursor: pointer !important;
+    border-radius: 0.1rem !important;
+    font-size: 12px !important;
+    padding: 2px 2px!important;
+    text-decoration: none !important;
   }
+  /*make the button slighty desaturated when hovering*/
+  .rectangular-button:hover {
+    background-color:  #84b51b;
+    color: white;
+  }
+  .rectangular-button2:hover {
+    background-color:  #484848;
+    color: white;
+  }
+  .location-icon {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 5px;
+    margin-left: 8px;
+  }
+.navbar-container{
+    color:  rgb(190, 187, 187);
+    font-size: 12px !important;
+    padding-left: 0px !important;
+
+}
+.navbar-container:hover {
+    color: white; /* Color blanco al pasar el mouse */
+    cursor: pointer;
+}
   /* División vertical */
 .divider {
     height: 15px;
     width: 1px;
-    background-color: white;
-    margin: 0 10px;
+    background-color: rgb(190, 187, 187);
   }
-  .navtext2 {
-    color: #5c7e10; /* Color verde para texto no autenticado */
-    font-weight: bold;
-    margin-left: 2% !important;
-    background-color: #171d25;
-    border: 0;
+.navtext2 {
+    text-align: center;
+    color:  rgb(190, 187, 187);
+    font-family: 'Motiva Sans', sans-serif;
+    font-size: 11px;
+    margin-top: 1vh;
+    margin-left: 1vh;
   }
-  
+.navtext2:hover {
+    text-align: center;
+    color:  white;
+    font-family: 'Motiva Sans', sans-serif;
+    font-size: 11px;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    cursor: pointer;
+}
   .navtext:hover {
     color: white; /* Color blanco al pasar el mouse */
   }
@@ -60,12 +142,19 @@
 .location-container {
     display: flex;
     align-items: center;
-    color: white;
   }
-  
-  .location-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+ .navDropOptions{
+    font-family: 'Motiva-Sans', sans-serif;
+    font-size: 13px;
+    text-align: left;
+    padding-left: 0;
+    margin-left: 4px;
+    margin-right: 20px;
+ } 
+.download-icon{
+    width: 15px;
+    height: 15px;
+    margin: 0.1vh 0.6vh 0.5vh 0.5vh;
   }
+
 
