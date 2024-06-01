@@ -5,7 +5,6 @@
     position: relative !important;
     width: 100% !important;
     height: 450px !important; /* Cubre toda la altura del viewport */
-    
 }
   
   .video-background {
@@ -59,8 +58,6 @@
     position: relative !important;
     height: 412px;
     background-color: #182a39;
-    margin-left: 20%;
-    padding-right: 15%;
 }
 .carousel-item:hover {
     box-shadow: 0px 0px 10px 1px white;
@@ -69,9 +66,7 @@
 
 .destanrectitle{
     color: white;
-    padding-left: 150px !important;
     padding: 10px 0;
-
 }
 
 .carousel-item{   
@@ -96,7 +91,6 @@
     background-size: cover;
     box-shadow: 0px 0px 29px 1px #000000;
 
-
 }
 
 .gameinfo{
@@ -106,7 +100,7 @@
 
 .gametitle{
     color: white !important;
-    margin: 20px;
+    margin: 20px !important;
     font-size: 20px;
     width: 300px;
 }
@@ -159,9 +153,8 @@
     margin-top: 50px ;
     height: 560px;
     background-color: #182a39;
-    margin-left: 20%;
-    padding-left: 130px;
-    padding-right: 15%;
+    
+    
 }
 
 .GAME1{
@@ -258,7 +251,6 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 5px;
-    
     width: 306px;
     height: 180px;
     background-color: #aadcf1;
@@ -290,8 +282,6 @@
 }
 
 .explorecontainer{
-    margin-left: 20%;
-    padding-left: 130px;
     padding-bottom: 20px;
 }
 .bar2{
@@ -326,3 +316,28 @@
     box-shadow: 0px 0px 10px 1px white;
 }
 
+
+
+.centrecont{
+    margin: 10px !important;
+}
+
+.fullcont{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.leftcont{
+    width: 25%;
+    padding-left: 200px;
+    padding-top: 170px;
+}
+
+.leftopt{
+    color: #334753;
+}
+
+.leftopt1{
+    color: #4f6c7e;
+    margin-bottom: 20px;
+}

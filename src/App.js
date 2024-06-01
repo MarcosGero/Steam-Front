@@ -14,6 +14,8 @@ import Noticias from './pages/Noticias';
 import PasswordRecoveryPage from "./pages/PasswordRecoveryPage";
 import AvisoRecovery from "./pages/AvisoRecovery";
 import PasswordResetPage from "./pages/PasswordResetPage";
+import GameDetails from './pages/GameDetails';
+
 
 /////////////////TOKEN/////////////////////////////////
 Axios.defaults.baseURL = 'http://localhost:8080/api/v1/'
@@ -46,6 +48,8 @@ function App() {
             <Route path="/verificar-email" element={<AvisoEmail/>} />
             <Route path="/verificar-recovery" element={<AvisoRecovery/>} />
             <Route path="/noticias" element={<Noticias/>} />
+            <Route path="/details" element={<GameDetails/>} />
+
           </Routes>
         </Layout>
       </AuthProvider>
