@@ -129,5 +129,9 @@
 }
 
 .image-gallery-icon{
-    margin: 0 -250px;
+    
+    width: 120px !important;
+    height: 120px !important;
+    padding: 0 !important;
+
 }
