@@ -15,6 +15,8 @@ import {
 import { BiWorld } from "react-icons/bi";
 import { ImDownload } from "react-icons/im";
 import {Avatar, IconButton, Menu, MenuItem, Typography} from "@mui/material";
+import {Notifications} from "@mui/icons-material";
+import {BsBell} from "react-icons/bs";
 
 const NavigationBar = () => {
   const [isAuthenticated, setAuthenticated] = useState(); // Indica si es usuario esta o no autenticado
@@ -74,16 +76,16 @@ const NavigationBar = () => {
           <Offcanvas.Body >
             <Container className="navoptions">
               <Nav className="navlinks">
-                <Nav.Link className="navlink" href="home">
+                <Nav.Link className="navlink" href="/home">
                   TIENDA
                 </Nav.Link>
-                <Nav.Link className="navlink" href="link">
+                <Nav.Link className="navlink" href="/link">
                   COMUNIDAD
                 </Nav.Link>
-                <Nav.Link className="navlink" href="link">
+                <Nav.Link className="navlink" href="/link">
                   ACERCA DE
                 </Nav.Link>
-                <Nav.Link className="navlink" href="link">
+                <Nav.Link className="navlink" href="/link">
                   SOPORTE
                 </Nav.Link>
               </Nav>
@@ -93,8 +95,11 @@ const NavigationBar = () => {
                 {isAuthenticated ? (
                     <div className="d-flex">
                       <button className="dark rectangular-button2">
-                        <ImDownload className="download-icon mr-2" />
+                        <ImDownload className="download-icon mr-2"/>
                         Instalar Steam
+                      </button>
+                      <button className="dark rectangular-button2">
+                        <BsBell className="download-icon mr-2"/>
                       </button>
                       <IconButton
                           edge="end"
@@ -106,8 +111,9 @@ const NavigationBar = () => {
                             marginTop: '4px'  // Ajustar la posición vertical
                           }}
                       >
-                        <Typography  variant="body2" sx={{ marginRight: 1, fontSize: '13px', color: 'rgb(190, 187, 187);' }}>
-                          {userName}
+                        <Typography variant="body2"
+                                    sx={{marginRight: 1, fontSize: '13px', color: 'rgb(190, 187, 187);'}}>
+                          {userName}▾
                         </Typography>
                         {userImage && imageFormat ? (
                             <Avatar
@@ -141,11 +147,12 @@ const NavigationBar = () => {
                             }
                           }}
                       >
-                        <MenuItem sx={{fontSize:'13px'}} onClick={handleRequest}>Detalles de cuenta: {userName}</MenuItem>
-                        <MenuItem sx={{fontSize:'13px'}} onClick={handleLogout}>Cerrar sesión</MenuItem>
+                        <MenuItem sx={{fontSize: '13px'}} onClick={handleRequest}>Detalles de
+                          cuenta: {userName}</MenuItem>
+                        <MenuItem sx={{fontSize: '13px'}} onClick={handleLogout}>Cerrar sesión</MenuItem>
                       </Menu>
                     </div>
-                )  : (
+                ) : (
                     <>
                       <button className="rectangular-button">
                         <ImDownload className="download-icon mr-2"/>
