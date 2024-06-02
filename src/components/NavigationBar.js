@@ -93,15 +93,36 @@ const NavigationBar = () => {
                 {isAuthenticated ? (
                     <div className="d-flex">
                       <button className="dark rectangular-button2">
-                        <ImDownload className="download-icon mr-2"/>
+                        <ImDownload className="download-icon mr-2" />
                         Instalar Steam
                       </button>
-                      <IconButton edge="end"  color="inherit" onClick={handleMenuOpen} sx={{ width: '50%' }} >
-                        <Typography variant="body2" sx={{marginRight: 1}}>
+                      <IconButton
+                          edge="end"
+                          onClick={handleMenuOpen}
+                          sx={{
+                            width: 'auto',
+                            alignItems: 'center',
+                            padding: '4px',
+                            marginTop: '4px'  // Ajustar la posición vertical
+                          }}
+                      >
+                        <Typography  variant="body2" sx={{ marginRight: 1, fontSize: '13px', color: 'rgb(190, 187, 187);' }}>
                           {userName}
                         </Typography>
                         {userImage && imageFormat ? (
-                            <Avatar src={`data:${imageFormat};base64,${userImage}`} alt="User"/>
+                            <Avatar
+                                src={`data:${imageFormat};base64,${userImage}`}
+                                alt="User"
+                                sx={{
+                                  borderRadius: 1,
+                                  width: '34px',
+                                  borderStyle: 'solid',
+                                  borderWidth: '1px',
+                                  boxShadow: '0 0 0 1px gray',
+                                  borderColor: 'black',
+                                  height: '34px' // Corregir la altura
+                                }}
+                            />
                         ) : (
                             <Avatar>{userName.charAt(0)}</Avatar>
                         )}
@@ -110,13 +131,21 @@ const NavigationBar = () => {
                           anchorEl={anchorEl}
                           open={Boolean(anchorEl)}
                           onClose={handleMenuClose}
-                          color="dark"
+                          PaperProps={{
+                            sx: {
+                              backgroundColor: '#2b3544', // Fondo oscuro
+                              color: 'white', // Color del texto
+                              '& .MuiMenuItem-root': {
+                                color: 'white' // Asegurar que los elementos del menú tengan el texto blanco
+                              }
+                            }
+                          }}
                       >
-                        <MenuItem onClick={handleRequest}>Detalles de cuenta</MenuItem>
-                        <MenuItem onClick={handleLogout}>Cerrar sesión</MenuItem>
+                        <MenuItem sx={{fontSize:'13px'}} onClick={handleRequest}>Detalles de cuenta: {userName}</MenuItem>
+                        <MenuItem sx={{fontSize:'13px'}} onClick={handleLogout}>Cerrar sesión</MenuItem>
                       </Menu>
                     </div>
-                ) : (
+                )  : (
                     <>
                       <button className="rectangular-button">
                         <ImDownload className="download-icon mr-2"/>
