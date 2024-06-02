@@ -62,7 +62,7 @@
     display: flex;
 }
 .rectangular-button2 {
-  background-color: #343434; /* Color verde oscuro */
+  background-color: #67707B33; /* Color verde oscuro */
   border: none;
   color: rgb(229, 221, 221);
     height: 22px !important;
@@ -73,6 +73,22 @@
     font-size: 12px !important;
     padding: 2px 2px!important;
     text-decoration: none !important;
+}
+.rectangular-button3 {
+    background-color: #67707B33; /* Color verde oscuro */
+    border: none;
+    color: rgb(229, 221, 221);
+    height: 22px !important;
+    width: 40px !important;
+    margin: 1.9vh 0.3vh 0.3vh 0.3vh !important;
+    cursor: pointer !important;
+    border-radius: 0.1rem !important;
+    font-size: 12px !important;
+    padding: 2px 2px!important;
+    text-decoration: none !important;
+}
+.rectangular-button3:hover{
+    background-color: rgba(130, 138, 145, 0.2);
 }
 .rectangular-button {
     background-color: #688f16; /* Color verde oscuro */
@@ -93,7 +109,7 @@
     color: white;
   }
   .rectangular-button2:hover {
-    background-color:  #484848;
+    background-color: rgba(130, 138, 145, 0.2);
     color: white;
   }
   .location-icon {
@@ -167,6 +183,7 @@
     padding-right: 0;
     color: #c5c6c7;
 }
+
 .nav-dropdown .dropdown-toggle::after {
     margin-left: 30px;
 }

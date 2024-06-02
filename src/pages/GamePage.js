@@ -25,7 +25,7 @@ function GamePage() {
     }, [name]);
 
     if (!game) return <div>Loading...</div>;
-
+    const portada = "http://localhost:8080/api/v1/games/images/" + (game.thumbnail);
     const images = game.imageUrl ? game.imageUrl.map(url => ({
         original: `http://localhost:8080/api/v1/games/images/${url}`,
         thumbnail: `http://localhost:8080/api/v1/games/images/${url}`,
@@ -48,9 +48,10 @@ function GamePage() {
                     </div>
                     <div className='leftsection'>
                         <div className='gamecover'>
+                            <image src={portada} />
                         </div>
                         <div className='gamedetails'>
-                            {game.description}
+                            {game.details}
                         </div>
                         <div className='gamedate'>
                             FECHA DE LANZAMIENTO: {game.launchDate}
@@ -75,11 +76,6 @@ function GamePage() {
                 <div className='aboutcont'>
                     <div className='abouttitle'>
                         ACERCA DE ESTE JUEGO
-                    </div>
-                    <div className='aboutvid'>
-                        <video className="video" autoPlay loop muted>
-                            <source src={vid} type="video/mp4" />
-                        </video>
                     </div>
                     <div className='detailscont'>
                         {game.description}

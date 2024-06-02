@@ -98,8 +98,8 @@ const NavigationBar = () => {
                         <ImDownload className="download-icon mr-2"/>
                         Instalar Steam
                       </button>
-                      <button className="dark rectangular-button2">
-                        <BsBell className="download-icon mr-2"/>
+                      <button className="dark rectangular-button3" >
+                        <BsBell className="download-icon mr-2" />
                       </button>
                       <IconButton
                           edge="end"
