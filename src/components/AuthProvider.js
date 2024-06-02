@@ -55,6 +55,9 @@ export function AuthProvider({ children }) {
       const response = await Axios.post(API_URL + "auth/login", { username: username, password: password });
       localStorage.setItem("local-user", username);
       localStorage.setItem("local-token", response.data.token);
+      const userdata = await Axios.get(API_URL + "user/me");
+      localStorage.setItem("local-picture",userdata.data.image);
+      localStorage.setItem("local-format",userdata.data.imageMimeType);
       navigate("/home");
     } catch (error) {
       setLoading(false);

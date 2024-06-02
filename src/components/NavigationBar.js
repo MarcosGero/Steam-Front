@@ -14,21 +14,31 @@ import {
 } from "../components/AuthProvider";
 import { BiWorld } from "react-icons/bi";
 import { ImDownload } from "react-icons/im";
+import {Avatar, IconButton, Menu, MenuItem, Typography} from "@mui/material";
 
 const NavigationBar = () => {
   const [isAuthenticated, setAuthenticated] = useState(); // Indica si es usuario esta o no autenticado
   const AuthUser = useAuthUserContext(); // Maneja la autenticacion de usuario
+  const [anchorEl, setAnchorEl] = useState(null);
   const LogOutUser = useLogOutContext(); // Maneja el cierre de sesion
   const navigate = useNavigate(); // Forma para navegar entre las paginas
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   useEffect(() => {
     setAuthenticated(AuthUser());
   }, [AuthUser]);
+  const handleMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
 
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
   const handleLogout = () => {
     LogOutUser(); // Llama a la función de cierre de sesión del contexto
   };
-
+  const userName = localStorage.getItem("local-user");
+  const userImage = localStorage.getItem("local-picture");
+  const imageFormat = localStorage.getItem("local-format");
   const handleRequest = () => { // Maneja los request
     if (isAuthenticated) {
       navigate("/account-details"); // URL de detalles de cuenta
@@ -81,41 +91,35 @@ const NavigationBar = () => {
             <Container>
               <Nav className="extraoptions">
                 {isAuthenticated ? (
-                  <>
-                    <button className="dark rectangular-button2">
-                      <ImDownload className="download-icon mr-2" />
-                      Instalar Steam
-                    </button>
-                    <NavDropdown
-                      className="nav-dropdown"
-                      title={localStorage.getItem("local-user")}
-                      menuVariant="dark"
-                    >
-                      <NavDropdown.Item
-                        style={{ padding: "3px" }}
-                        onClick={handleRequest}
+                    <div className="d-flex">
+                      <button className="dark rectangular-button2">
+                        <ImDownload className="download-icon mr-2"/>
+                        Instalar Steam
+                      </button>
+                      <IconButton edge="end"  color="inherit" onClick={handleMenuOpen} sx={{ width: '50%' }} >
+                        <Typography variant="body2" sx={{marginRight: 1}}>
+                          {userName}
+                        </Typography>
+                        {userImage && imageFormat ? (
+                            <Avatar src={`data:${imageFormat};base64,${userImage}`} alt="User"/>
+                        ) : (
+                            <Avatar>{userName.charAt(0)}</Avatar>
+                        )}
+                      </IconButton>
+                      <Menu
+                          anchorEl={anchorEl}
+                          open={Boolean(anchorEl)}
+                          onClose={handleMenuClose}
+                          color="dark"
                       >
-                        <div className="navDropOptions">
-                          Detalles de cuenta:{" "}
-                          <a style={{ color: "#4cb4ff" }}>
-                            {localStorage.getItem("local-user")}
-                          </a>
-                        </div>
-                      </NavDropdown.Item>
-                      <NavDropdown.Item
-                        style={{ padding: "3px" }}
-                        onClick={handleLogout}
-                      >
-                        <div className="navDropOptions">
-                          Cerrar sesión de la cuenta...
-                        </div>
-                      </NavDropdown.Item>
-                    </NavDropdown>
-                  </>
+                        <MenuItem onClick={handleRequest}>Detalles de cuenta</MenuItem>
+                        <MenuItem onClick={handleLogout}>Cerrar sesión</MenuItem>
+                      </Menu>
+                    </div>
                 ) : (
-                  <>
-                    <button className="rectangular-button">
-                      <ImDownload className="download-icon mr-2" />
+                    <>
+                      <button className="rectangular-button">
+                        <ImDownload className="download-icon mr-2"/>
                         Instalar Steam
                     </button>
                     <div onClick={handleRequest} className="navtext2">
