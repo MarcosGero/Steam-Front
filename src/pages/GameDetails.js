@@ -53,6 +53,7 @@ function GameDetails() { // Pagina a la que se accede una vez se encuentra logue
                             <ImageGallery  items={images}
                             showPlayButton={false}
                             showFullscreenButton={false}
+                            
                             />
                         </div>
                         <div className='leftsection'>

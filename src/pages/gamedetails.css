@@ -22,7 +22,6 @@
 .screenshots-slider{
     width: 600px;
     height: 432px;
-    
 }
 
 .leftsection{
@@ -129,3 +128,6 @@
     padding-bottom: 50px;
 }
 
+.image-gallery-icon{
+    margin: 0 -250px;
+}
