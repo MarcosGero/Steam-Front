@@ -2,13 +2,14 @@ import './gamedetails.css';
 import React, { useEffect, useState } from 'react';
 import "./home.css";
 import vid from './detailsbgvid.mp4'
+import placeholder from '../resources/video-placeholder.webp';
 import { Button } from 'react-bootstrap';
 import "react-image-gallery/styles/css/image-gallery.css";
 
 import { useParams } from "react-router-dom";
 import Subnavbar from "./Subnavbar";
 import Axios from "axios";
-import ImageRender from "../components/ImageRender";
+import ImageGallery from "react-image-gallery";
 
 function GamePage() {
     const { name } = useParams();
@@ -26,10 +27,25 @@ function GamePage() {
 
     if (!game) return <div>Loading...</div>;
     const portada = "http://localhost:8080/api/v1/games/images/" + (game.thumbnail);
-    const images = game.imageUrl ? game.imageUrl.map(url => ({
-        original: `http://localhost:8080/api/v1/games/images/${url}`,
-        thumbnail: `http://localhost:8080/api/v1/games/images/${url}`,
-    })) : [];
+
+    const images = game.imageUrl ? game.imageUrl.map(url => {
+        const isVideo = url.endsWith('.webm');
+        return isVideo ? {
+            original: `http://localhost:8080/api/v1/games/images/${url}`,
+            thumbnail: placeholder, // Usa un placeholder para los videos
+            renderItem: () => (
+                <div className="video-wrapper">
+                    <video controls autoPlay loop muted>
+                        <source src={`http://localhost:8080/api/v1/games/images/${url}`} type="video/webm" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            )
+        } : {
+            original: `http://localhost:8080/api/v1/games/images/${url}`,
+            thumbnail: `http://localhost:8080/api/v1/games/images/${url}`
+        };
+    }) : [];
 
     return (
         <div className='details'>
@@ -40,10 +56,10 @@ function GamePage() {
                 </div>
                 <div className='gamecard'>
                     <div className='screenshots-slider'>
-                        <ImageRender  items={images}
-                                       showPlayButton={false}
-                                       showFullscreenButton={false}
-
+                        <ImageGallery
+                            items={images}
+                            showPlayButton={false}
+                            showFullscreenButton={false}
                         />
                     </div>
                     <div className='leftsection'>
