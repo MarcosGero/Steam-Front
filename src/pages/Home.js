@@ -16,17 +16,6 @@ function Home() { // Pagina a la que se accede una vez se encuentra logueado
             <div className="video-container">
                 <div>
                     <SearchBar/>
-                    <div className='buttonscontainer'>
-                        <ButtonGroup className='buttonsbar' aria-label="buttons">
-                        <Button className='bar1' variant="secondary">Tu tienda</Button>
-                        <Button className='bar1' variant="secondary">Nuevo y destacable</Button>
-                        <Button className='bar1' variant="secondary">Categorías</Button>
-                        <Button className='bar1' variant="secondary">Tienda de puntos</Button>
-                        <Button className='bar1' variant="secondary" href="/noticias">Noticias</Button>
-                        <Button className='bar1' variant="secondary">Laboratorios</Button>
-                        <Form.Control className='searchgame' size="sm" type="text"/>
-                        </ButtonGroup>
-                    </div>
                 </div>
                 <video className="video-background" autoPlay loop muted>
                     <source src={vid} type="video/mp4" />
