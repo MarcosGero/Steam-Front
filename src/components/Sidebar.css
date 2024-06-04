@@ -4,10 +4,8 @@
     color: white;
 
     flex: 1;
-    max-width: 300px;
-    min-width: 300px;
-
-    min-height: 100vh;
+    min-width: 310px;
+    max-width: 310px;
 
     background-image: url('../resources/Steaam.png');
     background-size: cover;
@@ -27,15 +25,15 @@
 
   .toggle-button {
     cursor: pointer;
-    font-size: 40px;
+    font-size: 25px;
     font-weight: 100;
-    margin-left: 260px;
+    margin-left: 285px;
     color: white;
   }
 
   .sidebar h2 {
     padding: 0 60px 8px 20px;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     font-size: 32px;
     font-weight: 600;
     line-height: 30px;
@@ -146,6 +144,37 @@
     margin-bottom: 2px;
   }
 
+  .custom-button-blue {
+    display: block;
+    padding: 10px 0px 10px 15px;
+    background-color: rgba(7, 191, 255, 0.19);
+    color: #07bfff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-bottom: 2px;
+
+    position: relative;
+  }
+
+  .custom-button-blue::before, .custom-button-blue::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 3px;
+  background-color: #07bfff;
+}
+
+  .custom-button-blue span{
+    color: #07bfff;
+    font-weight: 500;
+  }
+
   .custom-button-2 {
     display:flex;
     padding: 10px 10px;
@@ -186,7 +215,7 @@
   .footer {
     padding-left: 20px;
 
-    position: fixed;
+    position: absolute;
     bottom : 0;
     left : 0;
     width: 100%;

@@ -1,12 +1,9 @@
     .news-section {
-        flex-grow: 1;
-        min-height: 100vh;
-
         overflow-y: auto;
+        min-width: calc(100vh - 400px);
     }
 
     .upcoming-events {
-      flex: 1;
       background-color: #21241b;
     }
 
@@ -45,9 +42,6 @@
     }
 
     .news-list {
-      flex: 1 1 300px;
-      min-height: 100vh;
-
       background: #32353e;
       font-family: 'Motiva Sans', Arial, Helvetica, sans-serif;
     }

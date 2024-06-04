@@ -4,7 +4,7 @@ import logo from '../resources/logo_stem.png';
 import logo1 from '../resources/tuerca.png';
 
 function Sidebar() {
-
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [isCollapsed, setCollapsed] = useState(false);
 
     const toggleCollapsed = () => {
@@ -42,7 +42,7 @@ function Sidebar() {
                     <div className="menu-section">
                         <h3>EVENTOS Y NOTICIAS GLOBALES</h3>
 
-                        <button className='custom-button'>
+                        <button className='custom-button-blue'>
                             <span className='button-text'> DESTACADO</span>
                             <span className='button-subtext'>De las mejores fuentes</span>
                         </button>
