@@ -2,6 +2,8 @@ import './gamedetails.css';
 
 
 import React from 'react';
+import SearchBar from '../components/SearchBar';
+
 import "./home.css";
 import vid from './detailsbgvid.mp4'
 import { Form, Button, ButtonGroup, Row, Card } from 'react-bootstrap';
@@ -33,17 +35,7 @@ function GameDetails() { // Pagina a la que se accede una vez se encuentra logue
     ];
     return (
         <div className='details'>
-                    <div className='buttonscontainer'>
-                        <ButtonGroup className='buttonsbar' aria-label="buttons">
-                        <Button className='bar1' variant="secondary">Tu tienda</Button>
-                        <Button className='bar1' variant="secondary">Nuevo y destacable</Button>
-                        <Button className='bar1' variant="secondary">Categorías</Button>
-                        <Button className='bar1' variant="secondary">Tienda de puntos</Button>
-                        <Button className='bar1' variant="secondary">Noticias</Button>
-                        <Button className='bar1' variant="secondary">Laboratorios</Button>
-                        <Form.Control className='searchgame' size="sm" type="text"/>
-                        </ButtonGroup>
-                    </div>
+                    <SearchBar/>
             <div className='detailscentrecont'>
                     <div className='gametitle'>
                         GAME TITLE

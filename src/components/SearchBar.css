@@ -1,0 +1,101 @@
+.buttonscontainer{
+    display: flex;
+    position: absolute;
+    right: 50%;
+    margin-top: 50px;
+    transform: translate(50%, -50%);
+    background-color: #1b3a7c;
+    opacity: 80%;
+    z-index: 1;
+    border-radius: 5px;
+
+}
+
+.searchgame{
+    height: 20px;
+    width: 180px;
+    background-color: #316282 !important;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 5px;
+}
+
+.buttonsbar{
+    height: 40px;
+    width: 940px;
+    
+}
+
+.bar1{
+    background-color: transparent !important;
+    border-color: transparent !important;
+    font-size: 12px !important;
+}
+
+.bar1:hover {
+    background-color: #3c7bab !important;
+}
+
+.rbt{
+    margin-top: 5px;
+    width: 200px;
+    height: 30px;
+}
+
+.rbt-input-main{
+    background-color: #316282 !important;
+}
+
+.ta-item{
+    display: flex;
+    height: 60px !important;
+    width: 428px !important;
+    margin-left: 3px;
+    opacity: 100% !important;
+
+}
+
+.dropdown-menu{
+    width: 428px !important;
+    inset: 0px auto auto auto !important;
+    transform: translate(-238px, 30px) !important;
+    opacity: 100% !important;
+    background-color: rgb(75, 75, 75);
+
+}
+.dropdown-item{
+    padding: 0px !important;
+    opacity: 100% !important;
+    display: flex !important;
+}
+
+.dropdown-item:hover {
+
+    background-color: rgb(97, 97, 97);
+
+}
+
+.searchimage{
+    height: 45px;
+    width: 120px ;
+    background-color: white;
+    margin: 3px;
+    margin-top: 8px !important;
+}
+
+
+.gamename{
+    color: white;
+    margin-top: 8px;
+    margin-left: 5px;
+    font-weight: bold;
+    height: 20px;
+}
+
+.gameprice{
+    font-size: 15px;
+    font-weight: bold;
+    height: 20px;   
+    position: absolute;
+    margin-left: 130px;
+}

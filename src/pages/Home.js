@@ -7,6 +7,7 @@ import i1 from '../resources/gameplay1.jpg'
 import i2 from '../resources/gameplay2.jpg'
 import i3 from '../resources/gameplay3.jpg'
 import i4 from '../resources/gameplay4.jpg'
+import SearchBar from '../components/SearchBar';
 
 
 function Home() { // Pagina a la que se accede una vez se encuentra logueado
@@ -14,17 +15,7 @@ function Home() { // Pagina a la que se accede una vez se encuentra logueado
         <div className='home'>
             <div className="video-container">
                 <div>
-                    <div className='buttonscontainer'>
-                        <ButtonGroup className='buttonsbar' aria-label="buttons">
-                        <Button className='bar1' variant="secondary">Tu tienda</Button>
-                        <Button className='bar1' variant="secondary">Nuevo y destacable</Button>
-                        <Button className='bar1' variant="secondary">Categorías</Button>
-                        <Button className='bar1' variant="secondary">Tienda de puntos</Button>
-                        <Button className='bar1' variant="secondary">Noticias</Button>
-                        <Button className='bar1' variant="secondary">Laboratorios</Button>
-                        <Form.Control className='searchgame' size="sm" type="text"/>
-                        </ButtonGroup>
-                    </div>
+                    <SearchBar/>
                 </div>
                 <video className="video-background" autoPlay loop muted>
                     <source src={vid} type="video/mp4" />
