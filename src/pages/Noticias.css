@@ -4,9 +4,10 @@ html,body {
     margin: 0;
 }
 
-.contenedor{
+.gran-contenedor{
     display: flex;
-    background: black;
+    background: #32353e;
 
     min-height: calc(100vh - 104px);
+    max-height: calc(100vh - 104px);
 }

@@ -11,7 +11,6 @@ import AccountPage from './pages/AccountPage';
 import EmailVerification from './pages/EmailVerification';
 import AvisoEmail from './pages/AvisoEmail';
 import Noticias from './pages/Noticias';
-import Contenedor from './components/test/javascript/granContenedor'
 import PasswordRecoveryPage from "./pages/PasswordRecoveryPage";
 import AvisoRecovery from "./pages/AvisoRecovery";
 import PasswordResetPage from "./pages/PasswordResetPage";
@@ -49,7 +48,6 @@ function App() {
             <Route path="/verificar-email" element={<AvisoEmail/>} />
             <Route path="/verificar-recovery" element={<AvisoRecovery/>} />
             <Route path="/noticias" element={<Noticias/>} />
-            <Route path="/test" element={<Contenedor/>} />
             <Route path="/games/:name" element={<GamePage />} />
           </Routes>
         </Layout>

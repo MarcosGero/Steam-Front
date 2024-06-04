@@ -8,7 +8,7 @@ import Footer from './Footer'
    const location = useLocation();
 
    // Condiciona si la ruta actual es '/noticias'
-   const showFooter = location.pathname != '/test';
+   const showFooter = location.pathname != '/noticias';
 
    return(
     <>

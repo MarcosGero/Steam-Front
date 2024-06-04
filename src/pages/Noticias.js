@@ -5,7 +5,7 @@ import './Noticias.css'
 
 function Noticias() {
   return (
-    <div className="contenedor">
+    <div className="gran-contenedor">
         <Sidebar />
       <NewsSection />
     </div>

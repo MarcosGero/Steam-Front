@@ -4,7 +4,7 @@ import logo from '../resources/logo_stem.png';
 import logo1 from '../resources/tuerca.png';
 
 function Sidebar() {
-
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [isCollapsed, setCollapsed] = useState(false);
 
     const toggleCollapsed = () => {
