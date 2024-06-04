@@ -84,7 +84,7 @@
 }
 
 
-.gamename{
+.searchname{
     color: white;
     margin-top: 8px;
     margin-left: 5px;
@@ -92,7 +92,9 @@
     height: 20px;
 }
 
-.gameprice{
+.searchprice{
+    padding-top: 30px;
+    color: white;
     font-size: 15px;
     font-weight: bold;
     height: 20px;   

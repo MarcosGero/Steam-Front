@@ -43,11 +43,11 @@ function SearchBar() {
                 <div className='searchimage'>
                     
                 </div>
-                <div className='gamename'>
+                <div className='searchname'>
                         {option.name}
                 </div>
-                <div className='gameprice'>
-                        {option.id}
+                <div className='searchprice'>
+                        {option.id }
                 </div>
               </div>
             )}
