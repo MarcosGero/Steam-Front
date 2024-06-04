@@ -1,0 +1,13 @@
+html,body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.gran-contenedor{
+    display: flex;
+    background: #32353e;
+
+    min-height: calc(100vh - 104px);
+    max-height: calc(100vh - 104px);
+}

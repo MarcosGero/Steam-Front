@@ -20,7 +20,7 @@ function Home() { // Pagina a la que se accede una vez se encuentra logueado
                         <Button className='bar1' variant="secondary">Nuevo y destacable</Button>
                         <Button className='bar1' variant="secondary">Categorías</Button>
                         <Button className='bar1' variant="secondary">Tienda de puntos</Button>
-                        <Button className='bar1' variant="secondary">Noticias</Button>
+                        <Button className='bar1' variant="secondary" href="/noticias">Noticias</Button>
                         <Button className='bar1' variant="secondary">Laboratorios</Button>
                         <Form.Control className='searchgame' size="sm" type="text"/>
                         </ButtonGroup>

@@ -6,7 +6,7 @@ function EventItemBig({ title, date, user, logot, description, detail, video }) 
     return (
         <div className="event-item-b">
             <button className='custom-button-b'>
-                <div className='contenedor' >
+                <div className='contengo'>
                     <div className='section-info-b'>
                         <div className='event-info-b'>
                             <img src={logot} alt="logo"/>
@@ -23,7 +23,7 @@ function EventItemBig({ title, date, user, logot, description, detail, video }) 
                 </div>
             </button>
         </div>
-);
+    );
 }
 
 export default EventItemBig;

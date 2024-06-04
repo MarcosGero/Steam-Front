@@ -1,13 +1,12 @@
-// src/pages/NewsPage.js
 import React from 'react';
 import Sidebar from '../components/Sidebar';
 import NewsSection from '../components/SeccionNoticias';
-import '../App.css';
+import './Noticias.css'
 
 function Noticias() {
   return (
-    <div className="App-flexible">
-      <Sidebar />
+    <div className="contenedor">
+        <Sidebar />
       <NewsSection />
     </div>
   );
