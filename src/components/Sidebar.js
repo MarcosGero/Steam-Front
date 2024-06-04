@@ -42,7 +42,7 @@ function Sidebar() {
                     <div className="menu-section">
                         <h3>EVENTOS Y NOTICIAS GLOBALES</h3>
 
-                        <button className='custom-button'>
+                        <button className='custom-button-blue'>
                             <span className='button-text'> DESTACADO</span>
                             <span className='button-subtext'>De las mejores fuentes</span>
                         </button>

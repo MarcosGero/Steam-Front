@@ -144,6 +144,37 @@
     margin-bottom: 2px;
   }
 
+  .custom-button-blue {
+    display: block;
+    padding: 10px 0px 10px 15px;
+    background-color: rgba(7, 191, 255, 0.19);
+    color: #07bfff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-bottom: 2px;
+
+    position: relative;
+  }
+
+  .custom-button-blue::before, .custom-button-blue::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 3px;
+  background-color: #07bfff;
+}
+
+  .custom-button-blue span{
+    color: #07bfff;
+    font-weight: 500;
+  }
+
   .custom-button-2 {
     display:flex;
     padding: 10px 10px;
