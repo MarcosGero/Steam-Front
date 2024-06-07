@@ -2,20 +2,21 @@
     background-color: #182a39;
 }
 .video-container {
-    position: relative !important;
-    width: 100% !important;
-    height: 450px !important; /* Cubre toda la altura del viewport */
+    position: relative;
+    width: 100%;
+    height: 55vh; /* Ajusta la altura para que ocupe toda la altura de la ventana */
+    overflow: hidden;
 }
-  
-  .video-background {
+
+.video-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajusta el video para cubrir todo el espacio */
-    z-index: 0; /* Coloca el video detrás del contenido */
-  }
+    height: 52vh;
+    object-fit: cover; /* Cubre todo el contenedor */
+    object-position: center; /* Centra el video */
+}
 
 .buttonscontainer{
     position: absolute;
@@ -23,7 +24,6 @@
     margin-top: 50px;
     transform: translate(50%, -50%);
     background-color: #1b3a7c;
-    opacity: 80% !important;
     z-index: 1;
 }
 
@@ -38,21 +38,6 @@
     margin-right: 5px;
 }
 
-.buttonsbar{
-    height: 40px;
-    width: 940px;
-    
-}
-
-.bar1{
-    background-color: transparent !important;
-    border-color: transparent !important;
-    font-size: 12px !important;
-}
-
-.bar1:hover {
-    background-color: #3c7bab !important;
-}
 
 .destandrec_container {
     position: relative !important;

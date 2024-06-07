@@ -1,0 +1,20 @@
+.paper {
+    background-color: #142540;
+    color: white;
+    height: 100vh;
+    max-width: 280px;
+    margin: auto;
+}
+
+.list-item {
+    padding: 16px;
+    cursor: pointer;
+}
+
+.list-item:hover {
+    background: linear-gradient(90deg, rgba(20,37,64,1) 0%, rgba(58,123,213,1) 100%);
+}
+
+.list-item-selected {
+    background-color: rgba(20,37,64,0.8);
+}

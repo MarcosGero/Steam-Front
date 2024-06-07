@@ -1,103 +1,167 @@
-.buttonscontainer{
+/* SearchBar.css */
+
+.buttonscontainer {
     display: flex;
     position: absolute;
+    width: 70%;
     right: 50%;
     margin-top: 50px;
     transform: translate(50%, -50%);
-    background-color: #1b3a7c;
-    opacity: 80%;
-    z-index: 1;
+    background: linear-gradient(90deg, #4176b2 0%, #395e8d 50%, #0e305d 100%); /* Degradado horizontal */
+    background-color: #1d4675;
     border-radius: 5px;
-
 }
 
-.searchgame{
+.searchgame {
     height: 20px;
     width: 180px;
     background-color: #316282 !important;
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 5px;
+    text-decoration: none !important;
 }
 
-.buttonsbar{
+.buttonsbar {
     height: 40px;
-    width: 940px;
-    
+    width: 100%;  /* Asegura que use todo el espacio disponible */
+    display: flex;
+    justify-content: space-between;  /* Espacio uniforme entre botones */
+    align-items: center;  /* Alineación vertical central */
 }
 
-.bar1{
+.bar1 {
+    height: 100%;
     background-color: transparent !important;
     border-color: transparent !important;
+    margin: 0!important;
     font-size: 12px !important;
+    flex: 1;  /* Cada botón toma el mismo espacio */
+    text-align: center;
+    text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.5); /* Sombreado de texto */
+    font-weight: bold;
+    padding: 9px 0px 0px 0px;  /* Ajusta el padding para dar espacio entre botones */
+    border: none !important;
 }
 
 .bar1:hover {
-    background-color: #3c7bab !important;
+    background: linear-gradient(to right, rgb(71, 139, 208) 0%, rgba(60, 123, 171, 0) 100%) !important;
+    text-decoration: none !important; 
+    border: none !important; /* Elimina cualquier borde */
+    margin: 0 !important; /* Elimina cualquier margen */
 }
 
-.rbt{
+
+.rbt {
     margin-top: 5px;
     width: 200px;
     height: 30px;
 }
 
-.rbt-input-main{
+.rbt-input-main {
     background-color: #316282 !important;
 }
 
-.ta-item{
+.dropdown-menu {
+    width: 428px !important;
+    inset: 0px auto auto auto !important;
+    transform: translate(-238px, 30px) !important;
+    opacity: 1 !important;
+    background-color: rgb(71, 74, 80) !important;
+    text-decoration: none !important;
+}
+
+.dropdown-item {
+    padding: 0px !important;
+    opacity: 1 !important;
+    display: flex !important;
+}
+.ta-item {
     display: flex;
     height: 60px !important;
     width: 428px !important;
     margin-left: 3px;
+    text-decoration: none !important; 
     opacity: 100% !important;
-
+    background-color: rgb(71, 74, 80) !important;
+    color: white; /* Texto blanco */
 }
 
-.dropdown-menu{
-    width: 428px !important;
-    inset: 0px auto auto auto !important;
-    transform: translate(-238px, 30px) !important;
-    opacity: 100% !important;
-    background-color: rgb(75, 75, 75);
-
-}
-.dropdown-item{
-    padding: 0px !important;
-    opacity: 100% !important;
-    display: flex !important;
+.ta-item:hover {
+    background-color: white !important; /* Fondo blanco al pasar el cursor */
+    color: black !important; /* Texto negro al pasar el cursor */
+    text-decoration: none !important;
 }
 
-.dropdown-item:hover {
-
-    background-color: rgb(97, 97, 97);
-
-}
-
-.searchimage{
-    height: 45px;
-    width: 120px ;
+.searchimage {
+    height: 100%;
+    width: 25%;
     background-color: white;
-    margin: 3px;
-    margin-top: 8px !important;
+    margin: 0px 10px 0px 0px !important;
 }
 
 
-.searchname{
+
+.ta-item:hover .searchname {
+    color: black !important; /* Texto negro al pasar el cursor */
+    text-decoration: none !important;;
+}
+.searchname {
     color: white;
     margin-top: 8px;
-    margin-left: 5px;
+    margin-left: 120px;
     font-weight: bold;
+    position: absolute;
+    font-size: 15px;
     height: 20px;
+    transition: color 0.3s;
 }
 
-.searchprice{
+.searchprice {
     padding-top: 30px;
     color: white;
     font-size: 15px;
-    font-weight: bold;
-    height: 20px;   
+    height: 20px;
     position: absolute;
-    margin-left: 130px;
+    margin-left: 120px;
+    transition: color 0.3s;
+}
+.ta-item:hover .searchprice {
+    color: black !important; /* Texto negro al pasar el cursor */
+    text-decoration: none !important;
+}
+.rbt-menu {
+    background-color: rgb(71, 74, 80) !important;
+    opacity: 1 !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1) !important;
+    z-index: 1050 !important;
+    text-decoration: none !important; 
+}
+
+.rbt-menu .rbt-menu-item {
+    padding: 10px !important;
+    color: #333 !important;
+    background-color: rgb(71, 74, 80) !important;
+    border-bottom: 1px solid #eee !important;
+    text-decoration: none !important; 
+}
+
+
+
+.rbt-menu.dropdown-menu {
+    backdrop-filter: none !important;
+    background-color: rgb(71, 74, 80) !important;
+    opacity: 1 !important;
+    text-decoration: none !important; 
+}
+
+.navbar {
+    z-index: 1040 !important;
+    text-decoration: none !important; 
+}
+
+.rbt-menu-container {
+    background-color: rgb(71, 74, 80) !important;
+    opacity: 1 !important;
+    text-decoration: none !important; 
 }

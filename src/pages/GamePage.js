@@ -7,9 +7,9 @@ import { Button } from 'react-bootstrap';
 import "react-image-gallery/styles/css/image-gallery.css";
 
 import { useParams } from "react-router-dom";
-import Subnavbar from "./Subnavbar";
 import Axios from "axios";
 import ImageGallery from "react-image-gallery";
+import SearchBar from "../components/SearchBar";
 
 function GamePage() {
     const { name } = useParams();
@@ -49,7 +49,7 @@ function GamePage() {
 
     return (
         <div className='details'>
-            <Subnavbar/>
+            <SearchBar/>
             <div className='detailscentrecont'>
                 <div className='gametitle'>
                     {game.name}
