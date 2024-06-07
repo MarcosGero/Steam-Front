@@ -13,11 +13,11 @@ import SearchBar from '../components/SearchBar';
 function Home() { // Pagina a la que se accede una vez se encuentra logueado
     return (
         <div className='home'>
-            <div className="video-container">
+            <div  className="video-container">
                 <div>
                     <SearchBar/>
                 </div>
-                <video className="video-background" autoPlay loop muted>
+                <video   className="video-background" autoPlay loop muted>
                     <source src={vid} type="video/mp4" />
                 </video>
             </div>

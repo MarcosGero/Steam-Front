@@ -1,4 +1,5 @@
 import React from 'react';
+import './menucol.css';
 import { List, ListItem, ListItemText, Paper } from '@mui/material';
 
 const MenuColumn = () => { // Algunas opciones en detalles de pagina
@@ -12,16 +13,21 @@ const MenuColumn = () => { // Algunas opciones en detalles de pagina
   ];
 
   return (
-    
-    <Paper style={{backgroundColor: '#142540',color: 'white', height: '100vh', maxWidth: 280, margin: 'auto' }}>
-      <List component="nav" aria-label="main mailbox folders">
-        {menuItems.map((item, index) => (
-          <ListItem button selected={index === 0} key={item}>
-            <ListItemText primary={item} />
-          </ListItem>
-        ))}
-      </List>
-    </Paper>
+
+      <Paper className="paper">
+        <List component="nav" aria-label="main mailbox folders">
+          {menuItems.map((item, index) => (
+              <ListItem
+                  button
+                  className={index === 0 ? 'list-item list-item-selected' : 'list-item'}
+                  key={item}
+              >
+                <ListItemText primary={item} />
+              </ListItem>
+          ))}
+        </List>
+      </Paper>
+
   );
 };
 
