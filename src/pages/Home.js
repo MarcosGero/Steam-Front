@@ -108,7 +108,7 @@
                             OFERTAS ESPECIALES
                         </div>
                         <div class="cont">
-                        <div class="GAME1">
+                        <div class="GAME1" onClick={()=>navigate('/games/Ghost of Tsushima: VERSION DEL DIRECTOR')}>
                             <div className='offerpic'>
 
                             </div>
@@ -147,7 +147,7 @@
                             <div className='price'>$8.99 USD</div>
                             </div>
                         </div>
-                        <div class="GAME4">
+                        <div class="GAME4" onClick={()=>navigate('/games/EA SPORTS FC 24')}> 
                         <div className='offerpic4'></div>
                         <div className='offtitle'>
                             ¡Oferta del día!

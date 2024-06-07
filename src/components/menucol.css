@@ -1,6 +1,6 @@
 .paper {
-    background-color: #142540;
-    color: white;
+    background-color: #142540 !important;
+    color: white !important;
     height: 100vh;
     max-width: 280px;
     margin: auto;
