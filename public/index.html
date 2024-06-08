@@ -1,93 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta
+          name="description"
+          content="Web site created using create-react-app"
+  />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>Bienvenidos a Steam</title>
+  <style>
+    @font-face {
+      font-family: "Motiva Sans";
+      src: url("MotivaSansRegular.woff.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Bienvenidos a Steam</title>
-    <style>
-      @font-face {
-        font-family: "Motiva Sans";
-        src: url("MotivaSansRegular.woff.ttf") format("truetype");
-        font-weight: normal;
-        font-style: normal;
-      }
+    @font-face {
+      font-family: "Motiva Sans";
+      src: url("MotivaSansBold.woff.ttf") format("truetype");
+      font-weight: bold;
+      font-style: normal;
+    }
 
-      @font-face {
-        font-family: "Motiva Sans";
-        src: url("MotivaSansBold.woff.ttf") format("truetype");
-        font-weight: bold;
-        font-style: normal;
-      }
+    @font-face {
+      font-family: "Motiva Sans";
+      src: url("MotivaSansLight.woff.ttf") format("truetype");
+      font-weight: 300; /* Light */
+      font-style: normal;
+    }
 
-      @font-face {
-        font-family: "Motiva Sans";
-        src: url("MotivaSansLight.woff.ttf") format("truetype");
-        font-weight: 300; /* Light */
-        font-style: normal;
-      }
+    @font-face {
+      font-family: "Motiva Sans";
+      src: url("MotivaSansMedium.woff.ttf") format("truetype");
+      font-weight: 500; /* Medium */
+      font-style: normal;
+    }
 
-      @font-face {
-        font-family: "Motiva Sans";
-        src: url("MotivaSansMedium.woff.ttf") format("truetype");
-        font-weight: 500; /* Medium */
-        font-style: normal;
-      }
+    @font-face {
+      font-family: "Motiva Sans";
+      src: url("MotivaSansExtraBold.woff.ttf") format("truetype");
+      font-weight: 800; /* Extra Bold */
+      font-style: normal;
+    }
 
-      @font-face {
-        font-family: "Motiva Sans";
-        src: url("MotivaSansExtraBold.woff.ttf") format("truetype");
-        font-weight: 800; /* Extra Bold */
-        font-style: normal;
-      }
+    @font-face {
+      font-family: "Motiva Sans";
+      src: url("MotivaSansThin.woff.ttf") format("truetype");
+      font-weight: 100; /* Thin */
+      font-style: normal;
+    }
 
-      @font-face {
-        font-family: "Motiva Sans";
-        src: url("MotivaSansThin.woff.ttf") format("truetype");
-        font-weight: 100; /* Thin */
-        font-style: normal;
-      }
+    @font-face {
+      font-family: "Motiva Sans";
+      src: url("MotivaSansBlack.woff.ttf") format("truetype");
+      font-weight: 900; /* Black */
+      font-style: normal;
+    }
+    
 
-      @font-face {
-        font-family: "Motiva Sans";
-        src: url("MotivaSansBlack.woff.ttf") format("truetype");
-        font-weight: 900; /* Black */
-        font-style: normal;
-      }
-    </style>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    body.top-bg {
+      background-color: #142540; /* Color para la parte superior */
+    }
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    body.bottom-bg {
+      background-color: #181C24; /* Color para la parte inferior */
+    }
+  </style>
+</head>
+<body class="top-bg">
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+<script>
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const bodyHeight = document.body.offsetHeight;
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    if (scrollPosition + windowHeight >= bodyHeight) {
+      // Parte inferior de la página
+      document.body.classList.add('bottom-bg');
+      document.body.classList.remove('top-bg');
+    } else if (scrollPosition === 0) {
+      // Parte superior de la página
+      document.body.classList.add('top-bg');
+      document.body.classList.remove('bottom-bg');
+    } else {
+      // En medio de la página
+      document.body.classList.remove('top-bg');
+      document.body.classList.remove('bottom-bg');
+    }
+  });
+</script>
+</body>
 </html>
