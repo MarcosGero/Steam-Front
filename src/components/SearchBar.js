@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './SearchBar.css';
 import { Form, Button, ButtonGroup } from 'react-bootstrap';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import Axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function SearchBar() {
     const [singleSelections, setSingleSelections] = useState([]);
     const [options, setOptions] = useState([]);
+    const navigate = useNavigate();
 
     const fetchGames = (query) => {
         if (query.length > 0) {
@@ -23,29 +25,47 @@ function SearchBar() {
         }
     };
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter' && singleSelections.length > 0) {
+            const gameName = singleSelections[0].name;
+
+            navigate(`/games/${encodeURIComponent(gameName)}`);
+        }
+    };
+
+    const handleSelection = (selected) => {
+        setSingleSelections(selected);
+        if (selected.length > 0) {
+            const gameName = selected[0].name;
+            
+            navigate(`/games/${encodeURIComponent(gameName)}`);
+        }
+    };
+
     return (
         <>
             <div className='buttonscontainer'>
                 <ButtonGroup className='buttonsbar' aria-label="buttons">
-                    <Button className='bar1' variant="secondary" href='/noticias'>Tu tienda</Button>
-                    <Button className='bar1' variant="secondary" href='/noticias'>Nuevo y destacable</Button>
-                    <Button className='bar1' variant="secondary" href='/noticias'>Categorías</Button>
-                    <Button className='bar1' variant="secondary" href='/noticias'>Tienda de puntos</Button>
+                    <Button className='bar1' variant="secondary" href='/home'>Tu tienda</Button>
+                    <Button className='bar1' variant="secondary" href='/home'>Nuevo y destacable</Button>
+                    <Button className='bar1' variant="secondary" href='/home'>Categorías</Button>
+                    <Button className='bar1' variant="secondary" href='/home'>Tienda de puntos</Button>
                     <Button className='bar1' variant="secondary" href='/noticias'>Noticias</Button>
-                    <Button className='bar1' variant="secondary" href='/noticias'>Laboratorios</Button>
+                    <Button className='bar1' variant="secondary" href='/home'>Laboratorios</Button>
                 </ButtonGroup>
                 <Form.Group className='typeahead-container'>
                     <Typeahead
                         id="basic-typeahead-single"
                         labelKey="name"
-                        onChange={setSingleSelections}
+                        onChange={handleSelection}
                         onInputChange={(text) => fetchGames(text)}
                         options={options}
                         selected={singleSelections}
                         minLength={1}
+                        onKeyDown={handleKeyDown}
                         renderMenuItemChildren={(option, props) => (
                             <div className="ta-item">
-                                <img  className='searchimage' src={`http://localhost:8080/api/v1/games/images/${option.thumbnail}`} alt={option.name} />
+                                <img className='searchimage' src={`http://localhost:8080/api/v1/games/images/${option.thumbnail}`} alt={option.name} />
                                 <div className='searchname'>
                                     {option.name}
                                 </div>
