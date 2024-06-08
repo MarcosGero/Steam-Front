@@ -12,7 +12,7 @@
   font-weight: 350;
   color: white !important;
 }
-/*if hover then turn the text blue and add an underscore**/
+
 .navlink:hover {
   color: #1A9FFF !important;
   text-decoration: underline;
