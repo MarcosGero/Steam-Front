@@ -1,20 +1,37 @@
 .paper {
-    background-color: #142540;
-    color: white;
+    background-color: #142540 !important;
+    color: white !important;
     height: 100vh;
     max-width: 280px;
-    margin: auto;
+    margin: 15px;
+}
+
+.paper span {
+    font-family: 'Motiva Sans', Arial, Helvetica, sans-serif;
+    font-weight: 150;
+    font-size: 1.2rem;
 }
 
 .list-item {
     padding: 16px;
     cursor: pointer;
+    position: relative;
+}
+
+.list-item-selected::before, .list-item-selected::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left : 0;
+    width: 3px;
+    background-color: #07bfff;
 }
 
 .list-item:hover {
-    background: linear-gradient(90deg, rgba(20,37,64,1) 0%, rgba(58,123,213,1) 100%);
+    background: linear-gradient(120deg, rgb(52, 96, 158) 0%, rgb(20, 37, 64) 100%);
 }
 
 .list-item-selected {
-    background-color: rgba(20,37,64,0.8);
+    background: linear-gradient(120deg, rgb(52, 96, 158) 0%, rgb(20, 37, 64) 100%);
 }
