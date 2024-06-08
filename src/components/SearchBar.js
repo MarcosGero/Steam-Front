@@ -29,7 +29,7 @@ function SearchBar() {
         if (event.key === 'Enter' && singleSelections.length > 0) {
             const gameName = singleSelections[0].name;
 
-            navigate(`/games/${encodeURIComponent(gameName)}`);
+            window.location.href = `/games/${encodeURIComponent(gameName)}`;
         }
     };
 
@@ -37,8 +37,8 @@ function SearchBar() {
         setSingleSelections(selected);
         if (selected.length > 0) {
             const gameName = selected[0].name;
-            
-            navigate(`/games/${encodeURIComponent(gameName)}`);
+
+            window.location.href = `/games/${encodeURIComponent(gameName)}`;
         }
     };
 

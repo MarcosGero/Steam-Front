@@ -32,7 +32,7 @@ function GamePage() {
         const isVideo = url.endsWith('.webm');
         return isVideo ? {
             original: `http://localhost:8080/api/v1/games/images/${url}`,
-            thumbnail: placeholder, // Usa un placeholder para los videos
+            thumbnail: placeholder, 
             renderItem: () => (
                 <div className="video-wrapper" key={index}>
                     <video controls autoPlay loop muted>
