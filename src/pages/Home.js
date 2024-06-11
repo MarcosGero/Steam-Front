@@ -108,7 +108,7 @@
                             OFERTAS ESPECIALES
                         </div>
                         <div class="cont">
-                        <div class="GAME1" onClick={()=>navigate('/games/Ghost of Tsushima: VERSION DEL DIRECTOR')}>
+                        <div class="GAME1" onClick={()=>navigate('/games/Ghost of Tsushima')}>
                             <div className='offerpic'>
 
                             </div>
@@ -123,7 +123,7 @@
                             <div className='price'>$30.00 USD</div>
                             </div>
                         </div>
-                        <div class="GAME2">
+                        <div class="GAME2" onClick={()=>navigate('/games/Cyberpunk 2077')}>
                         <div className='offerpic1'>
                             </div>
                             <div className='offer1'>
@@ -137,7 +137,7 @@
                             <div className='price'>$17.99 USD</div>
                             </div>
                         </div>
-                        <div class="GAME3">
+                        <div class="GAME3" onClick={()=>navigate('/games/Hellblade: Senua\'s Sacrifice')}>
                         <div className='offerpic3'></div>
                         <div className='offtitle'>
                             ¡Oferta del día!

@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <React.StrictMode style={{ backgroundColor: '#282c34'}}>
     <App style={{ backgroundColor: '#282c34', minHeight: '100vh' }}/>
   </React.StrictMode>
 );

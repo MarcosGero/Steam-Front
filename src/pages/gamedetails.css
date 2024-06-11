@@ -45,11 +45,14 @@
 }
 .gamecover{
 
-    height: 151px;
-    width: 324px;
-    background-image: url('../resources/game1.png');
-    background-size: cover;
+    height: 40%;
+    width: 100%;
+    align-content: center;
 
+}
+.gamethumbnail{
+    height: 100%;
+    width: 100%;
 }
 .gamedetails{    
     margin-top: 10px;

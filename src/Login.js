@@ -7,7 +7,7 @@ const Login = () => {
     <Container className="mt-5">
       <Row className="justify-content-center">
         <Col md={6}>
-          <Card style={{ width: '18rem' }} className="mx-auto p-4"> {/* Estilo y clases para centrar */}
+          <Card style={{ width: '18rem' }} className="mx-auto p-4">
             <Card.Body>
               <h3 className="text-center mb-4">INICIA SESIÓN CON EL NOMBRE DE LA CUENTA</h3>
               <Form>

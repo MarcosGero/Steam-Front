@@ -12,7 +12,7 @@
   font-weight: 350;
   color: white !important;
 }
-/*if hover then turn the text blue and add an underscore**/
+
 .navlink:hover {
   color: #1A9FFF !important;
   text-decoration: underline;
@@ -62,7 +62,7 @@
     display: flex;
 }
 .rectangular-button2 {
-  background-color: #67707B33; /* Color verde oscuro */
+  background-color: #67707B33;
   border: none;
   color: rgb(229, 221, 221);
     height: 22px !important;
@@ -103,7 +103,7 @@
     padding: 2px 2px!important;
     text-decoration: none !important;
   }
-  /*make the button slighty desaturated when hovering*/
+
   .rectangular-button:hover {
     background-color:  #84b51b;
     color: white;
