@@ -1,7 +1,6 @@
 import './gamedetails.css';
 import React, { useEffect, useState } from 'react';
 import "./home.css";
-import vid from './detailsbgvid.mp4'
 import placeholder from '../resources/video-placeholder.webp';
 import { Button } from 'react-bootstrap';
 import "react-image-gallery/styles/css/image-gallery.css";

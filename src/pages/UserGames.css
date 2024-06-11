@@ -1,0 +1,58 @@
+    html,body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .user-back-game {
+        display: flex;
+        flex-direction: column;
+        background: #1b2838;
+
+        min-height: calc(100vh - 104px - 222px);
+        max-height: calc(100vh - 104px - 222px);
+    }
+
+    .user-header-game {
+        display: flex;
+        background: rgba(58, 62, 71, 0.5);
+    }
+
+    .user-header-game h3 {
+        color: white;
+        font-size: 1.5rem;
+        align-self: center;
+    }
+
+    .user-header-game p {
+        color: #828282;
+        align-self: center;
+        margin-top: 1rem;
+        margin-left: 0.5rem;
+    }
+
+    .user-header-game img{
+        margin: 15px 25px;
+        width: 60px;
+    }
+
+    .user-header-game a {
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #3c97b6;
+    }
+
+    @media (max-width: 768px) {
+        .user-header-game { flex-direction: column;}
+    }
+
+    @media (max-width: 1200px) {
+        .user-header-game { margin: 0 60px;}
+    }
+
+    @media (max-width: 1600px) {
+        .user-header-game { margin: 0 230px;}
+    }
