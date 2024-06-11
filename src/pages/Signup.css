@@ -61,6 +61,6 @@
   }
 
   @font-face {
-    font-family: 'geometris'; /* Nombre de la fuente personalizada */
-    src: url('../resources/geometris.ttf') format('truetype'); /* Ruta relativa a tu archivo TTF */
+    font-family: 'geometris';
+    src: url('../resources/geometris.ttf') format('truetype');
   }

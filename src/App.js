@@ -15,6 +15,7 @@ import PasswordRecoveryPage from "./pages/PasswordRecoveryPage";
 import AvisoRecovery from "./pages/AvisoRecovery";
 import PasswordResetPage from "./pages/PasswordResetPage";
 import GamePage from './pages/GamePage';
+import UserGames from './pages/UserGames';
 
 
 /////////////////TOKEN/////////////////////////////////
@@ -49,6 +50,7 @@ function App() {
             <Route path="/verificar-recovery" element={<AvisoRecovery/>} />
             <Route path="/noticias" element={<Noticias/>} />
             <Route path="/games/:name" element={<GamePage />} />
+            <Route path="/user-games" element={<UserGames />} />
           </Routes>
         </Layout>
       </AuthProvider>

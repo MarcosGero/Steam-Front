@@ -106,8 +106,8 @@
 }
 
 @font-face {
-  font-family: 'Morl-Black'; /* Nombre de la fuente personalizada */
-  src: url('../resources/Morl-Black.ttf') format('truetype'); /* Ruta relativa a tu archivo TTF */
+  font-family: 'Morl-Black';
+  src: url('../resources/Morl-Black.ttf') format('truetype');
 }
 
 .underbanner {

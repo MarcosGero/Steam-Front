@@ -1,9 +1,8 @@
 import './gamedetails.css';
 import React, { useEffect, useState } from 'react';
 import "./home.css";
-import vid from './detailsbgvid.mp4'
 import placeholder from '../resources/video-placeholder.webp';
-import { Button } from 'react-bootstrap';
+import {Button, Image} from 'react-bootstrap';
 import "react-image-gallery/styles/css/image-gallery.css";
 
 import { useParams } from "react-router-dom";
@@ -28,13 +27,13 @@ function GamePage() {
     if (!game) return <div>Loading...</div>;
     const portada = "http://localhost:8080/api/v1/games/images/" + (game.thumbnail);
 
-    const images = game.imageUrl ? game.imageUrl.map(url => {
+    const images = game.imageUrl ? game.imageUrl.map((url, index) => {
         const isVideo = url.endsWith('.webm');
         return isVideo ? {
             original: `http://localhost:8080/api/v1/games/images/${url}`,
-            thumbnail: placeholder, // Usa un placeholder para los videos
+            thumbnail: placeholder, 
             renderItem: () => (
-                <div className="video-wrapper">
+                <div className="video-wrapper" key={index}>
                     <video controls autoPlay loop muted>
                         <source src={`http://localhost:8080/api/v1/games/images/${url}`} type="video/webm" />
                         Your browser does not support the video tag.
@@ -64,7 +63,7 @@ function GamePage() {
                     </div>
                     <div className='leftsection'>
                         <div className='gamecover'>
-                            <image src={portada} />
+                            <Image className='gamethumbnail' src={portada} />
                         </div>
                         <div className='gamedetails'>
                             {game.details}
