@@ -27,6 +27,9 @@ function UserGames () {
                      Reseñas
                  </button>
              </div>
+             <div className='search-game'>
+                 <input className='input-with-icon' placeholder='Buscar un juego' type='text'/>
+             </div>
              <h3> Slice </h3>
          </div>
         </div>

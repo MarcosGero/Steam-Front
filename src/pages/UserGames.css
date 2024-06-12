@@ -85,6 +85,43 @@
         background-color: #3c97b6 !important;
     }
 
+    .search-game input[type="text"] {
+        width: 20%;
+        border-radius: 0;
+        border: none;
+        background-color: rgba(24, 26, 33, .5) !important;
+        color :white;
+        margin-bottom: 30px;
+        margin-top: 15px;
+        font-size: 0.9rem;
+        font-style: italic;
+    }
+
+    .search-game {
+        position: relative;
+    }
+
+    .input-with-icon {
+        padding-left: 30px;
+        background: #2b2d42;
+        border: none;
+        border-radius: 4px;
+        height: 40px;
+        color: #ffffff;
+    }
+
+    .search-game::before {
+        content: '';
+        position: absolute;
+        left: 155px;
+        top: 42%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        background: url('../resources/lupe.png') no-repeat center center;
+        background-size: contain;
+    }
+
     @media (max-width: 768px) {
         .user-header-game { flex-direction: column;}
         .user-body-game { flex-direction: column;}
