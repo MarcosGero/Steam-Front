@@ -9,7 +9,24 @@ function UserGames () {
              <p > » </p>
              <p> <a href=''>Juegos</a> </p>
          </div>
-         <div>
+         <div className="user-body-game" >
+             <div className="button-game">
+                 <button className="button">
+                     Jugados recientemente
+                 </button>
+                 <button className="button button-alt-color">
+                     Todos los juegos
+                 </button>
+                 <button className="button">
+                     Juegos Completados (0)
+                 </button>
+                 <button className="button">
+                     Seguidos
+                 </button>
+                 <button className="button">
+                     Reseñas
+                 </button>
+             </div>
              <h3> Slice </h3>
          </div>
         </div>

@@ -15,12 +15,14 @@
 
     .user-header-game {
         display: flex;
+        margin: 0 230px;
         background: rgba(58, 62, 71, 0.5);
     }
 
     .user-header-game h3 {
         color: white;
         font-size: 1.5rem;
+        font-weight: 500;
         align-self: center;
     }
 
@@ -45,14 +47,55 @@
         color: #3c97b6;
     }
 
+    .user-body-game {
+        background: #1b2838;
+        margin: 25px 260px;
+        padding: 0;
+    }
+
+    .button-game{
+        display: flex;
+        position: relative;
+    }
+
+    .button {
+        background-color: rgba(0, 0, 0, 0.2) !important;
+        border: none;
+        border-radius: 0;
+        cursor: pointer;
+        margin-right: 5px;
+        font-size: 0.9rem;
+    }
+
+    .button-alt-color{
+        background-color: #3c97b6 !important;
+    }
+
+    .button:hover {
+        background-color: #3c97b6 !important;
+    }
+
+    .button-game::before, .button-game::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 6px;
+        background-color: #3c97b6 !important;
+    }
+
     @media (max-width: 768px) {
         .user-header-game { flex-direction: column;}
+        .user-body-game { flex-direction: column;}
     }
 
     @media (max-width: 1200px) {
         .user-header-game { margin: 0 60px;}
+        .user-body-game { margin: 25px 60px;}
     }
 
     @media (max-width: 1600px) {
         .user-header-game { margin: 0 230px;}
+        .user-body-game { margin: 25px 260px;}
     }
