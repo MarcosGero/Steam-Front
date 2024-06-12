@@ -1,4 +1,8 @@
 import './UserGames.css';
+import GameItem from "../components/GameItem";
+import img_1 from "../resources/ejemplo.jpg"
+import img_2 from "../resources/ejemplo_2.jpg"
+import img_3 from "../resources/ejemplo_3.jpg"
 
 function UserGames () {
     return(
@@ -39,7 +43,11 @@ function UserGames () {
              <div className='accesorie-game'>
                  <a> ESTADO DE DESCARGA REMOTA: Sin acceso a tu PC</a>
              </div>
-             <h3> Slice </h3>
+             <div className='contenedor-game'>
+                 <GameItem img={img_1} title='NaissanceE' time='114 minutos' date='11 de oct de 2021'/>
+                 <GameItem img={img_2} title='Despotism 3K' time='113 minutos' date='11 de ago de 2022'/>
+                 <GameItem img={img_3} title='BitBurner' time='70 minutos' date='21 de dic de 2021'/>
+             </div>
          </div>
         </div>
     );

@@ -6,6 +6,7 @@
 
     .user-back-game {
         display: flex;
+        overflow-y: auto;
         flex-direction: column;
         background: #1b2838;
 
@@ -106,7 +107,7 @@
         display: flex;
         color: white;
         margin-top: 25px;
-        margin-left: 390px;
+        margin-left: 370px;
     }
 
     .option-game p {
@@ -131,7 +132,7 @@
     .search-game::before {
         content: '';
         position: absolute;
-        left: 155px;
+        left: 145px;
         top: 42%;
         transform: translateY(-50%);
         width: 24px;
@@ -145,6 +146,10 @@
         text-align: center;
         background-color: rgba(24, 26, 33, .5);
         padding: 12px;
+    }
+
+    .contenedor-game{
+        margin-top: 20px;
     }
 
     @media (max-width: 768px) {

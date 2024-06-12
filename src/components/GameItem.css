@@ -1,0 +1,60 @@
+    .game-item{
+        background-color: rgba(24, 26, 33, .5) !important;
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .game-item-header{
+    }
+
+    .game-item-body{
+        display: block;
+        margin-top: 15px;
+    }
+
+    .game-item-body h3{
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .game-item-header img{
+        padding: 10px;
+        width: 290px;
+    }
+
+    .game-item-info{
+        display: flex;
+    }
+
+    .game-item-info p{
+        display: flex;
+        color: #c1c1c1;
+        margin-top: 10px;
+        margin-bottom: 0;
+        margin-right: 20px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .game-item-params {
+        display: flex;
+        margin-top: 0;
+    }
+
+    .game-item-params p{
+        color: darkgray;
+        font-size: 12px;
+        margin-right: 98px;
+    }
+
+    .game-dropdown{
+
+    }
+
+    .dropbtn{
+        border: none;
+        border-radius: 0;
+        cursor: pointer;
+        padding: 4px;
+        width: 60%;
+    }
