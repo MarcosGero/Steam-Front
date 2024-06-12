@@ -29,6 +29,15 @@ function UserGames () {
              </div>
              <div className='search-game'>
                  <input className='input-with-icon' placeholder='Buscar un juego' type='text'/>
+                 <div className='option-game'>
+                     <img src={require('../resources/tuerca.png')} alt='user'/>
+                     <p><a href='' style={{color: 'white'}}>Tiempo de juego</a></p>
+                     <p><a href='' style={{textDecoration: 'none'}}>Nombre</a></p>
+                     <p><a href='' style={{textDecoration: 'none'}}>Logros completados</a></p>
+                 </div>
+             </div>
+             <div className='accesorie-game'>
+                 <a> ESTADO DE DESCARGA REMOTA: Sin acceso a tu PC</a>
              </div>
              <h3> Slice </h3>
          </div>
