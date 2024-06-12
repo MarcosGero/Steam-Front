@@ -5,10 +5,10 @@ function GameItem ({img, title, time, date}){
     return (
         <div className="game-item">
             <div className='game-item-header'>
-                <img src={img} alt="portada"/>
+                <a href='' ><img src={img} alt="portada"/></a>
             </div>
             <div className='game-item-body'>
-                <h3>{title}</h3>
+                <h3><a href='' >{title}</a></h3>
                 <div className='game-item-info'>
                     <p> TIEMPO TOTAL DE JUEGO </p>
                     <p> ULTIMA SESION</p>
@@ -18,7 +18,10 @@ function GameItem ({img, title, time, date}){
                     <p> {date} </p>
                 </div>
                 <div className="game-dropdown">
-                    <button className="dropbtn">Mi contenido de juego  -></button>
+                    <button className="dropbtn">
+                        <p className='mod'>Mi contenido de juego</p>
+                        <p>v</p>
+                    </button>
                 </div>
             </div>
         </div>

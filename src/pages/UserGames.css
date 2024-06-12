@@ -10,8 +10,8 @@
         flex-direction: column;
         background: #1b2838;
 
-        min-height: calc(100vh - 104px - 222px);
-        max-height: calc(100vh - 104px - 222px);
+        min-height: calc(100vh - 104px);
+        max-height: calc(100vh - 104px);
     }
 
     .user-header-game {
@@ -44,7 +44,7 @@
         text-decoration: none;
     }
 
-    a:hover {
+    .a:hover {
         color: #3c97b6;
     }
 
@@ -108,6 +108,8 @@
         color: white;
         margin-top: 25px;
         margin-left: 370px;
+        position: absolute;
+        right: 0;
     }
 
     .option-game p {
@@ -132,8 +134,8 @@
     .search-game::before {
         content: '';
         position: absolute;
-        left: 145px;
-        top: 42%;
+        left: 148px;
+        top: 55%;
         transform: translateY(-50%);
         width: 24px;
         height: 24px;

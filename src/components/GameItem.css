@@ -22,6 +22,11 @@
         width: 290px;
     }
 
+    .game-item-body a {
+        text-decoration: none;
+        color: white;
+    }
+
     .game-item-info{
         display: flex;
     }
@@ -52,9 +57,24 @@
     }
 
     .dropbtn{
+        display:flex;
         border: none;
         border-radius: 0;
         cursor: pointer;
         padding: 4px;
         width: 60%;
+
+        background-color: rgba(58, 64, 74, .5) !important;
+    }
+
+    .dropbtn p {
+        margin-bottom : 0;
+    }
+
+    .mod{
+        margin-right: 30px;
+    }
+
+    .dropbtn:hover{
+        background-color: rgba(149, 150, 159, 0.5) !important;
     }

@@ -4,6 +4,8 @@ import img_1 from "../resources/ejemplo.jpg"
 import img_2 from "../resources/ejemplo_2.jpg"
 import img_3 from "../resources/ejemplo_3.jpg"
 
+
+
 function UserGames () {
     return(
         <div className="user-back-game">
