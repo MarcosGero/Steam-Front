@@ -11,13 +11,13 @@ import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import axios from "axios";
 import {API_URL} from "../config/env";
+import {Avatar} from "@mui/material";
 
 // {user.name}
 
 /*
     {games.map(game => (
         <GameItem
-           key={games._id}
            img={`http://localhost:8080/api/v1/games/images/${games.thumbnail}`}
            title={games.name}
            time={games.playTime}
@@ -30,6 +30,8 @@ function UserGames () {
 
     const [games, setGames] = useState([]);
     const [user, setUser] = useState({});
+    const userImage = localStorage.getItem("local-picture");
+    const imageFormat = localStorage.getItem("local-format");
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -44,22 +46,34 @@ function UserGames () {
         fetchUserData();
     }, []);
 
-    useEffect(() => {
+    /*useEffect(() => {
 
-        Axios.get(API_URL + 'users/'+user._getId+'/games')
+        Axios.get(API_URL + 'users/me/games')
             .then(response => {
                 setGames(response.data);
             })
             .catch(error => {
                 console.error('Hubo un error al recuperar los juegos del usuario!', error);
             });
-    }, []);
+    }, []);*/
 
     return(
         <div className="user-back-game">
          <div className="user-header-game">
-             <img className="user-image" src={require('../resources/v3_1.jpg')} alt='user'/>
-             <h3> <a href=''>UserName1 (*)</a> </h3>
+             <Avatar
+                 src={`data:${imageFormat};base64,${userImage}`}
+                 alt="User"
+                 sx={{
+                     borderRadius: 1,
+                     width: '60px',
+                     margin: '15px 25px',
+                     borderStyle: 'solid',
+                     borderWidth: '1px',
+                     boxShadow: '0 0 0 1px gray',
+                     borderColor: 'black'
+                 }}
+             />
+             <h3> <a href=''>{user.userName}</a> </h3>
              <p > » </p>
              <p> <a href=''>Juegos</a> </p>
          </div>
