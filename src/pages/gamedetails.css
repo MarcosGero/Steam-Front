@@ -1,5 +1,35 @@
-.details{
-    background-color: #182a39;    
+.details {
+    background-size: 100% 100%, 5px 5px;
+    background: linear-gradient(to right, #141c2d, #1e3549, #162331);
+    overflow: hidden; /* Hide any overflow from the pseudo-element */
+}
+.details::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent; /* Transparent background */
+    pointer-events: none; /* Ensure the pseudo-element does not interfere with interactions */
+    z-index: 1;
+}
+
+.details::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    width: 3px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.69);
+    border-radius: 50%;
+    box-shadow:
+            100px 50px rgba(255, 255, 255, 0.63),
+            300px 120px rgba(255, 255, 255, 0.66),
+            600px 40px rgba(255, 255, 255, 0.65),
+            1000px 20px rgba(255, 255, 255, 0.63),
+            2000px 20px rgba(255, 255, 255, 0.63);
 }
 
 .gamecard{
@@ -24,10 +54,12 @@
     width: 100%;
     height: 100%;
 }
-
+.first-image {
+    opacity: 0.3; /* Adjust opacity for transparency */
+}
 .detailscentrecont{
-    margin-left: 25.5% !important;
-    padding-top: 130px;
+    margin-left: 20.5% !important;
+    padding-top: 100px;
 }
 .gametitle{
     margin-left: 0px;
@@ -74,7 +106,7 @@
     margin-top: 30px;
     width: 616px;
     height: 72px;
-    background-color: rgb(75, 75, 75);
+    background: linear-gradient(to right, #404348, #5b7896);
     color: rgb(206, 206, 206);
     padding: 20px;    
     font-size: 20px;
@@ -87,27 +119,31 @@
     display: flex;
     align-items: center;
     padding-left: 10px;
-    width: 256px;
+    width: 300px;
     height: 36px;
     background-color: black;
     z-index: 2;
-    margin-left: 330px;
+    margin-left: 290px;
     margin-top: 80px;
 }
 
 .purchaseprice{
     color: white;
+    width: 40%;
 }
 
 .purchasecart{
-    margin-left: 30px;
+    margin-left: 15px;
+    margin-right: 5px;
+    padding-bottom: 9px;
     display: flex;
     align-items: center;
-    padding-left: 10px;
-    background-color: greenyellow;
-    color: black;
-    width: 153px;
-    height: 32px;
+    text-align: center;
+    background: linear-gradient(to right, #61be2d, #76c749);
+    color: rgba(245, 245, 245, 0.96);
+    text-shadow: 2px 1px 4px rgba(0, 0, 0, 1); /* Adding text shadow */
+    width: 70%;
+    height: 80%;
     border-radius: 3px;
     border: transparent !important;
 }

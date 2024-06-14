@@ -1,9 +1,9 @@
 import React from "react";
 import './GameItem.css';
 
-function GameItem ({img, title, time, date}){
+function GameItem ({img, title, time, date, onClick}){
     return (
-        <div className="game-item">
+        <div className="game-item" onClick={onClick}>
             <div className='game-item-header'>
                 <a href='' ><img src={img} alt="portada"/></a>
             </div>

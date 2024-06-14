@@ -92,7 +92,7 @@ function GamePage() {
                     </div>
                     <div className='purchasebutton'>
                         <div className='purchaseprice'>
-                            {game.price} USD
+                            { game.price ? (game.price + ' USD'):('Free to play')}
                         </div>
                         <Button className='purchasecart' onClick={handleAddToCart}>
                             Agregar al carrito

@@ -3,7 +3,8 @@
 .buttonscontainer {
     display: flex;
     position: absolute;
-    width: 50.7%;
+    width: 60.7%;
+    margin-left: -120px;
     margin-top: 50px;
     transform: translate(50%, -50%);
     background: linear-gradient(90deg, #4176b2 0%, #395e8d 50%, #0e305d 100%); /* Degradado horizontal */

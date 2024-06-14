@@ -71,7 +71,7 @@ function SearchBar() {
                                     {option.name}
                                 </div>
                                 <div className='searchprice'>
-                                    {option.price}
+                                    { option.price ? (option.price + ' USD'):('Free to play')}
                                 </div>
                             </div>
                         )}
