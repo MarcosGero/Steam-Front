@@ -15,7 +15,6 @@
     pointer-events: none; /* Ensure the pseudo-element does not interfere with interactions */
     z-index: 1;
 }
-
 .details::before {
     content: '';
     position: absolute;
@@ -50,7 +49,6 @@
     height: 0;
     overflow: hidden;
 }
-
 .video-wrapper video {
     position: absolute;
     top: 0;
@@ -73,12 +71,10 @@
     font-family: 'Motiva Sans', sans-serif;
     font-size: 26px;
 }
-
 .screenshots-slider{
     width: 600px;
     height: 432px;
 }
-
 .leftsection{
     width: 324px;
     height: 444px;
@@ -100,13 +96,11 @@
     font-size: 13px;
     color: rgb(206, 206, 206);
 }
-
 .gamedate{
     margin-top: 10px;
     font-size: 13px;
     color: #6d80a2;
 }
-
 .purchasecont{
     padding-bottom: 100px;
 }
@@ -122,7 +116,6 @@
     border-radius: 10px;
     z-index: 1;
 }
-
 .purchasebutton{
     position: absolute;
     display: flex;
@@ -135,12 +128,10 @@
     margin-left: 290px;
     margin-top: 80px;
 }
-
 .purchaseprice{
     color: white;
     width: 40%;
 }
-
 .purchasecart{
     margin-left: 15px;
     margin-right: 5px;
@@ -160,21 +151,17 @@
     background-color: rgb(193, 255, 99) !important;
     color: rgb(95, 95, 95);
 }
-
 .aboutcont {
     margin-top: 100px;
 }
-
 .abouttitle{
     color: white;
 }
-
 .aboutvid{
     margin-top: 15px;
     height: 260px;
     width: 616px;
 }
-
 .video {
     top: 0;
     left: 0;
@@ -182,17 +169,65 @@
     height: 100%;
     object-fit: fill; /* Ajusta el video para cubrir todo el espacio */
   }
-
 .detailscont{
     margin-top: 20px;
     width: 616px;
     color: rgb(163, 163, 163);
     padding-bottom: 50px;
 }
-
 .image-gallery-icon{
     
     width: 120px !important;
     height: 120px !important;
     padding: 0 !important;
+}
+
+.flotante-c{
+    background-color: #2b2d42;
+    width: 635px;
+    height: auto;
+}
+
+.flotante-s{
+    margin-left:-10px;
+    margin-top: 100px;
+}
+
+.f-c{
+    display:flex;
+    padding: 20px;
+}
+
+.f-c img{
+    width: 200px;
+    height: 100px;
+}
+
+.f-c-2 img{
+    width: 20px;
+    height: 20px;
+}
+
+.f-c-c{
+    display: flex;
+}
+
+.dropbtn-2{
+    display:flex;
+    height: 40px;
+}
+
+.flotante-footer{
+    display:flex;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.cart-detail{
+    display:flex;
+    color:gray;
+    position: relative;
+    right: 0;
+    bottom: 0;
 }

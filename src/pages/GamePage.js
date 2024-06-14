@@ -15,7 +15,7 @@ function GamePage() {
     const [game, setGame] = useState(null);
     const [firstImageUrl, setFirstImageUrl] = useState('');
     const [showModal, setShowModal] = useState(false);
-    const [modalMessage, setModalMessage] = useState('');
+    const [modalMessage, setModalMessage] = useState(false);
 
     useEffect(() => {
         Axios.get(`games/name/${name}`)
@@ -33,11 +33,11 @@ function GamePage() {
     const handleAddToCart = () => {
         Axios.post(`user/me/carrito/${game.name}`)
             .then(response => {
-                setModalMessage('Juego agregado al carrito correctamente.');
+                setModalMessage(true);
                 setShowModal(true);
             })
             .catch(error => {
-                setModalMessage('Hubo un error al agregar el juego al carrito.');
+                setModalMessage(false);
                 setShowModal(true);
                 console.error('There was an error adding the game to the cart!', error);
             });
@@ -130,17 +130,54 @@ function GamePage() {
                     </div>
                 </div>
             </div>
-            <Modal show={showModal} onHide={() => setShowModal(false)}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Resultado</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>{modalMessage}</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={() => setShowModal(false)}>
-                        Cerrar
-                    </Button>
-                </Modal.Footer>
+
+            <Modal className="flotante-s" show={showModal} onHide={() => setShowModal(true)}>
+                <div className="flotante-c">
+                    <div className="flotante-h"> X </div>
+                    <Modal.Body className="flotante-b">
+                        {modalMessage ? (
+                            <>
+                                <h2>¡Agregado a tu carrito!</h2>
+                                <div className="f-c">
+                                    <img src={require('../resources/ico_3.jpg')}/>
+                                    <div className="f-c-2">
+                                        <h3>Hellblade: Senua's Sacrifice</h3>
+                                        <img src={require('../resources/ico_1.jpg')}/>
+                                        <p>$0.50</p>
+                                        <div className="f-c-c">
+                                            <div className="game-dropdown">
+                                                <button className="dropbtn-2">
+                                                    <p className='mod'>Para mi cuenta</p>
+                                                    <p>v</p>
+                                                </button>
+                                            </div>
+                                            <div className="cart-detail">
+                                                <p><a>Agregar</a></p>
+                                                <p>|</p>
+                                                <p><a>Eliminar</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                <h2>Algo salio mal</h2>
+                                <p>Hubo un error al agregar el juego al carrito</p>
+                            </>
+                        )}
+                    </Modal.Body>
+                    <div className="flotante-footer">
+                        <Button variant="secondary" onClick={() => setShowModal(false)}>
+                            Seguir comprando
+                        </Button>
+                        <Button variant="secondary" onClick={() => setShowModal(false)}>
+                            Ver mi carrito
+                        </Button>
+                    </div>
+                </div>
             </Modal>
+
         </div>
     );
 }
