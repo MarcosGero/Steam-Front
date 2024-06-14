@@ -44,7 +44,7 @@ function Cart() {
                                     </div>
                                     <div className='priceanderase'>
                                         <div className='gamePrice'>
-                                            ${game.price}>
+                                            ${game.price}
                                         </div>
                                         <a className='eraseButton'>Eliminar</a>
                                     </div>

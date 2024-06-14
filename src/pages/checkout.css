@@ -30,6 +30,10 @@
 .contPay{
     width: 70rem;
     height: 40rem;   
+    padding-top: 4rem;
+    padding-left: 10rem;
+    margin-top: 60px;
+    position: relative !important;
 }
 
 .paymentmeth{
@@ -86,18 +90,13 @@
 .gamedesc{
     display: flex;
     height: 75px;
-    width: 610px;
+    width: 616px;
     padding: 15px;
     background-color: #13202c;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 }
 
-.totalandsub{
-    height: 75px;
-    width: 610px;
-    background-color: #13202c;
 
-}
 .gamedescImg{
     height: 45px;
     width: 120px;
@@ -106,12 +105,213 @@
 
 .gameprice1{
     color: white;
-    font-size: 13px;
+    font-size: 12px;
     margin-top: 11px;
-    margin-left: 320px;
+    margin-left: 300px;
 }
 
 .contPay2{
+    padding-top: 4rem;
+    padding-left: 10rem;
+    margin-top: 60px;
     display: flex;
     flex-wrap: wrap;
+}
+
+
+
+.checktabs{
+    width: 50%;
+    height: 104px;
+    
+    display: flex;
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 30px;
+    padding-left: 50px;
+    
+}
+
+.infopay{
+    color: white;
+    width: 135px;
+    height: 33px;
+    background-color: #5dc4f0;
+    font-size: 12px;
+    padding: 8px;
+}
+
+
+.arrow{
+    height: 33px;
+margin-left: 20px;
+margin-right: 20px;
+color: white;
+padding-top: 7px;
+}
+
+.revcomp{
+    width: 135px;
+    height: 33px;
+    font-size: 12px;
+    padding: 8px;
+    color: white;
+
+}
+
+
+.infopay1{
+    color: white;
+    width: 135px;
+    height: 33px;
+    font-size: 12px;
+    padding: 8px;
+}
+
+
+.revcomp1{
+    background-color: #5dc4f0;
+    width: 135px;
+    height: 33px;
+    font-size: 12px;
+    padding: 8px;
+    color: white;
+
+}
+
+
+.subandtot{
+    height: 127px;
+    width: 616px;
+    background-color: #13202c;
+    padding-top: 30px;
+}
+
+.precio{
+    color: white;
+    font-size: 12px;
+    margin-left: 400px;
+}
+
+.precio1{
+    color: white;
+    font-size: 12px;
+    margin-left: 419px;
+}
+
+.subtot{
+    display: flex;
+    color: white;
+    font-size: 12px;
+    width: 552px;
+    height: 30px;
+    border-bottom: 2px solid #ffffff;
+
+    margin-left: 5%;
+    padding-left: 20px;
+
+}
+
+.tot{
+    margin-top: 10px;
+    display: flex;
+    width: 552px;
+    color: white;
+    font-size: 12px;
+    margin-left: 5%;
+    padding-left: 20px;
+}
+
+.confirmation{
+    margin-top: 5px;
+    height: 218px;
+    width: 616px;
+    background-color: #13202c;    
+    margin-bottom: 100px;
+}
+
+.uppersec{
+    margin-left: 14px;
+    width: 590px;
+    height: 80px;
+    border-bottom: 2px solid #ffffff;
+
+}
+
+.upcont{
+    padding-top: 10px;
+    margin-left: 20px;
+    display: flex;
+    width: 590px;
+    height: 40px;
+}
+
+.lowcont{
+    padding-top: 10px;
+    margin-left: 20px;
+    display: flex;
+    width: 590px;
+    height: 40px;
+}
+.t1{
+    color: white;
+    font-size: 12px;
+}
+
+.t2{
+    color: white;
+    font-size: 12px;
+}
+
+.paymentmethod{
+    margin-left: 60px;
+    font-size: 12px;
+    color: greenyellow;
+}
+
+.steamacc{
+    margin-left: 60px;
+
+    font-size: 12px;
+    color: white;
+}
+
+.lowersec{
+    
+    display: flex;
+}
+
+#cbox1{
+    margin-left: 20px;
+    height: 30px;
+    margin-top: 20px;
+    
+}
+
+.terms{
+    color: white;
+    font-size: 14px;
+    margin-top: 24px;
+    margin-left: 20px;
+
+
+}
+
+#confirmationbutt{
+    width: 90px;
+    height: 30px;
+    background-color: rgb(126, 187, 35);
+    border: transparent ;
+    margin-top: 60px;
+    margin-left: 80px;
+
+}
+
+
+.compensteam{
+    margin-top: 10px;
+    color: white;
+    font-size: 13px;
 }

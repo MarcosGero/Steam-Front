@@ -18,6 +18,8 @@ import GamePage from './pages/GamePage';
 import UserGames from './pages/UserGames';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import ConfirmPurchase from './pages/ConfirmPurchase';
+
 
 
 /////////////////TOKEN/////////////////////////////////
@@ -55,6 +57,8 @@ function App() {
             <Route path="/user-games" element={<UserGames />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/confirm" element={<ConfirmPurchase />} />
+
 
           </Routes>
         </Layout>

@@ -8,15 +8,23 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
 
+
 function Checkout() {
     const navigate = useNavigate();
     return (
         <div className='checkcont'>
             <div className='checkout'>
-                        <Tabs
-                            defaultActiveKey="inf"
-                            >
-                            <Tab  eventKey="inf" title="Información del pago">
+                <div className='checktabs'> 
+                    <div className='infopay'>
+                        Información del pago    
+                    </div>
+                    <div className='arrow'>
+                        ►
+                    </div>
+                    <div className='revcomp'>
+                        Revisión + Compra
+                    </div>
+                </div>
                                 <div className='contPay'>
                                 <div className='payment-title'>
                                     MÉTODO DE PAGO
@@ -44,39 +52,7 @@ function Checkout() {
                                     </Button>
                                 </div>
                             
-                        </div>
-                            </Tab>
-                            <Tab eventKey="profile" title="Revisión + Compra">
-                                    
-                                <div className='contPay2'>
-                                    <div className='gamedesc'>
-                                        <div className='gamedescImg'>
-
-                                        </div>
-                                        <div className='gameTitle'>
-                                            GameTitle
-                                        </div>
-                                        
-                                        <div className='gameprice1'>
-                                            $20.22
-                                        </div>                       
-                                    </div>
-                                    <div className='totalPrice'>
-                                        <div className='totalPriceTitle'>
-                                            <div className='totalEstimado'>
-                                            Total estimado:   
-                                            </div> 
-                                            <div className='gamePrice'> $20.22 </div>
-                                        </div>
-                                        <Button className='cartContinue'>
-                                            Continuar con la compra
-                                        </Button>
-                                    </div>
-                                    
-                                </div>
-                            </Tab>
-                        </Tabs>
-                        
+                        </div>                        
             </div>
         </div>
     );
