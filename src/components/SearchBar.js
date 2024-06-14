@@ -44,6 +44,7 @@ function SearchBar() {
 
     return (
         <>
+            
             <div className='buttonscontainer'>
                 <ButtonGroup className='buttonsbar' aria-label="buttons">
                     <Button className='bar1' variant="secondary" href='/home'>Tu tienda</Button>

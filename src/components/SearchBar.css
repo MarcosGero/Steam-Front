@@ -3,13 +3,13 @@
 .buttonscontainer {
     display: flex;
     position: absolute;
-    width: 70%;
-    right: 50%;
+    width: 50.7%;
     margin-top: 50px;
     transform: translate(50%, -50%);
     background: linear-gradient(90deg, #4176b2 0%, #395e8d 50%, #0e305d 100%); /* Degradado horizontal */
     background-color: #1d4675;
     border-radius: 5px;
+    z-index: 1;
 }
 
 .searchgame {

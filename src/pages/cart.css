@@ -1,0 +1,92 @@
+.contCar{
+    width: 100%;
+    margin-left: 25%;
+    padding-left: 6px;
+    margin-bottom: 200px;
+}
+
+.cartTitle{
+    color: white;
+    font-size: 20px;
+    padding-top: 100px;
+    font-weight: bold;
+}
+
+.gameCont{
+    display: flex;
+    height: 143px;
+    width: 610px;
+    padding: 15px;
+    background-color: #13202c;
+    margin-bottom: 30px;
+}
+
+.gameImg{
+    width: 200px;
+    height: 93.47px;
+    background-color: black;
+}
+
+.gameTitle{
+    margin-left: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.priceanderase{
+    text-align: right;
+    margin-top: 65px;
+    margin-left: 230px;
+}
+
+.gamePrice{
+    font-weight: bold;
+    font-size: 17px;
+    color:white;
+    
+}
+
+.eraseButton{
+    color: grey !important;
+    margin-top: 93px;
+}
+
+.cartContent{
+    display: flex;
+    margin-top: 30px;
+}
+
+
+
+.totalPrice{
+    height: 150px;
+    width: 310px;
+    margin-left: 50px;
+    background-color: #13202c;
+    padding: 15px;
+    
+}
+
+.totalPriceTitle{
+    display: flex;
+    color: white;
+    font-weight: bold;
+}
+
+.totalEstimado{
+    margin-right: 110px;
+}
+
+.cartContinue{
+    margin-top: 50px;
+    background-color:  #0d82d6 !important;
+}
+
+.seguirComprando{
+    width: 168px;
+    height: 32px;
+    background-color:  #263039 !important;
+    font-size: 14px;
+    border-color: transparent;
+
+}

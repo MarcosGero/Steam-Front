@@ -16,6 +16,9 @@ import AvisoRecovery from "./pages/AvisoRecovery";
 import PasswordResetPage from "./pages/PasswordResetPage";
 import GamePage from './pages/GamePage';
 import UserGames from './pages/UserGames';
+import Cart from './pages/Cart';
+import Cart from './pages/Checkout';
+
 
 
 /////////////////TOKEN/////////////////////////////////
@@ -51,6 +54,7 @@ function App() {
             <Route path="/noticias" element={<Noticias/>} />
             <Route path="/games/:name" element={<GamePage />} />
             <Route path="/user-games" element={<UserGames />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </Layout>
       </AuthProvider>
