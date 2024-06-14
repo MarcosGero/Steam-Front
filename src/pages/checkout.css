@@ -1,0 +1,117 @@
+.nav-tabs {
+    height: 104px !important;
+    width: 60rem;  
+    border-color: transparent;
+    padding-top: 50px;    
+}
+
+.checkout{
+    background-color: #142540;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center !important;
+    margin-left: 20rem;
+}
+
+.checkcont{
+    background-color: #142540;
+
+}
+
+.payment-title{
+    color: white;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-weight: bolder;
+    font-size: 20px;
+
+}
+
+.contPay{
+    width: 70rem;
+    height: 40rem;   
+}
+
+.paymentmeth{
+    height: 296px;
+    width: 616px;
+    background-color: #0a1527;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+.payopt{
+    width: 250px;
+    height: 33px;
+}
+
+.pay1{
+    color: white;
+}
+
+#dropdown-basic{
+    margin-top: 20px;
+    color: white !important;
+    background-color: #0d131b;
+    border-color: white !important;
+}
+
+.tex2{
+    margin-top: 50px;
+    color: white;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+.tex3{
+    color: white;
+    font-size: 12px;
+}
+
+.continuar{
+    height: 30px;
+    width: 98px;
+    color: white;
+    background-color: #6e8b04;
+    border: white;
+    margin-top: 30px;
+    margin-left: 470px;
+}
+
+.continuar:hover{
+    background-color: #99C203;
+}
+
+
+.gamedesc{
+    display: flex;
+    height: 75px;
+    width: 610px;
+    padding: 15px;
+    background-color: #13202c;
+    margin-bottom: 30px;
+}
+
+.totalandsub{
+    height: 75px;
+    width: 610px;
+    background-color: #13202c;
+
+}
+.gamedescImg{
+    height: 45px;
+    width: 120px;
+    background-color: black;
+}
+
+.gameprice1{
+    color: white;
+    font-size: 13px;
+    margin-top: 11px;
+    margin-left: 320px;
+}
+
+.contPay2{
+    display: flex;
+    flex-wrap: wrap;
+}
