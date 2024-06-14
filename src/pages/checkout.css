@@ -203,11 +203,11 @@ padding-top: 7px;
 
 .subtot{
     display: flex;
-    color: white;
+    color: #39739c;
     font-size: 12px;
     width: 552px;
     height: 30px;
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 2px solid #212e3c;
 
     margin-left: 5%;
     padding-left: 20px;
@@ -218,7 +218,7 @@ padding-top: 7px;
     margin-top: 10px;
     display: flex;
     width: 552px;
-    color: white;
+    color: #39739c;
     font-size: 12px;
     margin-left: 5%;
     padding-left: 20px;
@@ -236,7 +236,7 @@ padding-top: 7px;
     margin-left: 14px;
     width: 590px;
     height: 80px;
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 2px solid #194660;
 
 }
 
@@ -256,12 +256,12 @@ padding-top: 7px;
     height: 40px;
 }
 .t1{
-    color: white;
+    color: #39739c;
     font-size: 12px;
 }
 
 .t2{
-    color: white;
+    color: #39739c;
     font-size: 12px;
 }
 
