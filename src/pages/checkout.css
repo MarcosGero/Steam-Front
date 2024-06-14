@@ -27,14 +27,6 @@
 
 }
 
-.contPay{
-    width: 70rem;
-    height: 40rem;   
-    padding-top: 4rem;
-    padding-left: 10rem;
-    margin-top: 60px;
-    position: relative !important;
-}
 
 .paymentmeth{
     height: 296px;
@@ -80,6 +72,7 @@
     border: white;
     margin-top: 30px;
     margin-left: 470px;
+    padding-top: 2px;
 }
 
 .continuar:hover{
@@ -112,22 +105,29 @@
 
 .contPay2{
     padding-top: 4rem;
-    padding-left: 10rem;
+    padding-left: 2rem;
     margin-top: 60px;
     display: flex;
     flex-wrap: wrap;
 }
 
+.contPay{
+    width: 70rem;
+    height: 40rem;
+    padding-top: 4rem;
+    padding-left: 3rem;
+    margin-top: 20px;
+    position: relative !important;
+}
 
 
 .checktabs{
     width: 50%;
     height: 104px;
-    
     display: flex;
     position: absolute;
-    top: 17%;
-    left: 50%;
+    top: 25%;
+    left: 47%;
     transform: translate(-50%, -50%);
     padding-top: 30px;
     padding-left: 50px;
@@ -306,6 +306,7 @@ padding-top: 7px;
     border: transparent ;
     margin-top: 60px;
     margin-left: 80px;
+    padding-top: 3px;
 
 }
 

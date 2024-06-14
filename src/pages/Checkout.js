@@ -47,7 +47,7 @@ function Checkout() {
                                     <div className='tex3'>
                                         Podrás revisar tu pedido antes de que se procese.
                                     </div>
-                                    <Button className='continuar'>
+                                    <Button className='continuar' onClick={()=>navigate('/confirm')}>
                                         Continuar
                                     </Button>
                                 </div>
