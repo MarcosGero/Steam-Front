@@ -2,7 +2,7 @@ import './gamedetails.css';
 import React, { useEffect, useState } from 'react';
 import "./home.css";
 import placeholder from '../resources/video-placeholder.webp';
-import { Button, Image } from 'react-bootstrap';
+import {Button, Image, Modal} from 'react-bootstrap';
 import "react-image-gallery/styles/css/image-gallery.css";
 
 import { useParams } from "react-router-dom";
@@ -31,7 +31,7 @@ function GamePage() {
     }, [name]);
 
     const handleAddToCart = () => {
-        Axios.post('user/me/carrito', { gameId: game.id })
+        Axios.post(`user/me/carrito/${game.name}`)
             .then(response => {
                 setModalMessage('Juego agregado al carrito correctamente.');
                 setShowModal(true);
@@ -130,6 +130,17 @@ function GamePage() {
                     </div>
                 </div>
             </div>
+            <Modal show={showModal} onHide={() => setShowModal(false)}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Resultado</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>{modalMessage}</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={() => setShowModal(false)}>
+                        Cerrar
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </div>
     );
 }

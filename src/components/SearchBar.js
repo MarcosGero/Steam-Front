@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import './SearchBar.css';
 import { Form, Button, ButtonGroup } from 'react-bootstrap';
 import { Typeahead } from 'react-bootstrap-typeahead';
@@ -9,8 +9,23 @@ import { useNavigate } from 'react-router-dom';
 function SearchBar() {
     const [singleSelections, setSingleSelections] = useState([]);
     const [options, setOptions] = useState([]);
+    const [hasCartItems, setHasCartItems] = useState(false);
     const navigate = useNavigate();
 
+    useEffect(() => {
+        const fetchCartItems = async () => {
+            try {
+                const response = await Axios.get(`/user/me/carrito`);
+                if (response.data.length > 0) {
+                    setHasCartItems(true);
+                }
+            } catch (error) {
+                console.error('Error fetching cart items:', error);
+            }
+        };
+
+        fetchCartItems();
+    }, []);
     const fetchGames = (query) => {
         if (query.length > 0) {
             Axios.get(`http://localhost:8080/api/v1/games/search/${query}`)
@@ -44,7 +59,15 @@ function SearchBar() {
 
     return (
         <>
-            
+            {hasCartItems && (
+                <Button
+                    variant="warning"
+                    className="cart-button"
+                    onClick={() => navigate('/cart')}
+                >
+                    Ver Carrito
+                </Button>
+            )}
             <div className='buttonscontainer'>
                 <ButtonGroup className='buttonsbar' aria-label="buttons">
                     <Button className='bar1' variant="secondary" href='/'>Tu tienda</Button>
