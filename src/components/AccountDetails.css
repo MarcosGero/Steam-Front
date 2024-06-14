@@ -1,9 +1,22 @@
-.layout {
-    min-height: 100vh;
-    background-color: #142540;
-    padding-top: 5vh;
+  .layout {
+      min-height: 100vh;
+      background-color: #142540;
+      padding-top: 5vh;
   }
-  
+
+  .layout h2 {
+    font-family: 'Motiva Sans', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 2.8rem;
+    letter-spacing: .03em;
+  }
+
+  .layout span {
+    font-family: 'Motiva Sans', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+
   .header {
     background: linear-gradient(45deg, #142540, #284067);
   }

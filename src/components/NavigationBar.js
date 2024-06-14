@@ -82,9 +82,16 @@ const NavigationBar = () => {
                 <Nav.Link className="navlink" href="/link">
                   COMUNIDAD
                 </Nav.Link>
-                <Nav.Link className="navlink" href="/link">
-                  ACERCA DE
-                </Nav.Link>
+                {/*Nombre del usuario si se autentica en los items principales*/}
+                {isAuthenticated ? (
+                    <Nav.Link className="navlink" style={{textTransform: 'uppercase'}} href="/user-games">
+                          {userName}
+                    </Nav.Link>
+                ) : (
+                    <Nav.Link className="navlink" href="/link">
+                      ACERCA DE
+                    </Nav.Link>
+                )}
                 <Nav.Link className="navlink" href="/link">
                   SOPORTE
                 </Nav.Link>
