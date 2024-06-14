@@ -1,0 +1,101 @@
+body {
+    background-color: #0b1016;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container-p {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+
+
+    min-height: calc(100vh - 104px - 225px);
+    max-height: calc(100vh - 104px - 225px);
+}
+
+.header h1 {
+    text-align: center;
+    color: #66c0f4;
+}
+
+.content, .steam, .points, .receipt, .footer {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #1b2838;
+    border-radius: 10px;
+}
+
+.content a, .footer a {
+    color: #66c0f4;
+    text-decoration: none;
+}
+
+.steam .buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.button {
+    display: block;
+    width: 45%;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.button.yes {
+    background-color: #4a90e2;
+}
+
+.button.yes:hover {
+    background-color: #357ab8;
+}
+
+.button.no {
+    background-color: #d9534f;
+}
+
+.button.no:hover {
+    background-color: #c9302c;
+}
+
+.points h2, .receipt h2 {
+    margin-top: 0;
+}
+
+.points span, .receipt span {
+    font-weight: bold;
+}
+
+button {
+    background-color: #4a90e2;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #357ab8;
+}
+
+.footer a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #4a90e2;
+    border-radius: 5px;
+}
+
+.footer a:hover {
+    background-color: #357ab8;
+}

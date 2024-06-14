@@ -19,6 +19,7 @@ import UserGames from './pages/UserGames';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import ConfirmPurchase from './pages/ConfirmPurchase';
+import ComprobanteCompra from './pages/comprobanteCompra';
 
 
 
@@ -58,7 +59,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/confirm" element={<ConfirmPurchase />} />
-
+            <Route path="/comprobante" element={<ComprobanteCompra />} />
 
           </Routes>
         </Layout>
