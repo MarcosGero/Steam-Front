@@ -1,13 +1,12 @@
 .contCar{
-    width: 100%;
-    margin-left: 25%;
+    width: 70%;
     padding-left: 6px;
-    margin-bottom: 200px;
+    margin-left: 21%;
 }
 
 .cart{
-    background-color: #142540;
-    
+    background: linear-gradient(to right, #141c2d, #1e3549, #162331);
+    padding-bottom: 20px;
 }
 .cartTitle{
     color: white;
@@ -18,11 +17,13 @@
 
 .gameCont{
     display: flex;
+    flex-direction: row;
+    align-items: center;
     height: 143px;
     width: 610px;
     padding: 15px;
-    background-color: #13202c;
-    margin-bottom: 30px;
+    background: linear-gradient(to right, rgba(11, 15, 23, 0.64), rgba(9, 16, 23, 0.64), rgba(11, 18, 24, 0.64));
+    margin-bottom: 5px;
 }
 
 .gameImg{
@@ -33,31 +34,42 @@
 
 .gameTitle{
     margin-left: 10px;
+    margin-top: 0%;
     font-weight: bold;
     color: white;
 }
 
 .priceanderase{
     text-align: right;
-    margin-top: 65px;
+    margin-top: 28px;
     margin-left: 230px;
 }
 
 .gamePrice{
-    font-weight: bold;
-    font-size: 17px;
+    font-size: 14px;
     color:white;
-    
+    margin-left: 60%;
+}
+.gameTotal{
+    font-size: 14px;
+    color:white;
+    margin-left: 80%;
 }
 
 .eraseButton{
-    color: grey !important;
-    margin-top: 93px;
+    color: #ffffff !important;
+    background-color: #13202c;
+    border-color: white;
+    height: 30px;
+    padding-top: 2px;
+    margin-top: 5px;
+
 }
 
 .cartContent{
-    display: flex;
     margin-top: 30px;
+}
+.cartGroup{
 }
 
 
@@ -65,14 +77,12 @@
 .totalPrice{
     height: 150px;
     width: 310px;
-    margin-left: 50px;
     background-color: #13202c;
     padding: 15px;
-    
+    margin-left: 20px;
 }
 
 .totalPriceTitle{
-    display: flex;
     color: white;
     font-weight: bold;
 }
@@ -80,15 +90,26 @@
 .totalEstimado{
     margin-right: 110px;
 }
+.impuestos{
+    margin-right: 10px;
+    font-weight: normal;
+    font-size: 12px;
+    margin-top: 10%;
+}
 
 .cartContinue{
-    margin-top: 50px;
+    margin-top: 10px;
     background-color:  #0d82d6 !important;
+}
+.cartContinue:hover{
+    margin-top: 10px;
+    background-color: #269ff5 !important;
 }
 
 .seguirComprando{
     width: 168px;
     height: 32px;
+    margin-top: 20px;
     background-color:  #263039 !important;
     font-size: 14px;
     border-color: transparent;
