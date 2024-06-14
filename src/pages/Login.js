@@ -69,7 +69,7 @@ function Login() {
                     <Form.Check type="checkbox" label="Recordarme" />
                   </Form.Group>
 
-                  <Button variant="primary" type="submit" className="button">
+                  <Button variant="primary" type="submit" className="buttonlogin">
                     Iniciar sesión
                   </Button>
 

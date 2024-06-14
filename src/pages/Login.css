@@ -65,11 +65,14 @@
   height: 268px !important;
 }
 
-.button{
-  width: 270px !important;
-  height: 47px !important;
+.buttonlogin{
+  width: 200px !important;
+  height: 35px !important;
   background-color: #0cb4ff !important;
   padding: 0px !important;
+}
+.buttonlogin:hover{
+  background-color: #1c9ad3 !important;
 }
 
 .logincard{
