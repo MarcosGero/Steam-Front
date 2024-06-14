@@ -12,6 +12,7 @@ import Axios from 'axios';
 import axios from "axios";
 import {API_URL} from "../config/env";
 import {Avatar} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 
 // {user.name}
 
@@ -32,12 +33,12 @@ function UserGames () {
     const [user, setUser] = useState({});
     const userImage = localStorage.getItem("local-picture");
     const imageFormat = localStorage.getItem("local-format");
-
+    const navigate = useNavigate();
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await axios.get(API_URL + 'user/me');
-                setUser(response.data);
+                const gamesResponse = await axios.get('/user/me/ownedGames');
+                setGames(gamesResponse.data);
             } catch (error) {
                 console.error('Error fetching user data:', error);
             }
@@ -45,7 +46,9 @@ function UserGames () {
 
         fetchUserData();
     }, []);
-
+    const handleGameClick = (gameName) => {
+        navigate(`/games/${gameName}`);
+    };
     /*useEffect(() => {
 
         Axios.get(API_URL + 'users/me/games')
@@ -108,24 +111,15 @@ function UserGames () {
                  <a> ESTADO DE DESCARGA REMOTA: Sin acceso a tu PC</a>
              </div>
              <div className='contenedor-game'>
-                 <GameItem
-                     img={img_1}
-                     title='NaissanceE'
-                     time='114 minutos'
-                     date='11 de oct de 2021'
-                 />
-                 <GameItem
-                     img={img_2}
-                     title='Despotism 3K'
-                     time='113 minutos'
-                     date='11 de ago de 2022'
-                 />
-                 <GameItem
-                     img={img_3}
-                     title='BitBurner'
-                     time='70 minutos'
-                     date='21 de dic de 2021'
-                 />
+                 {games.map(game => (
+                     <GameItem
+                         img={`http://localhost:8080/api/v1/games/images/${game.thumbnail}`}
+                         title={game.name}
+                         time='Tiempo de juego no disponible'
+                         date='Fecha de compra no disponible'
+                         onClick={() => handleGameClick(game.name)}
+                     />
+                 ))}
              </div>
          </div>
         </div>

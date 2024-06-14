@@ -20,9 +20,6 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 
 
-
-
-
 /////////////////TOKEN/////////////////////////////////
 Axios.defaults.baseURL = 'http://localhost:8080/api/v1/'
 Axios.defaults.headers.post['Accept'] = 'application/json'
@@ -44,11 +41,11 @@ function App() {
       <AuthProvider>
         <Layout>
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/recovery" element={<PasswordRecoveryPage />} />
             <Route path="/reset-password" element={<PasswordResetPage />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/account-details" element={<AccountPage />} />
             <Route path="/confirm-email" element={<EmailVerification/>} />
             <Route path="/verificar-email" element={<AvisoEmail/>} />
