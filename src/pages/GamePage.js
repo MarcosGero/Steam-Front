@@ -23,6 +23,17 @@ function GamePage() {
                 console.error('There was an error fetching the game!', error);
             });
     }, [name]);
+    const handleAddToCart = () => {
+        Axios.post('user/me/carrito', { game })
+            .then(response => {
+                console.log('Game added to cart:', response.data);
+                // Optionally show a success message or handle success state
+            })
+            .catch(error => {
+                console.error('There was an error adding the game to the cart!', error);
+                // Optionally show an error message or handle error state
+            });
+    };
 
     if (!game) return <div>Loading...</div>;
     const portada = "http://localhost:8080/api/v1/games/images/" + (game.thumbnail);
@@ -83,7 +94,7 @@ function GamePage() {
                         <div className='purchaseprice'>
                             {game.price} USD
                         </div>
-                        <Button className='purchasecart'>
+                        <Button className='purchasecart' onClick={handleAddToCart}>
                             Agregar al carrito
                         </Button>
                     </div>

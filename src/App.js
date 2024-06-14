@@ -17,7 +17,7 @@ import PasswordResetPage from "./pages/PasswordResetPage";
 import GamePage from './pages/GamePage';
 import UserGames from './pages/UserGames';
 import Cart from './pages/Cart';
-import Cart from './pages/Checkout';
+import Checkout from './pages/Checkout';
 
 
 
@@ -42,11 +42,11 @@ function App() {
       <AuthProvider>
         <Layout>
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/recovery" element={<PasswordRecoveryPage />} />
             <Route path="/reset-password" element={<PasswordResetPage />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/account-details" element={<AccountPage />} />
             <Route path="/confirm-email" element={<EmailVerification/>} />
             <Route path="/verificar-email" element={<AvisoEmail/>} />
@@ -55,6 +55,7 @@ function App() {
             <Route path="/games/:name" element={<GamePage />} />
             <Route path="/user-games" element={<UserGames />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </Layout>
       </AuthProvider>

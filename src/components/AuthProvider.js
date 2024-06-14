@@ -58,7 +58,7 @@ export function AuthProvider({ children }) {
       const userdata = await Axios.get(API_URL + "user/me");
       localStorage.setItem("local-picture",userdata.data.image);
       localStorage.setItem("local-format",userdata.data.imageMimeType);
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       setLoading(false);
       // Si no encuentra al usuario (404) entonces se le pide que vuelva a escribir el usuario y contraseña

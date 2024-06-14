@@ -15,7 +15,7 @@ import {
 import { BiWorld } from "react-icons/bi";
 import { ImDownload } from "react-icons/im";
 import {Avatar, IconButton, Menu, MenuItem, Typography} from "@mui/material";
-import {Notifications} from "@mui/icons-material";
+
 import {BsBell} from "react-icons/bs";
 
 const NavigationBar = () => {
@@ -45,7 +45,7 @@ const NavigationBar = () => {
     if (isAuthenticated) {
       navigate("/account-details"); // URL de detalles de cuenta
     } else {
-      navigate("/"); // Si el usuario no está autenticado, redirigir a la página de login
+      navigate("/login"); // Si el usuario no está autenticado, redirigir a la página de login
     }
   };
   const toggleOffcanvas = () => setShowOffcanvas(!showOffcanvas);
@@ -76,7 +76,7 @@ const NavigationBar = () => {
           <Offcanvas.Body >
             <Container className="navoptions">
               <Nav className="navlinks">
-                <Nav.Link className="navlink" href="/home">
+                <Nav.Link className="navlink" href="/">
                   TIENDA
                 </Nav.Link>
                 <Nav.Link className="navlink" href="/link">

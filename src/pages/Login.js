@@ -1,17 +1,30 @@
 import './Login.css';
 import { Form, Button, Container, Row, Card } from 'react-bootstrap';
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import Underbanner from '../components/Underbanner.js';
-import { useLoginContext } from "../components/AuthProvider.js"
+import {useAuthUserContext, useLoginContext, useLogOutContext} from "../components/AuthProvider.js"
 
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
+  const [isAuthenticated, setAuthenticated] = useState(); // Indica si es usuario esta o no autenticado
+  const AuthUser = useAuthUserContext(); // Maneja la autenticacion de usuario
+
+
   const [username, setUsername] = useState(''); // Constante que guarda el nombre de usuario
   const [password, setPassword] = useState('');// Constante que guarda la contraseña
   const [error, setError] = useState(''); // Para manejar errores
   const navigate = useNavigate();
-
+  useEffect(() => {
+    const checkAuth = async () => {
+      const authStatus = await AuthUser();
+      setAuthenticated(authStatus);
+      if (authStatus) {
+        navigate('/'); // Redirect to home if authenticated
+      }
+    };
+    checkAuth();
+  }, [AuthUser, navigate]);
   const LogUser = useLoginContext(); // Usar el contexto de login
 
   const handleSubmit = async (event) => { // Maneja los eventos de subida de informacion (cuando se clickea en iniciar sesion)

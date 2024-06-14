@@ -47,12 +47,12 @@ function SearchBar() {
             
             <div className='buttonscontainer'>
                 <ButtonGroup className='buttonsbar' aria-label="buttons">
-                    <Button className='bar1' variant="secondary" href='/home'>Tu tienda</Button>
-                    <Button className='bar1' variant="secondary" href='/home'>Nuevo y destacable</Button>
-                    <Button className='bar1' variant="secondary" href='/home'>Categorías</Button>
-                    <Button className='bar1' variant="secondary" href='/home'>Tienda de puntos</Button>
+                    <Button className='bar1' variant="secondary" href='/'>Tu tienda</Button>
+                    <Button className='bar1' variant="secondary" href='/'>Nuevo y destacable</Button>
+                    <Button className='bar1' variant="secondary" href='/'>Categorías</Button>
+                    <Button className='bar1' variant="secondary" href='/'>Tienda de puntos</Button>
                     <Button className='bar1' variant="secondary" href='/noticias'>Noticias</Button>
-                    <Button className='bar1' variant="secondary" href='/home'>Laboratorios</Button>
+                    <Button className='bar1' variant="secondary" href='/'>Laboratorios</Button>
                 </ButtonGroup>
                 <Form.Group className='typeahead-container'>
                     <Typeahead
