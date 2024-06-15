@@ -172,6 +172,12 @@
     height: 15px;
     margin: 0.1vh 0.6vh 0.5vh 0.5vh;
   }
+
+a{
+    text-decoration: none !important;
+    color: white !important;
+}
+
 .download-icon2{
     width: 15px;
     height: 15px;

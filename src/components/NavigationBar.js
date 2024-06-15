@@ -103,7 +103,7 @@ const NavigationBar = () => {
                     <div className="d-flex">
                       <button className="dark rectangular-button2">
                         <ImDownload className="download-icon mr-2"/>
-                        Instalar Steam
+                        <a href="https://cdn.akamai.steamstatic.com/client/installer/SteamSetup.exe">Instalar Steam</a>
                       </button>
                       <button className="dark rectangular-button3" >
                         <BsBell className="download-icon mr-2" />
