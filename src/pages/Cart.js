@@ -27,6 +27,20 @@ function Cart() {
 
         fetchCartGames();
     }, []);
+    const handleRemoveGame = async (gameId) => {
+        try {
+            await axios.delete(`/user/me/carrito/${gameId}`);
+            // Filter out the removed game from the state
+            const updatedCartGames = cartGames.filter(game => game.name !== gameId);
+            setCartGames(updatedCartGames);
+
+            // Update the total price
+            const total = updatedCartGames.reduce((sum, game) => sum + game.price, 0);
+            setTotalPrice(total);
+        } catch (error) {
+            console.error('Error removing game from cart:', error);
+        }
+    };
     const backgroundImageUrl = cartGames.length > 0 && cartGames[0].thumbnail
         ? `url('http://localhost:8080/api/v1/games/images/${cartGames[0].thumbnail}')`
         : '';
@@ -55,13 +69,13 @@ function Cart() {
                                     <Card.Text>
                                         <div className='priceanderase'>
                                             <div className='gamePrice'>${game.price}</div>
-                                            <Button variant='danger' className='eraseButton'>Eliminar</Button>
+                                            <Button variant='danger' className='eraseButton' onClick={() => handleRemoveGame(game.name)}>Eliminar</Button>
                                         </div>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
                         ))}
-                        <Button className='seguirComprando'>Seguir comprando</Button>
+                        <Button className='seguirComprando' onClick={() => navigate('/')}>Seguir comprando</Button>
                     </Grid>
                     <Grid item xs={4}>
                         <div className='totalPrice'>

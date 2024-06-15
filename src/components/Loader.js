@@ -1,21 +1,13 @@
 import './loader.css'
+import React from 'react';
 
-function BasicExample() {
+
+const Loader = () => {
   return (
-    <div className='overlay'>
-      <div className="lds-roller">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+      <div className="loader-overlay">
+        <div className="loader"></div>
       </div>
-    </div>
-
   );
-}
+};
 
-export default BasicExample;
+export default Loader;

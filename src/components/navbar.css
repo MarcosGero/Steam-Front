@@ -20,6 +20,11 @@
   text-decoration-thickness: 2px;
 
 }
+.cartera{
+    position: absolute;
+    top: 20px;
+    right: 23%;
+}
 .navlink{
   color: white !important;
   margin: 0%;

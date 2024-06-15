@@ -19,15 +19,35 @@ import {Avatar, IconButton, Menu, MenuItem, Typography} from "@mui/material";
 import {BsBell} from "react-icons/bs";
 
 const NavigationBar = () => {
-  const [isAuthenticated, setAuthenticated] = useState(); // Indica si es usuario esta o no autenticado
+  const [isAuthenticated, setAuthenticated] = useState(false); // Indica si es usuario esta o no autenticado
   const AuthUser = useAuthUserContext(); // Maneja la autenticacion de usuario
   const [anchorEl, setAnchorEl] = useState(null);
   const LogOutUser = useLogOutContext(); // Maneja el cierre de sesion
   const navigate = useNavigate(); // Forma para navegar entre las paginas
   const [showOffcanvas, setShowOffcanvas] = useState(false);
+  const [cartera,setCartera] = useState(0);
+
+  const userName = localStorage.getItem("local-user");
+  const userImage = localStorage.getItem("local-picture");
+  const imageFormat = localStorage.getItem("local-format");
+
   useEffect(() => {
-    setAuthenticated(AuthUser());
+    const checkAuth = async () => {
+      const authenticated = await AuthUser();
+      setAuthenticated(authenticated);
+    };
+    checkAuth();
   }, [AuthUser]);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      const carteraValue = localStorage.getItem("local-cartera");
+
+      setCartera(parseFloat(carteraValue) || 0);
+    }
+  }, [isAuthenticated]);
+
+
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -36,11 +56,9 @@ const NavigationBar = () => {
     setAnchorEl(null);
   };
   const handleLogout = () => {
-    LogOutUser(); // Llama a la función de cierre de sesión del contexto
+    LogOutUser();// Llama a la función de cierre de sesión del contexto
   };
-  const userName = localStorage.getItem("local-user");
-  const userImage = localStorage.getItem("local-picture");
-  const imageFormat = localStorage.getItem("local-format");
+
   const handleRequest = () => { // Maneja los request
     if (isAuthenticated) {
       navigate("/account-details"); // URL de detalles de cuenta
@@ -99,7 +117,7 @@ const NavigationBar = () => {
             </Container>
             <Container>
               <Nav className="extraoptions">
-                {isAuthenticated ? (
+                {isAuthenticated && userName? (
                     <div className="d-flex">
                       <button className="dark rectangular-button2">
                         <ImDownload className="download-icon mr-2"/>
@@ -108,6 +126,10 @@ const NavigationBar = () => {
                       <button className="dark rectangular-button3" >
                         <BsBell className="download-icon mr-2" />
                       </button>
+                      <Typography variant="body2" className="cartera"
+                                  sx={{marginTop: 3, fontSize: '12px', color: 'rgb(190, 187, 187);'}}>
+                        ${cartera.toFixed(2)} USD💲
+                      </Typography>
                       <IconButton
                           edge="end"
                           onClick={handleMenuOpen}
@@ -122,6 +144,7 @@ const NavigationBar = () => {
                                     sx={{marginRight: 1, fontSize: '13px', color: 'rgb(190, 187, 187);'}}>
                           {userName}▾
                         </Typography>
+
                         {userImage && imageFormat ? (
                             <Avatar
                                 src={`data:${imageFormat};base64,${userImage}`}

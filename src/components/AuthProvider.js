@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useState, useContext } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -27,25 +27,48 @@ export const usePasswordResetContext = () => {
 };
 
 export function AuthProvider({ children }) {
-  const [auth, setAuth] = useState(null);
+  const [auth, setAuth] = useState(false);
   const [errorSubmit, setErrorSubmit] = useState("");
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  /////////////////User Auth/////////////////////////////////
 
-  const AuthUser = () => {
-    Axios.get(API_URL + "auth/check")
-      .then((response) => {
-        setAuth(true);
-      })
-      .catch((error) => {
-        setAuth(false);
-      });
-    return auth;
-  };
-  /////////////////////////////////////////////////////////////
+    ///////////////////User Auth/////////////////////////////////
 
+    const AuthUser = async () => {
+        const token = localStorage.getItem("local-token");
+        if (!token) {
+            setAuth(false);
+            return false;
+        }
+
+        try {
+            setAuth(false);
+            const response = await Axios.get(API_URL + "auth/check");
+
+            if (response.data === "User is authenticated") {
+                const userdata = await Axios.get(API_URL + "user/me");
+                localStorage.setItem("local-user", userdata.data.userName);
+                localStorage.setItem("local-picture", userdata.data.image);
+                localStorage.setItem("local-format", userdata.data.imageMimeType);
+                localStorage.setItem("local-cartera", userdata.data.cartera);
+                setAuth(true);
+                return true;
+            } else {
+                setAuth(false);
+                return false;
+            }
+        } catch (error) {
+            setAuth(false);
+            return false;
+        }
+    };
+
+    useEffect(() => {
+        AuthUser();
+    }, []);
+
+    /////////////////////////////////////////////////////////////
   ///////////////////Log In///////////////////////////////////
 
   const LogUser = async (username, password) => {
@@ -58,6 +81,7 @@ export function AuthProvider({ children }) {
       const userdata = await Axios.get(API_URL + "user/me");
       localStorage.setItem("local-picture",userdata.data.image);
       localStorage.setItem("local-format",userdata.data.imageMimeType);
+      localStorage.setItem("local-cartera",userdata.data.cartera);
       navigate("/");
     } catch (error) {
       setLoading(false);
@@ -113,29 +137,40 @@ export function AuthProvider({ children }) {
   /////////////////////////////////////////////////////////////
 
   /////////////////Login Out/////////////////////////////////
-  const LogOutUser = (sumiterror) => {
-      setLoading(true);
-      localStorage.removeItem("local-token"); // Si el usuario sale de su sesion entonces se elimina su token
-      localStorage.removeItem("local-user");
-      setAuth(false);
-      setLoading(false);
-      navigate("/"); // Se vuelve a la pagina para iniciar sesion
-  };
+    const LogOutUser = async () => {
+        setLoading(true);
+        try {
+            await Axios.post(API_URL + "auth/logout");
+        } catch (error) {
+            console.error("Error logging out:", error);
+        } finally {
+            localStorage.removeItem("local-token");
+            localStorage.removeItem("local-user");
+            localStorage.removeItem("local-picture");
+            localStorage.removeItem("local-format");
+            localStorage.removeItem("local-cartera");
+
+            setAuth(false);
+            setLoading(false);
+            window.location.href = `/login`;
+        }
+    };
   ///////////////////////////////////////////////////////////
 
   return (
     <>
+    {loading && <Loader />}
+    <AuthUserContext.Provider value={AuthUser}>
       <LoginContext.Provider value={LogUser}>
       <requestPasswordContext.Provider value={{requestPasswordReset}}>
         <SingUpUserContext.Provider value={SingUpUser}>
-          <AuthUserContext.Provider value={AuthUser}>
             <LogOutContext.Provider value={LogOutUser}>
               {children}
             </LogOutContext.Provider>
-          </AuthUserContext.Provider>
         </SingUpUserContext.Provider>
       </requestPasswordContext.Provider>
       </LoginContext.Provider>
+    </AuthUserContext.Provider>
     </>
   );
 }

@@ -17,6 +17,7 @@ function GamePage() {
     const [showModal, setShowModal] = useState(false);
     const [modalMessage, setModalMessage] = useState('');
 
+
     useEffect(() => {
         Axios.get(`games/name/${name}`)
             .then(response => {
@@ -67,6 +68,11 @@ function GamePage() {
             thumbnailClass: className,
         };
     }) : [];
+
+    function handleModalClose() {
+        setShowModal(false);
+        window.location.href = `/games/${encodeURIComponent(name)}`;
+    }
 
     return (
         <div className='details' >
@@ -136,7 +142,7 @@ function GamePage() {
                 </Modal.Header>
                 <Modal.Body>{modalMessage}</Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={() => setShowModal(false)}>
+                    <Button variant="secondary" onClick={() => handleModalClose()}>
                         Cerrar
                     </Button>
                 </Modal.Footer>

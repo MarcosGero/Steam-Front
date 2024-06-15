@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "./checkout.css";
 import vid from './homebgvid.mp4'
 import { Form, Button, ButtonGroup, Row, Card, Dropdown } from 'react-bootstrap';
@@ -6,11 +6,40 @@ import SearchBar from '../components/SearchBar';
 import {useNavigate} from "react-router-dom";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import axios from "axios";
 
 
 
 function Checkout() {
+    const [cartGames, setCartGames] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [cartera, setCartera] = useState(0);
+    const [insufficientFunds, setInsufficientFunds] = useState(false);
     const navigate = useNavigate();
+    useEffect(() => {
+        const fetchCartData = async () => {
+            try {
+                const response = await axios.get(`/user/me/carrito`);
+                setCartGames(response.data);
+
+                const total = response.data.reduce((sum, game) => sum + game.price, 0);
+                setTotalPrice(total);
+
+                const carteraResponse = await axios.get(`/user/me`);
+                setCartera(carteraResponse.data.cartera);
+
+                if (total > carteraResponse.data.cartera) {
+                    setInsufficientFunds(true);
+                } else {
+                    setInsufficientFunds(false);
+                }
+            } catch (error) {
+                console.error('Error fetching cart or user data:', error);
+            }
+        };
+
+        fetchCartData();
+    }, []);
     return (
         <div className='checkcont'>
             <div className='checkout'>
@@ -47,7 +76,16 @@ function Checkout() {
                                     <div className='tex3'>
                                         Podrás revisar tu pedido antes de que se procese.
                                     </div>
-                                    <Button className='continuar' onClick={()=>navigate('/confirm')}>
+                                    {insufficientFunds && (
+                                        <div className='insufficient-funds'>
+                                            ⚠️ No tienes suficiente dinero en tu cartera para completar esta compra.
+                                        </div>
+                                    )}
+                                    <Button
+                                        className={`continuar ${insufficientFunds ? 'disabled-button' : ''}`}
+                                        onClick={() => navigate('/confirm')}
+                                        disabled={insufficientFunds}
+                                    >
                                         Continuar
                                     </Button>
                                 </div>
