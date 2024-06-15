@@ -15,7 +15,7 @@ function GamePage() {
     const [game, setGame] = useState(null);
     const [firstImageUrl, setFirstImageUrl] = useState('');
     const [showModal, setShowModal] = useState(false);
-    const [modalMessage, setModalMessage] = useState('');
+    const [modalMessage, setModalMessage] = useState(false);
 
 
     useEffect(() => {
@@ -72,6 +72,11 @@ function GamePage() {
     function handleModalClose() {
         setShowModal(false);
         window.location.href = `/games/${encodeURIComponent(name)}`;
+    }
+
+    function handleModalCarrito() {
+        setShowModal(false);
+        window.location.href = `/cart`;
     }
 
     return (
@@ -136,16 +141,60 @@ function GamePage() {
                     </div>
                 </div>
             </div>
-            <Modal show={showModal} onHide={() => setShowModal(false)}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Resultado</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>{modalMessage}</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={() => handleModalClose()}>
-                        Cerrar
-                    </Button>
-                </Modal.Footer>
+            <Modal
+                show={showModal}
+                onRequestClose={() => setShowModal(false)}
+                style={{
+                    content: {
+                        background: '#2a2d33 !important',
+                        borderRadius: '4px',
+                        width: '400px',
+                        padding: '20px',
+                        color: '#2a2d33 !important',
+                        textAlign: 'center',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center'
+                    },
+                    overlay: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.75)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }
+                }}
+            >
+                <div style={{marginBottom: '20px', textAlign:'center', marginTop: '20px', color:'black', padding:'0', margin:'0'}}>
+                    <h1>¡Agregado a tu carrito!</h1>
+                </div>
+                <div style={{display: 'flex', alignItems: 'center' }}>
+                    <div style={{textAlign: 'center', marginLeft: '80px', paddingBottom:'30px'}}>
+                        <h3 style={{color: 'black', fontSize:'medium', marginTop:'0'}}>{name}</h3>
+                        <p></p>
+                        <div style={{marginTop: '20px'}}>
+                            <button style={{
+                                background: '#6c757d',
+                                color: 'white',
+                                border: 'none',
+                                padding: '10px 20px',
+                                margin: '5px',
+                                cursor: 'pointer',
+                                borderRadius: '4px'
+                            }} onClick = {handleModalClose}>Seguir comprando
+                            </button>
+                            <button style={{
+                                background: '#007bff',
+                                color: 'white',
+                                border: 'none',
+                                padding: '10px 20px',
+                                margin: '5px',
+                                cursor: 'pointer',
+                                borderRadius: '4px'
+                            }} onClick={handleModalCarrito}>Ver mi carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </Modal>
         </div>
     );
