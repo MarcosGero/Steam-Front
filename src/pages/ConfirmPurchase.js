@@ -32,24 +32,12 @@ function ConfirmPurchase() {
         fetchCartData();
     }, []);
 
-    const handlePurchase = async () => {
+    const handlePurchase =  () => {
         if (!termsAccepted) {
             alert('Debes aceptar los términos y condiciones.');
             return;
         }
-
-        try {
-            const response = await axios.post(`/user/me/purchase`, { totalPrice });
-            if (response.data.success) {
-                localStorage.setItem("local-cartera",cartera-totalPrice);
-                navigate('/');
-            } else {
-                alert('No tienes suficiente dinero en tu cartera para completar esta compra.');
-            }
-        } catch (error) {
-            console.error('Error processing purchase:', error);
-            alert('Ocurrió un error al procesar la compra.');
-        }
+            navigate('/comprobante');
     };
 
     return (

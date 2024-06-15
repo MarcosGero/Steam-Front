@@ -1,11 +1,32 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./comprobanteCompra.css"
 import {jsPDF} from "jspdf";
 import html2canvas from 'html2canvas';
+import axios from "axios";
 
 function comprobanteCompra() {
+    const [cartGames, setCartGames] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [cartera, setCartera] = useState(0);
     const userName = localStorage.getItem("local-user");
 
+    useEffect(() => {
+        const func = async ()=> {
+            try {
+                const response = await axios.post(`/user/me/purchase`, {totalPrice});
+                if (response.data.success) {
+                    localStorage.setItem("local-cartera", cartera - totalPrice);
+                    navigate('/');
+                } else {
+                    alert('No tienes suficiente dinero en tu cartera para completar esta compra.');
+                }
+            } catch (error) {
+                console.error('Error processing purchase:', error);
+                alert('Ocurrió un error al procesar la compra.');
+            }
+        }
+        func();
+    }, []);
     //Funcion para la fecha
     const getCurrentDate = () => {
         const date = new Date();
@@ -120,4 +141,4 @@ function comprobanteCompra() {
     );
 }
 
-export default comprobanteCompra
+export default comprobanteCompra;
