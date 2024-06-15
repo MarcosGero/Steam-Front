@@ -4,10 +4,12 @@ import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Loader from "../components/Loader";
 
 function ComprobanteCompra() {
     const [cartGames, setCartGames] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
+    const [loading, setLoading] = useState(false);
     const [cartera, setCartera] = useState(parseFloat(localStorage.getItem("local-cartera")) || 0);
     const userName = localStorage.getItem("local-user");
     const navigate = useNavigate();
@@ -15,34 +17,48 @@ function ComprobanteCompra() {
     useEffect(() => {
         const fetchCartGames = async () => {
             try {
+                setLoading(true);
                 const response = await axios.get(`/user/me/carrito`);
                 setCartGames(response.data);
 
                 // Calculate the total price
                 const total = response.data.reduce((sum, game) => sum + game.price, 0);
                 setTotalPrice(total);
-                try {
-                    const response = await axios.post(`/user/me/purchase`, { totalPrice });
-                    if (response.data.success) {
-                        localStorage.setItem("local-cartera", cartera - totalPrice);
-                    } else {
-                        alert("No tienes suficiente dinero en tu cartera para completar esta compra.");
-                    }
-                } catch (error) {
-                    console.error("Error processing purchase:", error);
-                    alert("Ocurrió un error al procesar la compra.");
-                }
+                setLoading(false);
             } catch (error) {
                 console.error("Error fetching cart games:", error);
+                setLoading(false);
             }
         };
 
-        const processPurchase = async () => {
-
-        };
-
         fetchCartGames();
-    }, [totalPrice, cartera, navigate]);
+    }, []);
+
+    useEffect(() => {
+        if (cartGames.length > 0 && totalPrice > 0) {
+            processPurchase();
+        }
+    }, [cartGames, totalPrice]);
+
+    const processPurchase = async () => {
+        try {
+            setLoading(true);
+            const response = await axios.post(`/user/me/purchase`, { totalPrice });
+            if (response.data.success) {
+                const newCartera = cartera - totalPrice;
+                localStorage.setItem("local-cartera", newCartera.toFixed(2));
+                setCartera(newCartera);
+                generateReceipt();
+            } else {
+                alert("No tienes suficiente dinero en tu cartera para completar esta compra.");
+            }
+            setLoading(false);
+        } catch (error) {
+            console.error("Error processing purchase:", error);
+            //alert("Ocurrió un error al procesar la compra.");
+            setLoading(false);
+        }
+    };
 
     const getCurrentDate = () => {
         const date = new Date();
@@ -63,7 +79,7 @@ function ComprobanteCompra() {
         return invoiceNumber;
     };
 
-    const handlePrint = () => {
+    const generateReceipt = () => {
         const currentDate = getCurrentDate();
         const invoiceNumber = generateRandomInvoiceNumber();
 
@@ -136,29 +152,31 @@ function ComprobanteCompra() {
     };
 
     return (
-        <div className="container-p">
-            <div className="header">
-                <h1>¡GRACIAS POR TU COMPRA!</h1>
+        <>
+            {loading && <Loader />}
+            <div className="container-p">
+                <div className="header">
+                    <h1>¡GRACIAS POR TU COMPRA!</h1>
+                </div>
+                <div className="content">
+                    <p>
+                        Se te envió un correo electrónico de confirmación.<br />
+                        Todos los artículos digitales de este pedido están ahora registrados en tu cuenta de Steam. Para
+                        acceder a ellos, simplemente visita tu <a href="#">biblioteca en Steam</a> cuando quieras.
+                    </p>
+                </div>
+                <div className="receipt">
+                    <h2>RECIBO DE TU COMPRA</h2>
+                    <p>
+                        A continuación, te proporcionamos la confirmación de tu compra. También te la enviaremos por email
+                        dentro de poco.
+                    </p>
+                    <p>Nombre de cuenta: <span>{userName}</span></p>
+                    <p>Total: <span>${totalPrice.toFixed(2)} USD</span></p>
+                    <p>Código de confirmación: <span>{generateRandomInvoiceNumber()}</span></p>
+                </div>
             </div>
-            <div className="content">
-                <p>
-                    Se te envió un correo electrónico de confirmación.<br />
-                    Todos los artículos digitales de este pedido están ahora registrados en tu cuenta de Steam. Para
-                    acceder a ellos, simplemente visita tu <a href="#">biblioteca en Steam</a> cuando quieras.
-                </p>
-            </div>
-            <div className="receipt">
-                <h2>RECIBO DE TU COMPRA</h2>
-                <p>
-                    A continuación, te proporcionamos la confirmación de tu compra. También te la enviaremos por email
-                    dentro de poco.
-                </p>
-                <p>Nombre de cuenta: <span>{userName}</span></p>
-                <p>Total: <span>${totalPrice.toFixed(2)} USD</span></p>
-                <p>Código de confirmación: <span>{generateRandomInvoiceNumber()}</span></p>
-                <button onClick={handlePrint}>Imprimir</button>
-            </div>
-        </div>
+        </>
     );
 }
 
