@@ -19,6 +19,7 @@ function Checkout() {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     useEffect(() => {
+
         const fetchCartData = async () => {
             try {
                 setLoading(true);

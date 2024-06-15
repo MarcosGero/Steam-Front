@@ -8,6 +8,7 @@ function ConfirmPurchase() {
     const [cartGames, setCartGames] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const [userName, setUserName] = useState('');
+    const [cartera, setCartera] = useState(0);
     const [termsAccepted, setTermsAccepted] = useState(false);
     const navigate = useNavigate();
 
