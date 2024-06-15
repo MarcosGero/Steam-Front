@@ -41,6 +41,7 @@ function ConfirmPurchase() {
         try {
             const response = await axios.post(`/user/me/purchase`, { totalPrice });
             if (response.data.success) {
+                localStorage.setItem("local-cartera",cartera-totalPrice);
                 navigate('/');
             } else {
                 alert('No tienes suficiente dinero en tu cartera para completar esta compra.');

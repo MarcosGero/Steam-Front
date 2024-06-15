@@ -60,7 +60,6 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/confirm" element={<ConfirmPurchase />} />
             <Route path="/comprobante" element={<ComprobanteCompra />} />
-
           </Routes>
         </Layout>
       </AuthProvider>

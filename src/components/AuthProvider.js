@@ -43,18 +43,17 @@ export function AuthProvider({ children }) {
         }
 
         try {
-            setAuth(false);
             const response = await Axios.get(API_URL + "auth/check");
 
             if (response.data === "User is authenticated") {
-                const userdata = await Axios.get(API_URL + "user/me");
-                localStorage.setItem("local-user", userdata.data.userName);
-                localStorage.setItem("local-picture", userdata.data.image);
-                localStorage.setItem("local-format", userdata.data.imageMimeType);
-                localStorage.setItem("local-cartera", userdata.data.cartera);
                 setAuth(true);
                 return true;
             } else {
+                localStorage.removeItem("local-token");
+                localStorage.removeItem("local-user");
+                localStorage.removeItem("local-picture");
+                localStorage.removeItem("local-format");
+                localStorage.removeItem("local-cartera");
                 setAuth(false);
                 return false;
             }
@@ -160,17 +159,17 @@ export function AuthProvider({ children }) {
   return (
     <>
     {loading && <Loader />}
-    <AuthUserContext.Provider value={AuthUser}>
       <LoginContext.Provider value={LogUser}>
       <requestPasswordContext.Provider value={{requestPasswordReset}}>
         <SingUpUserContext.Provider value={SingUpUser}>
+            <AuthUserContext.Provider value={AuthUser}>
             <LogOutContext.Provider value={LogOutUser}>
               {children}
             </LogOutContext.Provider>
+            </AuthUserContext.Provider>
         </SingUpUserContext.Provider>
       </requestPasswordContext.Provider>
       </LoginContext.Provider>
-    </AuthUserContext.Provider>
     </>
   );
 }

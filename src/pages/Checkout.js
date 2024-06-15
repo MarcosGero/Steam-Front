@@ -7,6 +7,7 @@ import {useNavigate} from "react-router-dom";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import axios from "axios";
+import Loader from "../components/Loader";
 
 
 
@@ -15,10 +16,12 @@ function Checkout() {
     const [totalPrice, setTotalPrice] = useState(0);
     const [cartera, setCartera] = useState(0);
     const [insufficientFunds, setInsufficientFunds] = useState(false);
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     useEffect(() => {
         const fetchCartData = async () => {
             try {
+                setLoading(true);
                 const response = await axios.get(`/user/me/carrito`);
                 setCartGames(response.data);
 
@@ -33,14 +36,18 @@ function Checkout() {
                 } else {
                     setInsufficientFunds(false);
                 }
+                setLoading(false);
             } catch (error) {
                 console.error('Error fetching cart or user data:', error);
+                setLoading(false);
             }
         };
 
         fetchCartData();
     }, []);
     return (
+        <>
+        {loading && <Loader />}
         <div className='checkcont'>
             <div className='checkout'>
                 <div className='checktabs'> 
@@ -93,6 +100,7 @@ function Checkout() {
                         </div>                        
             </div>
         </div>
+        </>
     );
 }
 
