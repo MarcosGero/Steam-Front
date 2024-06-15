@@ -21,27 +21,27 @@ function ComprobanteCompra() {
                 // Calculate the total price
                 const total = response.data.reduce((sum, game) => sum + game.price, 0);
                 setTotalPrice(total);
+                try {
+                    const response = await axios.post(`/user/me/purchase`, { totalPrice });
+                    if (response.data.success) {
+                        localStorage.setItem("local-cartera", cartera - totalPrice);
+                    } else {
+                        alert("No tienes suficiente dinero en tu cartera para completar esta compra.");
+                    }
+                } catch (error) {
+                    console.error("Error processing purchase:", error);
+                    alert("Ocurrió un error al procesar la compra.");
+                }
             } catch (error) {
                 console.error("Error fetching cart games:", error);
             }
         };
 
         const processPurchase = async () => {
-            try {
-                const response = await axios.post(`/user/me/purchase`, { totalPrice });
-                if (response.data.success) {
-                    localStorage.setItem("local-cartera", cartera - totalPrice);
-                } else {
-                    alert("No tienes suficiente dinero en tu cartera para completar esta compra.");
-                }
-            } catch (error) {
-                console.error("Error processing purchase:", error);
-                alert("Ocurrió un error al procesar la compra.");
-            }
+
         };
 
         fetchCartGames();
-        processPurchase();
     }, [totalPrice, cartera, navigate]);
 
     const getCurrentDate = () => {
