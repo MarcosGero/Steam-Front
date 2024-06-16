@@ -38,6 +38,13 @@
     padding-left: 30px;
 }
 
+.ddmenu{
+    padding-left: 10px;
+    width: 250px !important;
+    margin-left: 238px;
+    margin-top: 28px;
+}
+
 .payopt{
     width: 250px;
     height: 33px;

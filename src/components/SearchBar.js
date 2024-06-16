@@ -5,6 +5,7 @@ import { Typeahead } from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import Axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import cartIcon from "./cart.png"
 
 function SearchBar() {
     const [singleSelections, setSingleSelections] = useState([]);
@@ -59,16 +60,20 @@ function SearchBar() {
 
     return (
         <>
-            {hasCartItems && (
-                <Button
-                    variant="warning"
-                    className="cart-button"
-                    onClick={() => navigate('/cart')}
-                >
-                    Ver Carrito
-                </Button>
-            )}
+            
             <div className='buttonscontainer'>
+                {
+                //hasCartItems && 
+                (
+                    <Button
+                        variant="warning"
+                        className="cart-button"
+                        onClick={() => navigate('/cart')}
+                    >
+                        <img src={cartIcon} className="cartlogo" />
+                        Ver Carrito
+                    </Button>
+                )}
                 <ButtonGroup className='buttonsbar' aria-label="buttons">
                     <Button className='bar1' variant="secondary" href='/'>Tu tienda</Button>
                     <Button className='bar1' variant="secondary" href='/'>Nuevo y destacable</Button>

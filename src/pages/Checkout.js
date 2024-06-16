@@ -74,7 +74,7 @@ function Checkout() {
                                         <Dropdown.Toggle variant="success" id="dropdown-basic">
                                             Mi Cartera de Steam
                                         </Dropdown.Toggle>
-                                        <Dropdown.Menu>
+                                        <Dropdown.Menu className='ddmenu'>
                                             <Dropdown.Item href="#/action-1">Mi Cartera de Steam</Dropdown.Item>
                                         </Dropdown.Menu>
                                         </Dropdown>
